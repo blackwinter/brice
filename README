@@ -1,0 +1,56 @@
+= brice - Extra cool IRb goodness for the masses
+
+== VERSION
+
+This documentation refers to brice version 0.0.1
+
+
+== DESCRIPTION
+
+Enhances your IRb experience by adding new functionality and by providing
+a framework that you can utilize to add your own extensions. It comes with
+a set of pre-selected features, but is highly configurable in that regard.
+
+Add this to your <tt>.irbrc</tt> and receive the default goodness:
+
+  require 'rubygems'
+  require 'brice/init'  # equivalent to: require 'brice'; Brice.init
+
+Or get some more control over the configuration:
+
+  require 'rubygems'
+  require 'brice'
+
+  Brice.init { |config|
+    ...
+  }
+
+See Brice::Config for what you can configure, and how.
+
+It will even load your own extensions that you place in your <tt>~/.brice</tt>
+directory. See Brice::DSL for helpers provided.
+
+Please note that further changes to the configuration for brice can't be
+guaranteed to have any effect after <tt>Brice.init</tt> has been called.
+
+
+== AUTHORS
+
+* Jens Wille <mailto:jens.wille@uni-koeln.de>
+
+
+== LICENSE AND COPYRIGHT
+
+Copyright (C) 2008 Jens Wille
+
+brice is free software: you can redistribute it and/or modify it under the
+terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.
+
+brice is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+brice. If not, see <http://www.gnu.org/licenses/>.
