@@ -5,7 +5,7 @@ begin
 
   Hen.lay! {{
     :rubyforge => {
-      :project => %q{brice},
+      :project => %q{prometheus},
       :package => %q{brice}
     },
 
