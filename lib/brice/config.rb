@@ -28,41 +28,101 @@ require 'ostruct'
 
 class Brice
 
+  # Exclude unwanted packages:
+  #
+  #   config.exclude 'foo', 'bar'
+  #   Brice.config -= %w[quix quux]
+  #
+  # Include non-default packages:
+  #
+  #   config.include 'foo', 'bar'
+  #   Brice.config += %w[quix quux]
+  #
+  # Configure individual packages (depends on package):
+  #
+  #   # set property
+  #   config.foo.bar = 'baz'
+  #
+  #   # set multiple properties
+  #   config.foo = %w[bar baz]
+  #   # equivalent to:
+  #   #config.foo.bar = true
+  #   #config.foo.baz = true
+  #
+  #   # reset package configuration
+  #   config.foo!
+  #
+  #   # see whether package is enabled/included
+  #   config.foo?
+
   class Config
 
     attr_reader :packages
 
-    def initialize(packages)
+    def initialize(packages = [])
       @packages = Hash.new { |h, k| h[k] = PackageConfig.new }
       packages.each { |package| self[package] }
     end
 
+    # call-seq:
+    #   config[package]
+    #
+    # Accessor for package +package+.
     def [](package)
-      packages[package.to_s]
+      @packages[package.to_s]
     end
 
-    def include(package)
-      self[package]
+    # call-seq:
+    #   config.include(*packages)
+    #   config += packages
+    #
+    # Enable/include packages +packages+.
+    def include(*packages)
+      packages.each { |package| self[package] }
       self
     end
 
     alias_method :+, :include
 
-    def exclude(package)
-      packages.delete(package.to_s)
+    # call-seq:
+    #   config.exclude(*packages)
+    #   config -= packages
+    #
+    # Disable/exclude packages +packages+.
+    def exclude(*packages)
+      packages.each { |package| @packages.delete(package.to_s) }
       self
     end
 
     alias_method :-, :exclude
 
+    # call-seq:
+    #   config.clear
+    #
+    # Clear all packages.
     def clear
-      packages.clear
+      @packages.clear
     end
 
+    # call-seq:
+    #   config.include?(package) => true or false
+    #   config.have?(package) => true or false
+    #
+    # See whether package +package+ is enabled/included.
     def include?(package)
-      packages.include?(package.to_s)
+      @packages.include?(package.to_s)
     end
 
+    alias_method :have?, :include?
+
+    # call-seq:
+    #   config.package                # package configuration
+    #   config.package = 'foo'        # equivalent to: config.package.foo = true
+    #   config.package = %w[foo bar]  # see above, multiple
+    #   config.package!               # reset package configuration
+    #   config.package?               # see whether package is enabled/included
+    #
+    # Convenience accessors to individual package configurations.
     def method_missing(method, *args)
       package, punctuation = method.to_s.sub(/([=!?])?\z/, ''), $1
 
@@ -84,6 +144,10 @@ class Brice
 
     class PackageConfig < OpenStruct
 
+      # call-seq:
+      #   pkgconfig.entries => anArray
+      #
+      # Returns all entries/keys.
       def entries
         instance_variable_get(:@table).keys.map { |key| key.to_s }.sort
       end

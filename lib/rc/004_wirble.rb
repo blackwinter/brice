@@ -19,7 +19,7 @@ brice 'wirble' do |config|
   end
 
   # Make wirble and ruby-debug use the same histfile
-  FILE_HISTORY = Wirble::History::DEFAULTS[:history_path]
+  silence { FILE_HISTORY = Wirble::History::DEFAULTS[:history_path] }
 
   Wirble.init(:skip_prompt => true)
   Wirble.colorize

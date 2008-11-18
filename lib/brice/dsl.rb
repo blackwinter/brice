@@ -26,12 +26,24 @@
 
 class Brice
 
+  # Certain global helper methods for use inside IRb extensions. Also
+  # available inside the IRb session.
+
   module DSL
 
+    # call-seq:
+    #   irb_rc { ... }
+    #
+    # Add IRB_RC proc (to be executed whenever a (sub-)session is started).
     def irb_rc
       Brice.irb_rc << Proc.new
     end
 
+    # call-seq:
+    #   irb_def(symbol) { ... }
+    #   irb_def(symbol, method)
+    #
+    # Define a method for use inside the IRb session.
     def irb_def(symbol, method = nil)
       irb_rc {
         Object.instance_eval {
@@ -46,14 +58,25 @@ class Brice
 
     alias_method :define_irb_method, :irb_def
 
+    # call-seq:
+    #   silence { ... }
+    #
+    # Silence warnings for block execution.
     def silence
       verbose, $VERBOSE = $VERBOSE, nil
-
       yield
     ensure
       $VERBOSE = verbose
     end
 
+    # call-seq:
+    #   brice_rescue(what, args = [], error = Exception)
+    #
+    # Call +what+ with +args+ and rescue potential +error+, optionally
+    # executing block in case of success. Gives a nicer error location
+    # instead of the full backtrace.
+    #
+    # Returns either the result of the executed method or of the block.
     def brice_rescue(what, args = [], error = Exception)
       res = send(what, *args)
 
@@ -62,11 +85,20 @@ class Brice
       raise unless err.is_a?(error)
 
       unless Brice.quiet
+        # FIXME: ideally, we'd want the __FILE__ and __LINE__ of the
+        # rc file where the error occurred.
         location = caller.find { |c| c !~ %r{(?:\A|/)lib/brice[/.]} }
         warn "#{err.class}: #{err} [#{location}]"
       end
     end
 
+    # call-seq:
+    #   brice_require(string)
+    #
+    # Kernel#require the library named +string+ and optionally execute
+    # block in case of success.
+    #
+    # Returns either the result of the executed method or of the block.
     def brice_require(string)
       args = [:require, [string], LoadError]
 
@@ -77,6 +109,13 @@ class Brice
       end
     end
 
+    # call-seq:
+    #   brice_load(filename, wrap = false)
+    #
+    # Kernel#load the file named +filename+ and optionally execute
+    # block in case of success.
+    #
+    # Returns either the result of the executed method or of the block.
     def brice_load(filename, wrap = false)
       args = [:load, [filename, wrap]]
 
@@ -87,6 +126,16 @@ class Brice
       end
     end
 
+    # call-seq:
+    #   brice(package)  # package == lib
+    #   brice(package => lib)
+    #   brice(package => [lib, ...])
+    #
+    # Declare package +package+. Optionally load given libraries (see below)
+    # and configure the package if it has been enabled/included.
+    #
+    # +package+ can be a String which already names the library to be loaded
+    # or a Hash of the form <tt>package => lib</tt> or <tt>package => [lib, ...]</tt>.
     def brice(package)
       package, libs = case package
         when Hash
