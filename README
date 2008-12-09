@@ -34,6 +34,14 @@ Please note that further changes to the configuration for brice can't be
 guaranteed to have any effect after <tt>Brice.init</tt> has been called.
 
 
+== LINKS
+
+<b></b>
+Documentation::     <http://prometheus.rubyforge.org/brice>
+Source code::       <http://github.com/blackwinter/brice>
+Rubyforge project:: <http://rubyforge.org/projects/prometheus>
+
+
 == AUTHORS
 
 * Jens Wille <mailto:jens.wille@uni-koeln.de>
