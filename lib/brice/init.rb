@@ -1,3 +1,3 @@
 # just a short-cut
-require File.dirname(__FILE__)
+require 'brice'
 Brice.init
