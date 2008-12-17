@@ -2,14 +2,15 @@
 
 == VERSION
 
-This documentation refers to brice version 0.0.1
+This documentation refers to brice version 0.0.2
 
 
 == DESCRIPTION
 
 Enhances your IRb experience by adding new functionality and by providing
 a framework that you can utilize to add your own extensions. It comes with
-a set of pre-selected features, but is highly configurable in that regard.
+a set of pre-selected features (see the files in {lib/rc}[link:../lib/rc]),
+but is highly configurable in that regard.
 
 Add this to your <tt>.irbrc</tt> and receive the default goodness:
 

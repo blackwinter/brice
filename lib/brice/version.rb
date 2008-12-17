@@ -4,7 +4,7 @@ class Brice
 
     MAJOR = 0
     MINOR = 0
-    TINY  = 1
+    TINY  = 2
 
     class << self
 
