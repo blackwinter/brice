@@ -23,14 +23,15 @@ brice 'rails' => nil do |config|
 
     IRB.conf[:PROMPT] ||= {}
 
-    IRB.conf[:PROMPT][:RAILS] = {
+    IRB.conf[:PROMPT][:BRICE_RAILS] = {
       :PROMPT_I => prompt,
       :PROMPT_S => prompt,
       :PROMPT_C => prompt,
-      :RETURN   => IRB.conf[:PROMPT][:BRICE][:RETURN]
+      :RETURN   => IRB.conf[:PROMPT][:BRICE_SIMPLE] ?
+        IRB.conf[:PROMPT][:BRICE_SIMPLE][:RETURN] : "=> %s\n"
     }
 
-    IRB.conf[:PROMPT_MODE] = :RAILS
+    IRB.conf[:PROMPT_MODE] = :BRICE_RAILS
 
     ### logger
     brice_require 'logger' do
