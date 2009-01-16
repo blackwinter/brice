@@ -20,13 +20,28 @@ brice 'prompt' => nil do |config|
 
   IRB.conf[:PROMPT] ||= {}  # prevent error in webrick
 
-  IRB.conf[:PROMPT][:BRICE] = {                   # name of prompt mode
-    :PROMPT_I => '  ',                            # normal prompt
-    :PROMPT_S => '  ',                            # prompt for continuing strings
-    :PROMPT_C => '  ',                            # prompt for continuing statement
-    :RETURN   => lambda { |rt| "#{rt} => %s\n" }  # format to return value
-  }
+  # prompt configuration:
+  #
+  #   PROMPT_I = normal prompt
+  #   PROMPT_S = prompt for continuing strings
+  #   PROMPT_C = prompt for continuing statement
+  #   RETURN   = format to return value
 
-  IRB.conf[:PROMPT_MODE] = :BRICE
+  IRB.conf[:PROMPT].update(
+    :BRICE_SIMPLE => {
+      :PROMPT_I => '  ',
+      :PROMPT_S => '  ',
+      :PROMPT_C => '  ',
+      :RETURN   => lambda { |rt| "#{rt} => %s\n" }
+    },
+    :BRICE_VERBOSE => {
+      :PROMPT_I => "#{RUBY_VERSION}p#{RUBY_PATCHLEVEL}> ",
+      :PROMPT_S => "#{RUBY_VERSION}p#{RUBY_PATCHLEVEL}> ",
+      :PROMPT_C => "#{RUBY_VERSION}p#{RUBY_PATCHLEVEL}> ",
+      :RETURN   => lambda { |rt| "#{rt} => %s\n" }
+    }
+  )
+
+  IRB.conf[:PROMPT_MODE] = RUBY_VERSION < '1.9' ? :BRICE_SIMPLE : :BRICE_VERBOSE
 
 end
