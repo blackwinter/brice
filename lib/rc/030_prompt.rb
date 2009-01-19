@@ -27,6 +27,9 @@ brice 'prompt' => nil do |config|
   #   PROMPT_C = prompt for continuing statement
   #   RETURN   = format to return value
 
+  prefix = "#{RUBY_VERSION}"
+  prefix << "p#{RUBY_PATCHLEVEL}" if defined?(RUBY_PATCHLEVEL)
+
   IRB.conf[:PROMPT].update(
     :BRICE_SIMPLE => {
       :PROMPT_I => '  ',
@@ -35,9 +38,9 @@ brice 'prompt' => nil do |config|
       :RETURN   => lambda { |rt| "#{rt} => %s\n" }
     },
     :BRICE_VERBOSE => {
-      :PROMPT_I => "#{RUBY_VERSION}p#{RUBY_PATCHLEVEL}> ",
-      :PROMPT_S => "#{RUBY_VERSION}p#{RUBY_PATCHLEVEL}> ",
-      :PROMPT_C => "#{RUBY_VERSION}p#{RUBY_PATCHLEVEL}> ",
+      :PROMPT_I => "#{prefix}> ",
+      :PROMPT_S => "#{prefix}> ",
+      :PROMPT_C => "#{prefix}> ",
       :RETURN   => lambda { |rt| "#{rt} => %s\n" }
     }
   )
