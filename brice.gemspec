@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{brice}
-  s.version = "0.0.4"
+  s.version = "0.0.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jens Wille"]
-  s.date = %q{2009-01-16}
+  s.date = %q{2009-01-19}
   s.description = %q{Extra cool IRb goodness for the masses}
   s.email = %q{jens.wille@uni-koeln.de}
   s.extra_rdoc_files = ["COPYING", "ChangeLog", "README"]
