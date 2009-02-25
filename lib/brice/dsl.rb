@@ -24,12 +24,16 @@
 ###############################################################################
 #++
 
+require 'nuggets/object/silence_mixin'
+
 class Brice
 
   # Certain global helper methods for use inside IRb extensions. Also
   # available inside the IRb session.
 
   module DSL
+
+    include Nuggets::Object::SilenceMixin
 
     # call-seq:
     #   irb_rc { ... }
@@ -57,17 +61,6 @@ class Brice
     end
 
     alias_method :define_irb_method, :irb_def
-
-    # call-seq:
-    #   silence { ... }
-    #
-    # Silence warnings for block execution.
-    def silence
-      verbose, $VERBOSE = $VERBOSE, nil
-      yield
-    ensure
-      $VERBOSE = verbose
-    end
 
     # call-seq:
     #   brice_rescue(what, args = [], error = Exception)

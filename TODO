@@ -7,9 +7,13 @@ http://rubyforge.org/projects/irbhelper/
 http://rubyforge.org/projects/irb-history/
 http://rubyforge.org/projects/irbprovements/
 http://rubyforge.org/projects/live-console/
+http://github.com/matthew/method_lister/
 http://rubyforge.org/projects/pope/
 http://rubyforge.org/projects/rshell/
 http://rubyforge.org/projects/rubyade/
 #http://rubyforge.org/projects/rubysideshow/ [-]
 http://rubyforge.org/projects/shellable/
 #http://rubyforge.org/projects/utilitybelt/ [+]
+
+http://rubysideshow.rubyforge.org/svn/IrbCallbacks/
+http://github.com/cldwalker/irbfiles/blob/master/.irb/todo/benchmark_via_callbacks.rb
