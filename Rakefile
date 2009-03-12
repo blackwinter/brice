@@ -14,7 +14,7 @@ begin
       :summary      => %q{Extra cool IRb goodness for the masses},
       :files        => FileList['lib/**/*.rb'].to_a,
       :extra_files  => FileList['[A-Z]*'].to_a,
-      :dependencies => [['ruby-nuggets', '>= 0.5.0']]
+      :dependencies => [['ruby-nuggets', '>= 0.5.2']]
     }
   }}
 rescue LoadError

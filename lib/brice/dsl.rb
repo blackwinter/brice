@@ -25,6 +25,7 @@
 #++
 
 require 'nuggets/object/silence_mixin'
+require 'nuggets/env/set'
 
 class Brice
 
@@ -117,6 +118,14 @@ class Brice
       else
         brice_rescue(*args)
       end
+    end
+
+    # call-seq:
+    #   brice_run_cmd(cmd, env = {})
+    #
+    # Runs +cmd+ with ENV modified according to +env+.
+    def brice_run_cmd(cmd, env = {})
+      ENV.with(env) { `#{cmd}` }
     end
 
     # call-seq:

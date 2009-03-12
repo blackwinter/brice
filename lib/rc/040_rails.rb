@@ -8,7 +8,7 @@ brice 'rails' => nil do |config|
 
     svn = brice_require('nuggets/file/which') { File.which('svn') }
 
-    if svn and svn_info = YAML.load(`#{svn} info`)
+    if svn and svn_info = YAML.load(brice_run_cmd("#{svn} info", 'LANG' => 'C'))
       repo = svn_info['Repository Root']
       path = svn_info['URL'].sub(%r{#{Regexp.escape(repo)}/?}, '')
 
