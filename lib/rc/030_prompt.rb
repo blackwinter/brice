@@ -6,7 +6,7 @@ brice 'prompt' => nil do |config|
     %w[prompt_i prompt_s prompt_c prompt_n return_format].each { |name|
       define_method(name) {
         ivar = instance_variable_get("@#{name}")
-        ivar.respond_to?(:call) ? ivar['%.4f' % @runtime] : ivar
+        ivar.respond_to?(:call) ? ivar['%.4f' % @runtime ||= 0] : ivar
       }
     }
 
