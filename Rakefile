@@ -1,4 +1,4 @@
-require %q{lib/brice/version}
+require File.expand_path(%q{../lib/brice/version}, __FILE__)
 
 begin
   require 'hen'
@@ -12,13 +12,11 @@ begin
     :gem => {
       :version      => Brice::VERSION,
       :summary      => %q{Extra cool IRb goodness for the masses},
-      :files        => FileList['lib/**/*.rb'].to_a,
-      :extra_files  => FileList['[A-Z]*'].to_a,
+      :author       => %q{Jens Wille},
+      :email        => %q{jens.wille@uni-koeln.de},
       :dependencies => [['ruby-nuggets', '>= 0.5.2']]
     }
   }}
-rescue LoadError
-  abort "Please install the 'hen' gem first."
+rescue LoadError => err
+  warn "Please install the `hen' gem. (#{err})"
 end
-
-### Place your custom Rake tasks here.
