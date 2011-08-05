@@ -35,6 +35,8 @@ require 'nuggets/env/user_home'
 
 class Brice
 
+  RC_DIR = __FILE__.sub(/\.rb\z/, '/rc')
+
   BRICE_HOME = File.join(ENV.user_home, '.brice')
 
   @verbose = false
@@ -151,7 +153,7 @@ class Brice
     #   find_rc_files(dir = ...) => anArray
     #
     # Find the actual extension files in +dir+.
-    def find_rc_files(dir = File.join(File.dirname(__FILE__), 'rc'))
+    def find_rc_files(dir = RC_DIR)
       File.directory?(dir) ? Dir["#{dir}/*.rb"].sort : []
     end
 
