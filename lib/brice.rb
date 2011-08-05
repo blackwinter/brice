@@ -25,15 +25,14 @@
 #++
 
 require 'irb'
-require 'rubygems'
 require 'nuggets/env/user_home'
 
-%w[config dsl version].each { |lib|
-  lib = "brice/#{lib}"
-  require lib
-}
+require 'brice/version'
 
 class Brice
+
+  autoload :Config, 'brice/config'
+  autoload :DSL,    'brice/dsl'
 
   RC_DIR = __FILE__.sub(/\.rb\z/, '/rc')
 
@@ -57,14 +56,13 @@ class Brice
     # Initialize Brice and optionally configure any packages.
     def init(options = {})
       @irb_rc = []
+
       @config = Config.new(rc_files(true).map { |rc|
         File.basename(rc, '.rb').sub(/\A\d+_/, '')
       })
 
       options.each { |key, value|
-        method = "#{key}="
-
-        if respond_to?(method)
+        if respond_to?(method = "#{key}=")
           send(method, value)
         else
           raise ArgumentError, "illegal option: #{key}"
@@ -85,10 +83,11 @@ class Brice
     # Set config to +config+. Raises a TypeError if +config+ is not a
     # Brice::Config.
     def config=(config)
-      raise TypeError, "expected Brice::Config, got #{config.class}" \
-        unless config.is_a?(Config)
-
-      @config = config
+      if config.is_a?(Config)
+        @config = config
+      else
+        raise TypeError, "expected Brice::Config, got #{config.class}"
+      end
     end
 
     # call-seq:

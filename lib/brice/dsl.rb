@@ -27,6 +27,8 @@
 require 'nuggets/object/silence_mixin'
 require 'nuggets/env/set'
 
+require 'brice'
+
 class Brice
 
   # Certain global helper methods for use inside IRb extensions. Also
@@ -40,8 +42,8 @@ class Brice
     #   irb_rc { ... }
     #
     # Add IRB_RC proc (to be executed whenever a (sub-)session is started).
-    def irb_rc
-      Brice.irb_rc << Proc.new
+    def irb_rc(&block)
+      Brice.irb_rc << block
     end
 
     # call-seq:
@@ -49,14 +51,10 @@ class Brice
     #   irb_def(symbol, method)
     #
     # Define a method for use inside the IRb session.
-    def irb_def(symbol, method = nil)
+    def irb_def(symbol, method = nil, &block)
       irb_rc {
         Object.instance_eval {
-          if method
-            define_method(symbol, method)
-          else
-            define_method(symbol, &Proc.new)
-          end
+          define_method(symbol, method || block)
         }
       }
     end
@@ -93,14 +91,8 @@ class Brice
     # block in case of success.
     #
     # Returns either the result of the executed method or of the block.
-    def brice_require(string)
-      args = [:require, [string], LoadError]
-
-      if block_given?
-        brice_rescue(*args) { |*a| yield(*a) }
-      else
-        brice_rescue(*args)
-      end
+    def brice_require(string, &block)
+      brice_rescue(:require, [string], LoadError, &block)
     end
 
     # call-seq:
@@ -110,14 +102,8 @@ class Brice
     # block in case of success.
     #
     # Returns either the result of the executed method or of the block.
-    def brice_load(filename, wrap = false)
-      args = [:load, [filename, wrap]]
-
-      if block_given?
-        brice_rescue(*args) { |*a| yield(*a) }
-      else
-        brice_rescue(*args)
-      end
+    def brice_load(filename, wrap = false, &block)
+      brice_rescue(:load, [filename, wrap], &block)
     end
 
     # call-seq:
@@ -125,7 +111,7 @@ class Brice
     #
     # Runs +cmd+ with ENV modified according to +env+.
     def brice_run_cmd(cmd, env = {})
-      ENV.with(env) { `#{cmd}` }
+      ENV.with(env) { %x{#{cmd}} }
     end
 
     # call-seq:
@@ -141,12 +127,14 @@ class Brice
     def brice(package)
       package, libs = case package
         when Hash
-          raise ArgumentError, "Too many package names: #{package.keys.join(' ')}" \
-            if package.size > 1
-          raise ArgumentError, 'No package name given' \
-            if package.size < 1
+          names = package.keys
 
-          [package.keys.first, [*package.values.first]]
+          err = names.size > 1 ? "Too many package names: #{names.join(' ')}" :
+                names.size < 1 ? 'No package name given' : nil
+
+          raise ArgumentError, err if err
+
+          [names.first, Array(package.values.first)]
         else
           [package, [package]]
       end

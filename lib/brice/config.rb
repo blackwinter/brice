@@ -25,6 +25,7 @@
 #++
 
 require 'ostruct'
+require 'brice'
 
 class Brice
 
@@ -45,9 +46,9 @@ class Brice
   #
   #   # set multiple properties
   #   config.foo = %w[bar baz]
-  #   # equivalent to:
-  #   #config.foo.bar = true
-  #   #config.foo.baz = true
+  #   # which is equivalent to:
+  #   config.foo.bar = true
+  #   config.foo.baz = true
   #
   #   # reset package configuration
   #   config.foo!
@@ -69,7 +70,7 @@ class Brice
     #
     # Accessor for package +package+.
     def [](package)
-      @packages[package.to_s]
+      packages[package.to_s]
     end
 
     # call-seq:
@@ -90,7 +91,7 @@ class Brice
     #
     # Disable/exclude packages +packages+.
     def exclude(*packages)
-      packages.each { |package| @packages.delete(package.to_s) }
+      packages.each { |package| self.packages.delete(package.to_s) }
       self
     end
 
@@ -101,7 +102,7 @@ class Brice
     #
     # Clear all packages.
     def clear
-      @packages.clear
+      packages.clear
     end
 
     # call-seq:
@@ -110,7 +111,7 @@ class Brice
     #
     # See whether package +package+ is enabled/included.
     def include?(package)
-      @packages.include?(package.to_s)
+      packages.include?(package.to_s)
     end
 
     alias_method :have?, :include?
@@ -126,17 +127,21 @@ class Brice
     def method_missing(method, *args)
       package, punctuation = method.to_s.sub(/([=!?])?\z/, ''), $1
 
-      raise ArgumentError, "wrong number of arguments (#{args.size} for 0)" \
-        unless punctuation == '=' || args.empty?
+      assignment = punctuation == '='
+
+      unless assignment || args.empty?
+        raise ArgumentError, "wrong number of arguments (#{args.size} for 0)"
+      end
 
       case punctuation
-        when '='
-          @packages[package] = PackageConfig.new
-          [*args.first].each { |arg| @packages[package].send("#{arg}=", true) }
-        when '!'
-          @packages[package] = PackageConfig.new
+        when '=', '!'
+          config = packages[package] = PackageConfig.new
+
+          assignment ? Array(args.first).each { |arg|
+            config.send("#{arg}=", true)
+          } : config
         when '?'
-          self.include?(package)
+          include?(package)
         else
           self[package]
       end
