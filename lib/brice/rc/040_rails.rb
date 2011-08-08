@@ -18,7 +18,7 @@ brice 'rails' => nil do |config|
       prompt = File.basename(Dir.pwd) << hint
     end
 
-    # add "ENV['RAILS_SANDBOX'] = 'true'" in rails-X.X.X/lib/commands/console.rb
+    # add "ENV['RAILS_SANDBOX'] = 'true'" in rails/lib/commands/console.rb
     prompt << "#{ENV['RAILS_SANDBOX'] ? '>' : '$'} "
 
     IRB.conf[:PROMPT] ||= {}

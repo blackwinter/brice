@@ -18,7 +18,7 @@ brice 'prompt' => nil do |config|
     end
   end
 
-  IRB.conf[:PROMPT] ||= {}  # prevent error in webrick
+  IRB.conf[:PROMPT] ||= {}
 
   # prompt configuration:
   #

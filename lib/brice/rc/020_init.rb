@@ -2,7 +2,7 @@
 
 brice 'init' => nil do |config|
 
-  $KCODE = 'u' unless RUBY_VERSION >= '1.9'
+  $KCODE = 'u' if RUBY_VERSION < '1.9'
 
   IRB.conf[:AUTO_INDENT] = true
 

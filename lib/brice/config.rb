@@ -149,12 +149,23 @@ class Brice
 
     class PackageConfig < OpenStruct
 
+      include Enumerable
+
       # call-seq:
-      #   pkgconfig.entries => anArray
+      #   pkgconfig.each { |entry| ... } -> pkgconfig
       #
-      # Returns all entries/keys.
-      def entries
-        instance_variable_get(:@table).keys.map { |key| key.to_s }.sort
+      # Iterates over all entries in +pkgconfig+. Returns +pkgconfig+.
+      def each
+        @table.keys.each { |key| yield key.to_s }
+        self
+      end
+
+      # call-seq:
+      #   pkgconfig.empty? -> true | false
+      #
+      # Checks whether +pkgconfig+ is empty?
+      def empty?
+        @table.empty?
       end
 
     end
