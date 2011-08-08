@@ -2,9 +2,6 @@
 
 brice 'shortcuts' => 'brice/shortcuts' do |config|
 
-  Brice::Shortcuts.init(
-    :object => config.object != false,
-    :ri     => config.ri     != false
-  )
+  Brice::Shortcuts.init(config.opt)
 
 end

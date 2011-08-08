@@ -33,6 +33,7 @@ module Brice
 
   autoload :Config,    'brice/config'
   autoload :DSL,       'brice/dsl'
+  autoload :History,   'brice/history'
   autoload :Shortcuts, 'brice/shortcuts'
 
   RC_DIR = __FILE__.sub(/\.rb\z/, '/rc')
