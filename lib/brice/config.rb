@@ -27,7 +27,7 @@
 require 'ostruct'
 require 'brice'
 
-class Brice
+module Brice
 
   # Exclude unwanted packages:
   #

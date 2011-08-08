@@ -29,7 +29,7 @@ require 'nuggets/env/set'
 
 require 'brice'
 
-class Brice
+module Brice
 
   # Certain global helper methods for use inside IRb extensions. Also
   # available inside the IRb session.

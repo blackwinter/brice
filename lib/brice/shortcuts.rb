@@ -26,7 +26,7 @@
 
 require 'brice'
 
-class Brice
+module Brice
 
   # Convenient shortcut methods.
   module Shortcuts

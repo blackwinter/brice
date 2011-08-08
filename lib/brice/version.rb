@@ -1,4 +1,4 @@
-class Brice
+module Brice
 
   module Version
 
