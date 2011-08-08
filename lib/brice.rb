@@ -31,8 +31,9 @@ require 'brice/version'
 
 class Brice
 
-  autoload :Config, 'brice/config'
-  autoload :DSL,    'brice/dsl'
+  autoload :Config,    'brice/config'
+  autoload :DSL,       'brice/dsl'
+  autoload :Shortcuts, 'brice/shortcuts'
 
   RC_DIR = __FILE__.sub(/\.rb\z/, '/rc')
 
@@ -117,6 +118,15 @@ class Brice
     # Get the custom extension files.
     def custom_extensions
       @custom_extensions ||= find_rc_files(BRICE_HOME)
+    end
+
+    # call-seq:
+    #   Brice.opt?(opt, key, default = true) -> anObject
+    #
+    # Returns the value of +opt+ at +key+ if present, or +default+
+    # otherwise.
+    def opt?(opt, key, default = true)
+      opt.is_a?(Hash) && opt.has_key?(key) ? opt[key] : default
     end
 
     private
