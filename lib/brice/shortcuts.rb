@@ -24,6 +24,7 @@
 ###############################################################################
 #++
 
+require 'nuggets/file/which'
 require 'brice'
 
 module Brice
