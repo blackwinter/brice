@@ -32,6 +32,7 @@ require 'brice/version'
 module Brice
 
   autoload :Config,    'brice/config'
+  autoload :Colours,   'brice/colours'
   autoload :DSL,       'brice/dsl'
   autoload :History,   'brice/history'
   autoload :Shortcuts, 'brice/shortcuts'
