@@ -81,6 +81,10 @@ module Brice
         # rc file where the error occurred.
         location = caller.find { |c| c !~ %r{(?:\A|/)lib/brice[/.]} }
         warn "#{err.class}: #{err} [#{location}]"
+
+        warn err.backtrace.map { |line|
+          "        from #{line}"
+        }.join("\n") if Brice.verbose
       end
     end
 
