@@ -3,8 +3,8 @@ module Brice
   module Version
 
     MAJOR = 0
-    MINOR = 1
-    TINY  = 1
+    MINOR = 2
+    TINY  = 0
 
     class << self
 

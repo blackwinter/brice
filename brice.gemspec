@@ -2,20 +2,20 @@
 
 Gem::Specification.new do |s|
   s.name = %q{brice}
-  s.version = "0.1.1"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Jens Wille"]
-  s.date = %q{2011-04-29}
+  s.authors = [%q{Jens Wille}]
+  s.date = %q{2011-08-09}
   s.description = %q{Extra cool IRb goodness for the masses}
   s.email = %q{jens.wille@uni-koeln.de}
-  s.extra_rdoc_files = ["README", "COPYING", "ChangeLog"]
-  s.files = ["lib/brice.rb", "lib/brice/init.rb", "lib/brice/version.rb", "lib/brice/config.rb", "lib/brice/dsl.rb", "lib/rc/004_wirble.rb", "lib/rc/030_prompt.rb", "lib/rc/005_added_methods.rb", "lib/rc/020_init.rb", "lib/rc/050_devel.rb", "lib/rc/015_utility_belt.rb", "lib/rc/010_libs.rb", "lib/rc/040_rails.rb", "README", "ChangeLog", "Rakefile", "TODO", "COPYING"]
+  s.extra_rdoc_files = [%q{README}, %q{COPYING}, %q{ChangeLog}]
+  s.files = [%q{lib/brice.rb}, %q{lib/brice/init.rb}, %q{lib/brice/history.rb}, %q{lib/brice/colours.rb}, %q{lib/brice/version.rb}, %q{lib/brice/shortcuts.rb}, %q{lib/brice/config.rb}, %q{lib/brice/rc/010_added_methods.rb}, %q{lib/brice/rc/060_utility_belt.rb}, %q{lib/brice/rc/020_libs.rb}, %q{lib/brice/rc/090_rails.rb}, %q{lib/brice/rc/030_history.rb}, %q{lib/brice/rc/070_init.rb}, %q{lib/brice/rc/040_colours.rb}, %q{lib/brice/rc/100_devel.rb}, %q{lib/brice/rc/050_shortcuts.rb}, %q{lib/brice/rc/080_prompt.rb}, %q{lib/brice/dsl.rb}, %q{README}, %q{ChangeLog}, %q{Rakefile}, %q{TODO}, %q{COPYING}]
   s.homepage = %q{http://prometheus.rubyforge.org/brice}
-  s.rdoc_options = ["--line-numbers", "--main", "README", "--charset", "UTF-8", "--all", "--title", "brice Application documentation (v0.1.1)"]
-  s.require_paths = ["lib"]
+  s.rdoc_options = [%q{--line-numbers}, %q{--main}, %q{README}, %q{--all}, %q{--charset}, %q{UTF-8}, %q{--title}, %q{brice Application documentation (v0.2.0)}]
+  s.require_paths = [%q{lib}]
   s.rubyforge_project = %q{prometheus}
-  s.rubygems_version = %q{1.7.2}
+  s.rubygems_version = %q{1.8.7}
   s.summary = %q{Extra cool IRb goodness for the masses}
 
   if s.respond_to? :specification_version then
