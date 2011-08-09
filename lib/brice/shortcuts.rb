@@ -76,6 +76,29 @@ module Brice
 
     module ObjectShortcuts
 
+      alias_method :x, :exit
+
+      def cgrep(needle)
+        needle = %r{#{Regexp.escape(needle)}}i unless needle.is_a?(Regexp)
+
+        res = []
+
+        ObjectSpace.each_object { |obj|
+          if obj.is_a?(Class) && obj <= self
+            name = obj.name
+            res << name if name =~ needle
+          end
+        }
+
+        res
+      end
+
+      def mgrep(needle)
+        methods.grep(
+          needle.is_a?(Regexp) ? needle : %r{#{Regexp.escape(needle)}}i
+        )
+      end
+
       # Print object methods, sorted by name. (excluding methods that
       # exist in the class Object)
       def po(obj = self)
@@ -88,15 +111,25 @@ module Brice
       end
 
       # Cf. <http://rubyforge.org/snippet/detail.php?type=snippet&id=22>
-      def aorta(obj = self)
+      def aorta(obj = self, editor = nil)
         tempfile = Tempfile.new('aorta')
         YAML.dump(obj, tempfile)
         tempfile.close
 
-        path = tempfile.path
-
-        system(ENV['VISUAL'] || ENV['EDITOR'] || 'vi', path)
-        return obj unless File.exists?(path)
+        if editor ||= File.which_command(%W[
+          #{ENV['VISUAL']}
+          #{ENV['EDITOR']}
+          /usr/bin/sensible-editor
+          /usr/bin/xdg-open
+          open
+          vi
+        ])
+          system(editor, path = tempfile.path)
+          return obj unless File.exists?(path)
+        else
+          warn 'No suitable editor found. Please specify.'
+          return obj
+        end
 
         content = YAML.load_file(path)
         tempfile.unlink
