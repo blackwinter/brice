@@ -34,8 +34,8 @@ module Brice
     extend self
 
     def init(opt = {})
-      init_object if Brice.opt?(opt, :object)
-      init_ri     if Brice.opt?(opt, :ri)
+      init_object if Brice.opt(opt, :object)
+      init_ri     if Brice.opt(opt, :ri)
     end
 
     def init_object

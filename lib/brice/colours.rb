@@ -92,10 +92,10 @@ module Brice
     }
 
     def init(opt = {})
-      enable_irb if Brice.opt?(opt, :irb, STDOUT.tty?)
-      enable_pp  if Brice.opt?(opt, :pp,  STDOUT.tty?)
+      enable_irb if Brice.opt(opt, :irb, STDOUT.tty?)
+      enable_pp  if Brice.opt(opt, :pp,  STDOUT.tty?)
 
-      self.colours = Brice.opt?(opt, :colours, colours)
+      self.colours = Brice.opt(opt, :colours, colours)
     end
 
     def disable

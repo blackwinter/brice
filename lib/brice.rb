@@ -122,11 +122,11 @@ module Brice
   end
 
   # call-seq:
-  #   Brice.opt?(opt, key, default = true) -> anObject
+  #   Brice.opt(opt, key, default = true) -> anObject
   #
   # Returns the value of +opt+ at +key+ if present, or +default+
   # otherwise.
-  def opt?(opt, key, default = true)
+  def opt(opt, key, default = true)
     opt.is_a?(Hash) && opt.has_key?(key) ? opt[key] : default
   end
 

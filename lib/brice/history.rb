@@ -46,7 +46,7 @@ module Brice
 
     def initialize(opt = {}, history = defined?(Readline::HISTORY) && Readline::HISTORY)
       DEFAULTS.each { |key, val|
-        instance_variable_set("@#{key}", Brice.opt?(opt, key, val))
+        instance_variable_set("@#{key}", Brice.opt(opt, key, val))
       }
 
       @path    = File.expand_path(@path)
