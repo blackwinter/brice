@@ -60,17 +60,32 @@ module Brice
     def init_history(history)
       @history = history
 
+      @libedit = begin
+        Readline.emacs_editing_mode
+        true
+      rescue NotImplementedError
+        false
+      end
+
       load_history
       extend_history
 
       Kernel.at_exit { save_history }
     end
 
-    def load_history(history = @history)
+    def read_history
       File.foreach(@path) { |line|
         line.chomp!
-        history << line
-      } if File.readable?(@path)
+        yield line
+      }
+    end
+
+    def load_history(history = @history)
+      return unless File.readable?(@path)
+      read_history { |line| history << line }
+
+      return unless @libedit
+      @first_line = read_history { |line| break line }
     end
 
     def extend_history
@@ -84,6 +99,8 @@ module Brice
       else
         lines = @history.to_a
       end
+
+      lines.unshift(@first_line) if @first_line
 
       lines.reverse! if @reverse
       lines.uniq!    if @uniq
