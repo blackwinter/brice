@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Brice::Config</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Brice::Config</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/brice/config_rb.html">
+                lib/brice/config.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Exclude unwanted packages:
+</p>
+<pre>
+  config.exclude 'foo', 'bar'
+  Brice.config -= %w[quix quux]
+</pre>
+<p>
+Include non-default packages:
+</p>
+<pre>
+  config.include 'foo', 'bar'
+  Brice.config += %w[quix quux]
+</pre>
+<p>
+Configure individual packages (depends on package):
+</p>
+<pre>
+  # set property
+  config.foo.bar = 'baz'
+
+  # set multiple properties
+  config.foo = %w[bar baz]
+  # equivalent to:
+  #config.foo.bar = true
+  #config.foo.baz = true
+
+  # reset package configuration
+  config.foo!
+
+  # see whether package is enabled/included
+  config.foo?
+</pre>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000024">+</a>&nbsp;&nbsp;
+      <a href="#M000026">-</a>&nbsp;&nbsp;
+      <a href="#M000022">[]</a>&nbsp;&nbsp;
+      <a href="#M000027">clear</a>&nbsp;&nbsp;
+      <a href="#M000025">exclude</a>&nbsp;&nbsp;
+      <a href="#M000029">have?</a>&nbsp;&nbsp;
+      <a href="#M000023">include</a>&nbsp;&nbsp;
+      <a href="#M000028">include?</a>&nbsp;&nbsp;
+      <a href="#M000030">method_missing</a>&nbsp;&nbsp;
+      <a href="#M000021">new</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Class <a href="Config/PackageConfig.html" class="link">Brice::Config::PackageConfig</a><br />
+
+    </div>
+
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">packages</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000021" class="method-detail">
+        <a name="M000021"></a>
+
+        <div class="method-heading">
+          <a href="#M000021" class="method-signature">
+          <span class="method-name">new</span><span class="method-args">(packages = [])</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000021-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000021-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/brice/config.rb, line 62</span>
+62:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">packages</span> = [])
+63:       <span class="ruby-ivar">@packages</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>, <span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-constant">PackageConfig</span>.<span class="ruby-identifier">new</span> }
+64:       <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">package</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">package</span>] }
+65:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000024" class="method-detail">
+        <a name="M000024"></a>
+
+        <div class="method-heading">
+          <span class="method-name">+</span><span class="method-args">(*packages)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Config.html#M000023">include</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000026" class="method-detail">
+        <a name="M000026"></a>
+
+        <div class="method-heading">
+          <span class="method-name">-</span><span class="method-args">(*packages)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Config.html#M000025">exclude</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000022" class="method-detail">
+        <a name="M000022"></a>
+
+        <div class="method-heading">
+          <a href="#M000022" class="method-signature">
+          <span class="method-name">config[package]<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Accessor for package <tt>package</tt>.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000022-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000022-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/brice/config.rb, line 71</span>
+71:     <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">package</span>)
+72:       <span class="ruby-ivar">@packages</span>[<span class="ruby-identifier">package</span>.<span class="ruby-identifier">to_s</span>]
+73:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000027" class="method-detail">
+        <a name="M000027"></a>
+
+        <div class="method-heading">
+          <a href="#M000027" class="method-signature">
+          <span class="method-name">config.clear<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Clear all packages.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000027-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000027-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/brice/config.rb, line 103</span>
+103:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clear</span>
+104:       <span class="ruby-ivar">@packages</span>.<span class="ruby-identifier">clear</span>
+105:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000025" class="method-detail">
+        <a name="M000025"></a>
+
+        <div class="method-heading">
+          <a href="#M000025" class="method-signature">
+          <span class="method-name">config.exclude(*packages)<br />
+config -= packages<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Disable/<a href="Config.html#M000025">exclude</a> packages
+<tt>packages</tt>.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000025-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000025-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/brice/config.rb, line 92</span>
+92:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exclude</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">packages</span>)
+93:       <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">package</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@packages</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">package</span>.<span class="ruby-identifier">to_s</span>) }
+94:       <span class="ruby-keyword kw">self</span>
+95:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000029" class="method-detail">
+        <a name="M000029"></a>
+
+        <div class="method-heading">
+          <span class="method-name">have?</span><span class="method-args">(package)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Config.html#M000023">include</a>?
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000023" class="method-detail">
+        <a name="M000023"></a>
+
+        <div class="method-heading">
+          <a href="#M000023" class="method-signature">
+          <span class="method-name">config.include(*packages)<br />
+config += packages<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Enable/<a href="Config.html#M000023">include</a> packages
+<tt>packages</tt>.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000023-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000023-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/brice/config.rb, line 80</span>
+80:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">include</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">packages</span>)
+81:       <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">package</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">package</span>] }
+82:       <span class="ruby-keyword kw">self</span>
+83:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000028" class="method-detail">
+        <a name="M000028"></a>
+
+        <div class="method-heading">
+          <a href="#M000028" class="method-signature">
+          <span class="method-name">config.include?(package) => true or false<br />
+config.have?(package) => true or false<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+See whether package <tt>package</tt> is enabled/included.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000028-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000028-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/brice/config.rb, line 112</span>
+112:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">include?</span>(<span class="ruby-identifier">package</span>)
+113:       <span class="ruby-ivar">@packages</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">package</span>.<span class="ruby-identifier">to_s</span>)
+114:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000030" class="method-detail">
+        <a name="M000030"></a>
+
+        <div class="method-heading">
+          <a href="#M000030" class="method-signature">
+          <span class="method-name">config.package                # package configuration<br />
+config.package = 'foo'        # equivalent to: config.package.foo = true<br />
+config.package = %w[foo bar]  # see above, multiple<br />
+config.package!               # reset package configuration<br />
+config.package?               # see whether package is enabled/included<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Convenience accessors to individual package configurations.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000030-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000030-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/brice/config.rb, line 126</span>
+126:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">method_missing</span>(<span class="ruby-identifier">method</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+127:       <span class="ruby-identifier">package</span>, <span class="ruby-identifier">punctuation</span> = <span class="ruby-identifier">method</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp re">/([=!?])?\z/</span>, <span class="ruby-value str">''</span>), <span class="ruby-identifier">$1</span>
+128: 
+129:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;wrong number of arguments (#{args.size} for 0)&quot;</span> \
+130:         <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">punctuation</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'='</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
+131: 
+132:       <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">punctuation</span>
+133:         <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'='</span>
+134:           <span class="ruby-ivar">@packages</span>[<span class="ruby-identifier">package</span>] = <span class="ruby-constant">PackageConfig</span>.<span class="ruby-identifier">new</span>
+135:           [<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>].<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@packages</span>[<span class="ruby-identifier">package</span>].<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{arg}=&quot;</span>, <span class="ruby-keyword kw">true</span>) }
+136:         <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'!'</span>
+137:           <span class="ruby-ivar">@packages</span>[<span class="ruby-identifier">package</span>] = <span class="ruby-constant">PackageConfig</span>.<span class="ruby-identifier">new</span>
+138:         <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'?'</span>
+139:           <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">package</span>)
+140:         <span class="ruby-keyword kw">else</span>
+141:           <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">package</span>]
+142:       <span class="ruby-keyword kw">end</span>
+143:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

@@ -1,1 +1,318 @@
-My GitHub Page
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>brice Application documentation (v0.2.2)</title>
+
+  <link type="text/css" media="screen" href="rdoc.css" rel="stylesheet" />
+
+  <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body class="indexpage">
+
+  
+  <h1>brice Application documentation (v0.2.2)</h1>
+
+  
+  <div id="main">
+    
+
+<h2>VERSION</h2>
+
+<p>This documentation refers to brice version 0.2.2</p>
+
+<h2>DESCRIPTION</h2>
+
+<p>Enhances your IRb experience by adding new functionality and by providing a
+framework that you can utilize to add your own extensions. It comes with a
+set of pre-selected features (see the files in <a
+href="../lib/rc">lib/rc</a>), but is highly configurable in that regard.</p>
+
+<p>Add this to your <tt>.irbrc</tt> and receive the default goodness:</p>
+
+<pre>require 'rubygems'
+require 'brice/init'  # equivalent to: require 'brice'; Brice.init</pre>
+
+<p>Or get some more control over the configuration:</p>
+
+<pre>require 'rubygems'
+require 'brice'
+
+Brice.init { |config|
+  ...
+}</pre>
+
+<p>See <a href="Brice/Config.html">Brice::Config</a> for what you can
+configure, and how.</p>
+
+<p>It will even load your own extensions that you place in your
+<tt>~/.brice</tt> directory. See <a href="Brice/DSL.html">Brice::DSL</a>
+for helpers provided.</p>
+
+<p>Please note that further changes to the configuration for brice can’t be
+guaranteed to have any effect after <tt><a
+href="Brice.html#method-i-init">Brice.init</a></tt> has been called.</p>
+
+<h2>LINKS</h2>
+
+<p></p>
+<table class="rdoc-list"><tr><td class="rdoc-term"><p>Documentation</p></td>
+<td>
+<p><a
+href="http://prometheus.rubyforge.org/brice">prometheus.rubyforge.org/brice</a></p>
+</td></tr><tr><td class="rdoc-term"><p>Source code</p></td>
+<td>
+<p><a
+href="http://github.com/blackwinter/brice">github.com/blackwinter/brice</a></p>
+</td></tr><tr><td class="rdoc-term"><p>RubyForge project</p></td>
+<td>
+<p><a
+href="http://rubyforge.org/projects/prometheus">rubyforge.org/projects/prometheus</a></p>
+</td></tr></table>
+
+<h2>AUTHORS</h2>
+<ul><li>
+<p>Jens Wille &lt;<a
+href="mailto:jens.wille@uni-koeln.de">jens.wille@uni-koeln.de</a>&gt;</p>
+</li></ul>
+
+<h2>LICENSE AND COPYRIGHT</h2>
+
+<p>Copyright (C) 2008-2011 Jens Wille</p>
+
+<p>brice is free software: you can redistribute it and/or modify it under the
+terms of the GNU Affero General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option)
+any later version.</p>
+
+<p>brice is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for
+more details.</p>
+
+<p>You should have received a copy of the GNU Affero General Public License
+along with brice. If not, see &lt;<a
+href="http://www.gnu.org/licenses/">www.gnu.org/licenses/</a>&gt;.</p>
+
+  </div>
+  
+
+  
+  
+  <h2>Files</h2>
+  <ul>
+    
+      <li class="file"><a href="COPYING.html">COPYING</a></li>
+    
+      <li class="file"><a href="ChangeLog.html">ChangeLog</a></li>
+    
+      <li class="file"><a href="README.html">README</a></li>
+    
+  </ul>
+  
+
+  <h2 id="classes">Classes/Modules</h2>
+  <ul>
+    
+    <li class="module"><a href="Brice.html">Brice</a></li>
+    
+    <li class="module"><a href="Brice/Colours.html">Brice::Colours</a></li>
+    
+    <li class="module"><a href="Brice/Colours/Colour.html">Brice::Colours::Colour</a></li>
+    
+    <li class="module"><a href="Brice/Colours/PP.html">Brice::Colours::PP</a></li>
+    
+    <li class="module"><a href="Brice/Colours/Tokenizer.html">Brice::Colours::Tokenizer</a></li>
+    
+    <li class="class"><a href="Brice/Config.html">Brice::Config</a></li>
+    
+    <li class="class"><a href="Brice/Config/PackageConfig.html">Brice::Config::PackageConfig</a></li>
+    
+    <li class="module"><a href="Brice/DSL.html">Brice::DSL</a></li>
+    
+    <li class="class"><a href="Brice/History.html">Brice::History</a></li>
+    
+    <li class="module"><a href="Brice/History/Tee.html">Brice::History::Tee</a></li>
+    
+    <li class="module"><a href="Brice/Shortcuts.html">Brice::Shortcuts</a></li>
+    
+    <li class="module"><a href="Brice/Shortcuts/ObjectShortcuts.html">Brice::Shortcuts::ObjectShortcuts</a></li>
+    
+    <li class="module"><a href="Brice/Version.html">Brice::Version</a></li>
+    
+    <li class="module"><a href="IRB.html">IRB</a></li>
+    
+    <li class="class"><a href="IRB/Context.html">IRB::Context</a></li>
+    
+  </ul>
+
+  <h2 id="methods">Methods</h2>
+  <ul>
+    
+      <li><a href="Brice/History/Tee.html#method-c-extended">::extended &mdash; Brice::History::Tee</a></li>
+    
+      <li><a href="Brice/History.html#method-c-init">::init &mdash; Brice::History</a></li>
+    
+      <li><a href="Brice/History.html#method-c-new">::new &mdash; Brice::History</a></li>
+    
+      <li><a href="Brice/Config.html#method-c-new">::new &mdash; Brice::Config</a></li>
+    
+      <li><a href="Brice/Colours/PP.html#method-c-pp_with_colour">::pp_with_colour &mdash; Brice::Colours::PP</a></li>
+    
+      <li><a href="Brice/Colours/PP.html#method-c-singleline_pp_with_colour">::singleline_pp_with_colour &mdash; Brice::Colours::PP</a></li>
+    
+      <li><a href="Brice/Version.html#method-c-to_a">::to_a &mdash; Brice::Version</a></li>
+    
+      <li><a href="Brice/Version.html#method-c-to_s">::to_s &mdash; Brice::Version</a></li>
+    
+      <li><a href="Brice/Config.html#method-i-2B">#+ &mdash; Brice::Config</a></li>
+    
+      <li><a href="Brice/Config.html#method-i-2D">#- &mdash; Brice::Config</a></li>
+    
+      <li><a href="Brice/Colours/Colour.html#method-i-5B-5D">#[] &mdash; Brice::Colours::Colour</a></li>
+    
+      <li><a href="Brice/Config.html#method-i-5B-5D">#[] &mdash; Brice::Config</a></li>
+    
+      <li><a href="IRB/Context.html#method-i-_brice_original_evaluate">#_brice_original_evaluate &mdash; IRB::Context</a></li>
+    
+      <li><a href="Brice/History/Tee.html#method-i-_tee_delete">#_tee_delete &mdash; Brice::History::Tee</a></li>
+    
+      <li><a href="Brice/Shortcuts/ObjectShortcuts.html#method-i-aorta">#aorta &mdash; Brice::Shortcuts::ObjectShortcuts</a></li>
+    
+      <li><a href="Brice/DSL.html#method-i-brice">#brice &mdash; Brice::DSL</a></li>
+    
+      <li><a href="Brice/DSL.html#method-i-brice_load">#brice_load &mdash; Brice::DSL</a></li>
+    
+      <li><a href="Brice/DSL.html#method-i-brice_require">#brice_require &mdash; Brice::DSL</a></li>
+    
+      <li><a href="Brice/DSL.html#method-i-brice_rescue">#brice_rescue &mdash; Brice::DSL</a></li>
+    
+      <li><a href="Brice/DSL.html#method-i-brice_run_cmd">#brice_run_cmd &mdash; Brice::DSL</a></li>
+    
+      <li><a href="Brice/Shortcuts/ObjectShortcuts.html#method-i-cgrep">#cgrep &mdash; Brice::Shortcuts::ObjectShortcuts</a></li>
+    
+      <li><a href="Brice/Config.html#method-i-clear">#clear &mdash; Brice::Config</a></li>
+    
+      <li><a href="Brice/Colours.html#method-i-colourize">#colourize &mdash; Brice::Colours</a></li>
+    
+      <li><a href="Brice/Colours.html#method-i-colourize_string">#colourize_string &mdash; Brice::Colours</a></li>
+    
+      <li><a href="Brice/Colours.html#method-i-colours">#colours &mdash; Brice::Colours</a></li>
+    
+      <li><a href="Brice/Colours.html#method-i-colours-3D">#colours= &mdash; Brice::Colours</a></li>
+    
+      <li><a href="Brice.html#method-i-config-3D">#config= &mdash; Brice</a></li>
+    
+      <li><a href="Brice.html#method-i-custom_extensions">#custom_extensions &mdash; Brice</a></li>
+    
+      <li><a href="Brice/DSL.html#method-i-define_irb_method">#define_irb_method &mdash; Brice::DSL</a></li>
+    
+      <li><a href="Brice/Colours.html#method-i-disable">#disable &mdash; Brice::Colours</a></li>
+    
+      <li><a href="Brice/Colours.html#method-i-disable_irb">#disable_irb &mdash; Brice::Colours</a></li>
+    
+      <li><a href="Brice/Colours.html#method-i-disable_pp">#disable_pp &mdash; Brice::Colours</a></li>
+    
+      <li><a href="Brice/Config/PackageConfig.html#method-i-each">#each &mdash; Brice::Config::PackageConfig</a></li>
+    
+      <li><a href="Brice/Config/PackageConfig.html#method-i-empty-3F">#empty? &mdash; Brice::Config::PackageConfig</a></li>
+    
+      <li><a href="Brice/Colours.html#method-i-enable_irb">#enable_irb &mdash; Brice::Colours</a></li>
+    
+      <li><a href="Brice/Colours.html#method-i-enable_pp">#enable_pp &mdash; Brice::Colours</a></li>
+    
+      <li><a href="Brice/Colours/Colour.html#method-i-escape">#escape &mdash; Brice::Colours::Colour</a></li>
+    
+      <li><a href="IRB/Context.html#method-i-evaluate">#evaluate &mdash; IRB::Context</a></li>
+    
+      <li><a href="Brice/Config.html#method-i-exclude">#exclude &mdash; Brice::Config</a></li>
+    
+      <li><a href="Brice/History.html#method-i-extend_history">#extend_history &mdash; Brice::History</a></li>
+    
+      <li><a href="Brice.html#method-i-finalize_irb_rc-21">#finalize_irb_rc! &mdash; Brice</a></li>
+    
+      <li><a href="Brice.html#method-i-find_rc_files">#find_rc_files &mdash; Brice</a></li>
+    
+      <li><a href="Brice/Config.html#method-i-have-3F">#have? &mdash; Brice::Config</a></li>
+    
+      <li><a href="Brice.html#method-i-have-3F">#have? &mdash; Brice</a></li>
+    
+      <li><a href="Brice/Config.html#method-i-include">#include &mdash; Brice::Config</a></li>
+    
+      <li><a href="Brice/Config.html#method-i-include-3F">#include? &mdash; Brice::Config</a></li>
+    
+      <li><a href="Brice.html#method-i-include-3F">#include? &mdash; Brice</a></li>
+    
+      <li><a href="Brice/Colours.html#method-i-init">#init &mdash; Brice::Colours</a></li>
+    
+      <li><a href="Brice.html#method-i-init">#init &mdash; Brice</a></li>
+    
+      <li><a href="Brice/Shortcuts.html#method-i-init">#init &mdash; Brice::Shortcuts</a></li>
+    
+      <li><a href="Brice/History.html#method-i-init_history">#init_history &mdash; Brice::History</a></li>
+    
+      <li><a href="Brice/Shortcuts.html#method-i-init_object">#init_object &mdash; Brice::Shortcuts</a></li>
+    
+      <li><a href="Brice/Shortcuts.html#method-i-init_ri">#init_ri &mdash; Brice::Shortcuts</a></li>
+    
+      <li><a href="Brice/Colours.html#method-i-inspect_value_with_colour">#inspect_value_with_colour &mdash; Brice::Colours</a></li>
+    
+      <li><a href="Brice/DSL.html#method-i-irb_def">#irb_def &mdash; Brice::DSL</a></li>
+    
+      <li><a href="Brice/DSL.html#method-i-irb_rc">#irb_rc &mdash; Brice::DSL</a></li>
+    
+      <li><a href="Brice.html#method-i-load_custom_extensions">#load_custom_extensions &mdash; Brice</a></li>
+    
+      <li><a href="Brice/History.html#method-i-load_history">#load_history &mdash; Brice::History</a></li>
+    
+      <li><a href="Brice.html#method-i-load_rc_files">#load_rc_files &mdash; Brice</a></li>
+    
+      <li><a href="Brice/Config.html#method-i-method_missing">#method_missing &mdash; Brice::Config</a></li>
+    
+      <li><a href="Brice/Shortcuts/ObjectShortcuts.html#method-i-mgrep">#mgrep &mdash; Brice::Shortcuts::ObjectShortcuts</a></li>
+    
+      <li><a href="Brice.html#method-i-opt">#opt &mdash; Brice</a></li>
+    
+      <li><a href="Brice/Colours.html#method-i-output_value_with_colour">#output_value_with_colour &mdash; Brice::Colours</a></li>
+    
+      <li><a href="Brice/Shortcuts/ObjectShortcuts.html#method-i-po">#po &mdash; Brice::Shortcuts::ObjectShortcuts</a></li>
+    
+      <li><a href="Brice/Shortcuts/ObjectShortcuts.html#method-i-poc">#poc &mdash; Brice::Shortcuts::ObjectShortcuts</a></li>
+    
+      <li><a href="Brice/History/Tee.html#method-i-push_m_with_tee">#push_m_with_tee &mdash; Brice::History::Tee</a></li>
+    
+      <li><a href="Brice/History/Tee.html#method-i-push_with_tee">#push_with_tee &mdash; Brice::History::Tee</a></li>
+    
+      <li><a href="Brice.html#method-i-rc_files">#rc_files &mdash; Brice</a></li>
+    
+      <li><a href="Brice/History.html#method-i-read_history">#read_history &mdash; Brice::History</a></li>
+    
+      <li><a href="Brice/Shortcuts.html#method-i-ri">#ri &mdash; Brice::Shortcuts</a></li>
+    
+      <li><a href="Brice/Shortcuts.html#method-i-ri-21">#ri! &mdash; Brice::Shortcuts</a></li>
+    
+      <li><a href="Brice/History.html#method-i-save_history">#save_history &mdash; Brice::History</a></li>
+    
+      <li><a href="Brice/History/Tee.html#method-i-tee">#tee &mdash; Brice::History::Tee</a></li>
+    
+      <li><a href="Brice/History/Tee.html#method-i-tee-21">#tee! &mdash; Brice::History::Tee</a></li>
+    
+      <li><a href="Brice/Colours/Tokenizer.html#method-i-tokenize">#tokenize &mdash; Brice::Colours::Tokenizer</a></li>
+    
+  </ul>
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+</body>
+</html>

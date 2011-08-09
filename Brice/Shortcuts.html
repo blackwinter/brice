@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Module: Brice::Shortcuts</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="module">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/brice/shortcuts_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/brice/shortcuts.rb">lib/brice/shortcuts.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">MODULE</span> <a href="Shortcuts/ObjectShortcuts.html">Brice::Shortcuts::ObjectShortcuts</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-init">#init</a></li>
+          
+          <li><a href="#method-i-init_object">#init_object</a></li>
+          
+          <li><a href="#method-i-init_ri">#init_ri</a></li>
+          
+          <li><a href="#method-i-ri">#ri</a></li>
+          
+          <li><a href="#method-i-ri-21">#ri!</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../COPYING.html">COPYING</a></li>
+        
+          <li class="file"><a href="../ChangeLog.html">ChangeLog</a></li>
+        
+          <li class="file"><a href="../README.html">README</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../Brice.html">Brice</a></li>
+        
+          <li><a href="../Brice/Colours.html">Brice::Colours</a></li>
+        
+          <li><a href="../Brice/Colours/Colour.html">Brice::Colours::Colour</a></li>
+        
+          <li><a href="../Brice/Colours/PP.html">Brice::Colours::PP</a></li>
+        
+          <li><a href="../Brice/Colours/Tokenizer.html">Brice::Colours::Tokenizer</a></li>
+        
+          <li><a href="../Brice/Config.html">Brice::Config</a></li>
+        
+          <li><a href="../Brice/Config/PackageConfig.html">Brice::Config::PackageConfig</a></li>
+        
+          <li><a href="../Brice/DSL.html">Brice::DSL</a></li>
+        
+          <li><a href="../Brice/History.html">Brice::History</a></li>
+        
+          <li><a href="../Brice/History/Tee.html">Brice::History::Tee</a></li>
+        
+          <li><a href="../Brice/Shortcuts.html">Brice::Shortcuts</a></li>
+        
+          <li><a href="../Brice/Shortcuts/ObjectShortcuts.html">Brice::Shortcuts::ObjectShortcuts</a></li>
+        
+          <li><a href="../Brice/Version.html">Brice::Version</a></li>
+        
+          <li><a href="../IRB.html">IRB</a></li>
+        
+          <li><a href="../IRB/Context.html">IRB::Context</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="module">Brice::Shortcuts</h1>
+
+    <div id="description" class="description">
+      
+<p>Convenient shortcut methods.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="init-method" class="method-detail ">
+          <a name="method-i-init"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">init</span><span
+              class="method-args">(opt = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="init-source">
+<pre>
+<span class="ruby-comment"># File lib/brice/shortcuts.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">init</span>(<span class="ruby-identifier">opt</span> = {})
+  <span class="ruby-identifier">init_object</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Brice</span>.<span class="ruby-identifier">opt</span>(<span class="ruby-identifier">opt</span>, <span class="ruby-value">:object</span>)
+  <span class="ruby-identifier">init_ri</span>     <span class="ruby-keyword">if</span> <span class="ruby-constant">Brice</span>.<span class="ruby-identifier">opt</span>(<span class="ruby-identifier">opt</span>, <span class="ruby-value">:ri</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- init-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- init-method -->
+
+      
+        <div id="init_object-method" class="method-detail ">
+          <a name="method-i-init_object"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">init_object</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="init_object-source">
+<pre>
+<span class="ruby-comment"># File lib/brice/shortcuts.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">init_object</span>
+  <span class="ruby-constant">Object</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:include</span>, <span class="ruby-constant">ObjectShortcuts</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- init_object-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- init_object-method -->
+
+      
+        <div id="init_ri-method" class="method-detail ">
+          <a name="method-i-init_ri"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">init_ri</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="init_ri-source">
+<pre>
+<span class="ruby-comment"># File lib/brice/shortcuts.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">init_ri</span>
+  <span class="ruby-constant">Module</span>.<span class="ruby-identifier">class_eval</span> {
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">ri</span>(*<span class="ruby-identifier">args</span>)
+      <span class="ruby-identifier">ri!</span>(<span class="ruby-string">'--no-pager'</span>, *<span class="ruby-identifier">args</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">ri!</span>(*<span class="ruby-identifier">args</span>)
+      <span class="ruby-identifier">opts</span>, <span class="ruby-identifier">args</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">partition</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/\A--/</span> }
+
+      <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">map!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">arg</span>, <span class="ruby-identifier">method</span> = <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-keyword">nil</span>
+
+        <span class="ruby-identifier">delim</span> = [[<span class="ruby-string">'#'</span>, <span class="ruby-value">:instance_method</span>], [<span class="ruby-string">'::'</span>, <span class="ruby-value">:method</span>]].<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>, <span class="ruby-identifier">m</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">match</span>  = <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-node">/\A#{i}/</span>, <span class="ruby-string">''</span>)
+          <span class="ruby-identifier">method</span> = <span class="ruby-keyword">begin</span>; <span class="ruby-identifier">send</span>(<span class="ruby-identifier">m</span>, <span class="ruby-identifier">arg</span>); <span class="ruby-keyword">rescue</span> <span class="ruby-constant">NameError</span>; <span class="ruby-keyword">end</span>
+
+          <span class="ruby-keyword">break</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">match</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">method</span>
+        } <span class="ruby-keyword">or</span> <span class="ruby-keyword">next</span> <span class="ruby-identifier">arg</span>
+
+        <span class="ruby-node">&quot;#{method &amp;&amp; method.to_s[/\((\w+)\)/, 1] || name}#{delim}#{arg}&quot;</span>
+      }
+
+      <span class="ruby-identifier">system</span>(<span class="ruby-string">'ri'</span>, *<span class="ruby-identifier">opts</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">args</span>))
+    <span class="ruby-keyword">end</span>
+  }
+
+  <span class="ruby-identifier">instance_eval</span> {
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">ri</span>(*<span class="ruby-identifier">args</span>);  <span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">ri</span>(*<span class="ruby-identifier">args</span>);  <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">ri!</span>(*<span class="ruby-identifier">args</span>); <span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">ri!</span>(*<span class="ruby-identifier">args</span>); <span class="ruby-keyword">end</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- init_ri-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- init_ri-method -->
+
+      
+        <div id="ri-method" class="method-detail ">
+          <a name="method-i-ri"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ri</span><span
+              class="method-args">(*args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="ri-source">
+<pre>
+<span class="ruby-comment"># File lib/brice/shortcuts.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ri</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">ri!</span>(<span class="ruby-string">'--no-pager'</span>, *<span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- ri-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ri-method -->
+
+      
+        <div id="ri-21-method" class="method-detail ">
+          <a name="method-i-ri-21"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ri!</span><span
+              class="method-args">(*args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="ri-21-source">
+<pre>
+<span class="ruby-comment"># File lib/brice/shortcuts.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ri!</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">opts</span>, <span class="ruby-identifier">args</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">partition</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/\A--/</span> }
+
+  <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">map!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">arg</span>, <span class="ruby-identifier">method</span> = <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-keyword">nil</span>
+
+    <span class="ruby-identifier">delim</span> = [[<span class="ruby-string">'#'</span>, <span class="ruby-value">:instance_method</span>], [<span class="ruby-string">'::'</span>, <span class="ruby-value">:method</span>]].<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>, <span class="ruby-identifier">m</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">match</span>  = <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-node">/\A#{i}/</span>, <span class="ruby-string">''</span>)
+      <span class="ruby-identifier">method</span> = <span class="ruby-keyword">begin</span>; <span class="ruby-identifier">send</span>(<span class="ruby-identifier">m</span>, <span class="ruby-identifier">arg</span>); <span class="ruby-keyword">rescue</span> <span class="ruby-constant">NameError</span>; <span class="ruby-keyword">end</span>
+
+      <span class="ruby-keyword">break</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">match</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">method</span>
+    } <span class="ruby-keyword">or</span> <span class="ruby-keyword">next</span> <span class="ruby-identifier">arg</span>
+
+    <span class="ruby-node">&quot;#{method &amp;&amp; method.to_s[/\((\w+)\)/, 1] || name}#{delim}#{arg}&quot;</span>
+  }
+
+  <span class="ruby-identifier">system</span>(<span class="ruby-string">'ri'</span>, *<span class="ruby-identifier">opts</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">args</span>))
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- ri-21-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ri-21-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

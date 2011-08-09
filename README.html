@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>File: README [brice Application documentation (v0.2.2)]</title>
+
+  <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet" />
+
+  <script src="./js/jquery.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="./js/thickbox-compressed.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="./js/quicksearch.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="./js/darkfish.js" type="text/javascript"
+    charset="utf-8"></script>
+</head>
+
+<body class="file">
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="./COPYING.html">COPYING</a></li>
+        
+          <li class="file"><a href="./ChangeLog.html">ChangeLog</a></li>
+        
+          <li class="file"><a href="./README.html">README</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="./Brice.html">Brice</a></li>
+        
+          <li><a href="./Brice/Colours.html">Brice::Colours</a></li>
+        
+          <li><a href="./Brice/Colours/Colour.html">Brice::Colours::Colour</a></li>
+        
+          <li><a href="./Brice/Colours/PP.html">Brice::Colours::PP</a></li>
+        
+          <li><a href="./Brice/Colours/Tokenizer.html">Brice::Colours::Tokenizer</a></li>
+        
+          <li><a href="./Brice/Config.html">Brice::Config</a></li>
+        
+          <li><a href="./Brice/Config/PackageConfig.html">Brice::Config::PackageConfig</a></li>
+        
+          <li><a href="./Brice/DSL.html">Brice::DSL</a></li>
+        
+          <li><a href="./Brice/History.html">Brice::History</a></li>
+        
+          <li><a href="./Brice/History/Tee.html">Brice::History::Tee</a></li>
+        
+          <li><a href="./Brice/Shortcuts.html">Brice::Shortcuts</a></li>
+        
+          <li><a href="./Brice/Shortcuts/ObjectShortcuts.html">Brice::Shortcuts::ObjectShortcuts</a></li>
+        
+          <li><a href="./Brice/Version.html">Brice::Version</a></li>
+        
+          <li><a href="./IRB.html">IRB</a></li>
+        
+          <li><a href="./IRB/Context.html">IRB::Context</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    
+<h1>brice - Extra cool IRb goodness for the masses</h1>
+
+<h2>VERSION</h2>
+
+<p>This documentation refers to brice version 0.2.2</p>
+
+<h2>DESCRIPTION</h2>
+
+<p>Enhances your IRb experience by adding new functionality and by providing a
+framework that you can utilize to add your own extensions. It comes with a
+set of pre-selected features (see the files in <a
+href="../lib/rc">lib/rc</a>), but is highly configurable in that regard.</p>
+
+<p>Add this to your <tt>.irbrc</tt> and receive the default goodness:</p>
+
+<pre>require 'rubygems'
+require 'brice/init'  # equivalent to: require 'brice'; Brice.init</pre>
+
+<p>Or get some more control over the configuration:</p>
+
+<pre>require 'rubygems'
+require 'brice'
+
+Brice.init { |config|
+  ...
+}</pre>
+
+<p>See <a href="Brice/Config.html">Brice::Config</a> for what you can
+configure, and how.</p>
+
+<p>It will even load your own extensions that you place in your
+<tt>~/.brice</tt> directory. See <a href="Brice/DSL.html">Brice::DSL</a>
+for helpers provided.</p>
+
+<p>Please note that further changes to the configuration for brice can’t be
+guaranteed to have any effect after <tt><a
+href="Brice.html#method-i-init">Brice.init</a></tt> has been called.</p>
+
+<h2>LINKS</h2>
+
+<p></p>
+<table class="rdoc-list"><tr><td class="rdoc-term"><p>Documentation</p></td>
+<td>
+<p><a
+href="http://prometheus.rubyforge.org/brice">prometheus.rubyforge.org/brice</a></p>
+</td></tr><tr><td class="rdoc-term"><p>Source code</p></td>
+<td>
+<p><a
+href="http://github.com/blackwinter/brice">github.com/blackwinter/brice</a></p>
+</td></tr><tr><td class="rdoc-term"><p>RubyForge project</p></td>
+<td>
+<p><a
+href="http://rubyforge.org/projects/prometheus">rubyforge.org/projects/prometheus</a></p>
+</td></tr></table>
+
+<h2>AUTHORS</h2>
+<ul><li>
+<p>Jens Wille &lt;<a
+href="mailto:jens.wille@uni-koeln.de">jens.wille@uni-koeln.de</a>&gt;</p>
+</li></ul>
+
+<h2>LICENSE AND COPYRIGHT</h2>
+
+<p>Copyright (C) 2008-2011 Jens Wille</p>
+
+<p>brice is free software: you can redistribute it and/or modify it under the
+terms of the GNU Affero General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option)
+any later version.</p>
+
+<p>brice is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for
+more details.</p>
+
+<p>You should have received a copy of the GNU Affero General Public License
+along with brice. If not, see &lt;<a
+href="http://www.gnu.org/licenses/">www.gnu.org/licenses/</a>&gt;.</p>
+
+  </div>
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Brice::DSL</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Brice::DSL</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/brice/dsl_rb.html">
+                lib/brice/dsl.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Certain global helper methods for use inside IRb extensions. Also available
+inside the IRb session.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000020">brice</a>&nbsp;&nbsp;
+      <a href="#M000018">brice_load</a>&nbsp;&nbsp;
+      <a href="#M000017">brice_require</a>&nbsp;&nbsp;
+      <a href="#M000016">brice_rescue</a>&nbsp;&nbsp;
+      <a href="#M000019">brice_run_cmd</a>&nbsp;&nbsp;
+      <a href="#M000015">define_irb_method</a>&nbsp;&nbsp;
+      <a href="#M000014">irb_def</a>&nbsp;&nbsp;
+      <a href="#M000013">irb_rc</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name">Nuggets::Object::SilenceMixin</span>
+      </div>
+    </div>
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000020" class="method-detail">
+        <a name="M000020"></a>
+
+        <div class="method-heading">
+          <a href="#M000020" class="method-signature">
+          <span class="method-name">brice(package)  # package == lib<br />
+brice(package => lib)<br />
+brice(package => [lib, ...])<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Declare package <tt>package</tt>. Optionally load given libraries (see
+below) and configure the package if it has been enabled/included.
+</p>
+<p>
+<tt>package</tt> can be a String which already names the library to be
+loaded or a Hash of the form <tt>package =&gt; lib</tt> or <tt>package
+=&gt; [lib, &#8230;]</tt>.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000020-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000020-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/brice/dsl.rb, line 141</span>
+141:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">brice</span>(<span class="ruby-identifier">package</span>)
+142:       <span class="ruby-identifier">package</span>, <span class="ruby-identifier">libs</span> = <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">package</span>
+143:         <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Hash</span>
+144:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Too many package names: #{package.keys.join(' ')}&quot;</span> \
+145:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">package</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+146:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">'No package name given'</span> \
+147:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">package</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">1</span>
+148: 
+149:           [<span class="ruby-identifier">package</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">first</span>, [<span class="ruby-operator">*</span><span class="ruby-identifier">package</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">first</span>]]
+150:         <span class="ruby-keyword kw">else</span>
+151:           [<span class="ruby-identifier">package</span>, [<span class="ruby-identifier">package</span>]]
+152:       <span class="ruby-keyword kw">end</span>
+153: 
+154:       <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Brice</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">package</span>)
+155:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">libs</span>.<span class="ruby-identifier">all?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">lib</span><span class="ruby-operator">|</span> <span class="ruby-operator">!</span><span class="ruby-identifier">lib</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">brice_require</span>(<span class="ruby-identifier">lib</span>) { <span class="ruby-keyword kw">true</span> } }
+156:           <span class="ruby-keyword kw">yield</span> <span class="ruby-constant">Brice</span>.<span class="ruby-identifier">config</span>[<span class="ruby-identifier">package</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+157:         <span class="ruby-keyword kw">end</span>
+158:       <span class="ruby-keyword kw">end</span>
+159:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000018" class="method-detail">
+        <a name="M000018"></a>
+
+        <div class="method-heading">
+          <a href="#M000018" class="method-signature">
+          <span class="method-name">brice_load(filename, wrap = false)<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Kernel#load the file named <tt>filename</tt> and optionally execute block
+in case of success.
+</p>
+<p>
+Returns either the result of the executed method or of the block.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000018-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000018-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/brice/dsl.rb, line 113</span>
+113:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">brice_load</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">wrap</span> = <span class="ruby-keyword kw">false</span>)
+114:       <span class="ruby-identifier">args</span> = [<span class="ruby-identifier">:load</span>, [<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">wrap</span>]]
+115: 
+116:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+117:         <span class="ruby-identifier">brice_rescue</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>) { <span class="ruby-operator">|</span><span class="ruby-operator">*</span><span class="ruby-identifier">a</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">yield</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">a</span>) }
+118:       <span class="ruby-keyword kw">else</span>
+119:         <span class="ruby-identifier">brice_rescue</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+120:       <span class="ruby-keyword kw">end</span>
+121:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000017" class="method-detail">
+        <a name="M000017"></a>
+
+        <div class="method-heading">
+          <a href="#M000017" class="method-signature">
+          <span class="method-name">brice_require(string)<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Kernel#require the library named <tt>string</tt> and optionally execute
+block in case of success.
+</p>
+<p>
+Returns either the result of the executed method or of the block.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000017-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000017-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/brice/dsl.rb, line 96</span>
+ 96:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">brice_require</span>(<span class="ruby-identifier">string</span>)
+ 97:       <span class="ruby-identifier">args</span> = [<span class="ruby-identifier">:require</span>, [<span class="ruby-identifier">string</span>], <span class="ruby-constant">LoadError</span>]
+ 98: 
+ 99:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+100:         <span class="ruby-identifier">brice_rescue</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>) { <span class="ruby-operator">|</span><span class="ruby-operator">*</span><span class="ruby-identifier">a</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">yield</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">a</span>) }
+101:       <span class="ruby-keyword kw">else</span>
+102:         <span class="ruby-identifier">brice_rescue</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+103:       <span class="ruby-keyword kw">end</span>
+104:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000016" class="method-detail">
+        <a name="M000016"></a>
+
+        <div class="method-heading">
+          <a href="#M000016" class="method-signature">
+          <span class="method-name">brice_rescue(what, args = [], error = Exception)<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Call <tt>what</tt> with <tt>args</tt> and rescue potential <tt>error</tt>,
+optionally executing block in case of success. Gives a nicer error location
+instead of the full backtrace.
+</p>
+<p>
+Returns either the result of the executed method or of the block.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000016-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000016-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/brice/dsl.rb, line 74</span>
+74:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">brice_rescue</span>(<span class="ruby-identifier">what</span>, <span class="ruby-identifier">args</span> = [], <span class="ruby-identifier">error</span> = <span class="ruby-constant">Exception</span>)
+75:       <span class="ruby-identifier">res</span> = <span class="ruby-identifier">send</span>(<span class="ruby-identifier">what</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+76: 
+77:       <span class="ruby-identifier">block_given?</span> <span class="ruby-value">? </span><span class="ruby-keyword kw">yield</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">res</span>
+78:     <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">err</span>
+79:       <span class="ruby-identifier">raise</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">err</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-identifier">error</span>)
+80: 
+81:       <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">Brice</span>.<span class="ruby-identifier">quiet</span>
+82:         <span class="ruby-comment cmt"># FIXME: ideally, we'd want the __FILE__ and __LINE__ of the</span>
+83:         <span class="ruby-comment cmt"># rc file where the error occurred.</span>
+84:         <span class="ruby-identifier">location</span> = <span class="ruby-identifier">caller</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp re">%r{(?:\A|/)lib/brice[/.]}</span> }
+85:         <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;#{err.class}: #{err} [#{location}]&quot;</span>
+86:       <span class="ruby-keyword kw">end</span>
+87:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000019" class="method-detail">
+        <a name="M000019"></a>
+
+        <div class="method-heading">
+          <a href="#M000019" class="method-signature">
+          <span class="method-name">brice_run_cmd(cmd, env = {})<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Runs <tt>cmd</tt> with ENV modified according to <tt>env</tt>.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000019-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000019-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/brice/dsl.rb, line 127</span>
+127:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">brice_run_cmd</span>(<span class="ruby-identifier">cmd</span>, <span class="ruby-identifier">env</span> = {})
+128:       <span class="ruby-constant">ENV</span>.<span class="ruby-identifier">with</span>(<span class="ruby-identifier">env</span>) { <span class="ruby-node">`#{cmd}`</span> }
+129:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000015" class="method-detail">
+        <a name="M000015"></a>
+
+        <div class="method-heading">
+          <span class="method-name">define_irb_method</span><span class="method-args">(symbol, method = nil)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="DSL.html#M000014">irb_def</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000014" class="method-detail">
+        <a name="M000014"></a>
+
+        <div class="method-heading">
+          <a href="#M000014" class="method-signature">
+          <span class="method-name">irb_def(symbol) { ... }<br />
+irb_def(symbol, method)<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Define a method for use inside the IRb session.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000014-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000014-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/brice/dsl.rb, line 52</span>
+52:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">irb_def</span>(<span class="ruby-identifier">symbol</span>, <span class="ruby-identifier">method</span> = <span class="ruby-keyword kw">nil</span>)
+53:       <span class="ruby-identifier">irb_rc</span> {
+54:         <span class="ruby-constant">Object</span>.<span class="ruby-identifier">instance_eval</span> {
+55:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">method</span>
+56:             <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">symbol</span>, <span class="ruby-identifier">method</span>)
+57:           <span class="ruby-keyword kw">else</span>
+58:             <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">symbol</span>, <span class="ruby-operator">&amp;</span><span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span>)
+59:           <span class="ruby-keyword kw">end</span>
+60:         }
+61:       }
+62:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000013" class="method-detail">
+        <a name="M000013"></a>
+
+        <div class="method-heading">
+          <a href="#M000013" class="method-signature">
+          <span class="method-name">irb_rc { ... }<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Add IRB_RC proc (to be executed whenever a (sub-)session is started).
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000013-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000013-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/brice/dsl.rb, line 43</span>
+43:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">irb_rc</span>
+44:       <span class="ruby-constant">Brice</span>.<span class="ruby-identifier">irb_rc</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span>
+45:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
