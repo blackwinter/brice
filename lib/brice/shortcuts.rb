@@ -81,14 +81,16 @@ module Brice
 
       def cgrep(needle)
         needle = %r{#{Regexp.escape(needle)}}i unless needle.is_a?(Regexp)
-
+        klass = is_a?(Class) ? self : self.class
         res = []
 
-        ObjectSpace.each_object { |obj|
-          if obj.is_a?(Class) && obj <= self
-            name = obj.name
-            res << name if name =~ needle
-          end
+        ObjectSpace.each_object(Class) { |obj|
+          next unless obj <= klass
+
+          name = obj.name
+          next unless name =~ needle
+
+          res.push(name.empty? ? obj.inspect : name)
         }
 
         res
