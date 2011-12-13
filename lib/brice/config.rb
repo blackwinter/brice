@@ -98,6 +98,19 @@ module Brice
     alias_method :-, :exclude
 
     # call-seq:
+    #   config.only(*packages)
+    #   config %= packages
+    #
+    # Enable/include *only* packages +packages+,
+    # disable/exclude everything else.
+    def only(*packages)
+      clear
+      self.include(*packages)
+    end
+
+    alias_method :%, :only
+
+    # call-seq:
     #   config.clear
     #
     # Clear all packages.
