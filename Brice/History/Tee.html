@@ -1,196 +1,184 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+
+<html>
 <head>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-  <title>Module: Brice::History::Tee</title>
+<title>Module: Brice::History::Tee</title>
 
-  <link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
 
-  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
 
-</head>
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
 <body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
 
-  <div id="metadata">
-    <div id="home-metadata">
-      <div id="home-section" class="section">
-        <h3 class="section-header">
-          <a href="../../index.html">Home</a>
-          <a href="../../index.html#classes">Classes</a>
-          <a href="../../index.html#methods">Methods</a>
-        </h3>
-      </div>
-    </div>
 
-    <div id="file-metadata">
-      <div id="file-list-section" class="section">
-        <h3 class="section-header">In Files</h3>
-        <div class="section-body">
-          <ul>
-          
-            <li><a href="../../lib/brice/history_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-              class="thickbox" title="lib/brice/history.rb">lib/brice/history.rb</a></li>
-          
-          </ul>
-        </div>
-      </div>
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
 
-      
-    </div>
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
 
-    <div id="class-metadata">
-      
 
-      
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/brice/history.rb
+  </ul>
+</nav>
 
-      
-
-      
-      <!-- Method Quickref -->
-      <div id="method-list-section" class="section">
-        <h3 class="section-header">Methods</h3>
-        <ul class="link-list">
-          
-          <li><a href="#method-c-extended">::extended</a></li>
-          
-          <li><a href="#method-i-_tee_delete">#_tee_delete</a></li>
-          
-          <li><a href="#method-i-push_m_with_tee">#push_m_with_tee</a></li>
-          
-          <li><a href="#method-i-push_with_tee">#push_with_tee</a></li>
-          
-          <li><a href="#method-i-tee">#tee</a></li>
-          
-          <li><a href="#method-i-tee-21">#tee!</a></li>
-          
-        </ul>
-      </div>
-      
-
-      
-    </div>
-
-    <div id="project-metadata">
-      
-      
-      <div id="fileindex-section" class="section project-section">
-        <h3 class="section-header">Files</h3>
-        <ul>
-        
-          <li class="file"><a href="../../COPYING.html">COPYING</a></li>
-        
-          <li class="file"><a href="../../ChangeLog.html">ChangeLog</a></li>
-        
-          <li class="file"><a href="../../README.html">README</a></li>
-        
-        </ul>
-      </div>
-      
-
-      <div id="classindex-section" class="section project-section">
-        <h3 class="section-header">Class/Module Index
-          <span class="search-toggle"><img src="../../images/find.png"
-            height="16" width="16" alt="[+]"
-            title="show/hide quicksearch" /></span></h3>
-        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
-        <fieldset>
-          <legend>Quicksearch</legend>
-          <input type="text" name="quicksearch" value=""
-            class="quicksearch-field" />
-        </fieldset>
-        </form>
-
-        <ul class="link-list">
-        
-          <li><a href="../../Brice.html">Brice</a></li>
-        
-          <li><a href="../../Brice/Colours.html">Brice::Colours</a></li>
-        
-          <li><a href="../../Brice/Colours/Colour.html">Brice::Colours::Colour</a></li>
-        
-          <li><a href="../../Brice/Colours/PP.html">Brice::Colours::PP</a></li>
-        
-          <li><a href="../../Brice/Colours/Tokenizer.html">Brice::Colours::Tokenizer</a></li>
-        
-          <li><a href="../../Brice/Config.html">Brice::Config</a></li>
-        
-          <li><a href="../../Brice/Config/PackageConfig.html">Brice::Config::PackageConfig</a></li>
-        
-          <li><a href="../../Brice/DSL.html">Brice::DSL</a></li>
-        
-          <li><a href="../../Brice/History.html">Brice::History</a></li>
-        
-          <li><a href="../../Brice/History/Tee.html">Brice::History::Tee</a></li>
-        
-          <li><a href="../../Brice/Shortcuts.html">Brice::Shortcuts</a></li>
-        
-          <li><a href="../../Brice/Shortcuts/ObjectShortcuts.html">Brice::Shortcuts::ObjectShortcuts</a></li>
-        
-          <li><a href="../../Brice/Version.html">Brice::Version</a></li>
-        
-          <li><a href="../../IRB.html">IRB</a></li>
-        
-          <li><a href="../../IRB/Context.html">IRB::Context</a></li>
-        
-        </ul>
-        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
-      </div>
-
-      
-    </div>
+    
   </div>
 
-  <div id="documentation">
-    <h1 class="module">Brice::History::Tee</h1>
-
-    <div id="description" class="description">
-      
-    </div><!-- description -->
-
+  <div id="class-metadata">
     
     
     
-    <div id="5Buntitled-5D" class="documentation-section">
-      
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
 
-      
+  <ul class="link-list">
+    
+    <li><a href="#method-c-extended">::extended</a>
+    
+    <li><a href="#method-i-_tee_delete">#_tee_delete</a>
+    
+    <li><a href="#method-i-push_m_with_tee">#push_m_with_tee</a>
+    
+    <li><a href="#method-i-push_with_tee">#push_with_tee</a>
+    
+    <li><a href="#method-i-tee">#tee</a>
+    
+    <li><a href="#method-i-tee-21">#tee!</a>
+    
+  </ul>
+</nav>
 
-      
+  </div>
 
-      
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
 
-      <!-- Methods -->
-      
-      <div id="public-class-method-details" class="method-section section">
-        <h3 class="section-header">Public Class Methods</h3>
+  <ul>
+  
+    <li class="file"><a href="../../COPYING.html">COPYING</a>
+  
+    <li class="file"><a href="../../ChangeLog.html">ChangeLog</a>
+  
+    <li class="file"><a href="../../README.html">README</a>
+  
+  </ul>
+</nav>
 
-      
-        <div id="extended-method" class="method-detail ">
-          <a name="method-c-extended"></a>
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Brice.html">Brice</a>
+  
+    <li><a href="../../Brice/Colours.html">Brice::Colours</a>
+  
+    <li><a href="../../Brice/Colours/Colour.html">Brice::Colours::Colour</a>
+  
+    <li><a href="../../Brice/Colours/PP.html">Brice::Colours::PP</a>
+  
+    <li><a href="../../Brice/Colours/Tokenizer.html">Brice::Colours::Tokenizer</a>
+  
+    <li><a href="../../Brice/Config.html">Brice::Config</a>
+  
+    <li><a href="../../Brice/Config/PackageConfig.html">Brice::Config::PackageConfig</a>
+  
+    <li><a href="../../Brice/DSL.html">Brice::DSL</a>
+  
+    <li><a href="../../Brice/History.html">Brice::History</a>
+  
+    <li><a href="../../Brice/History/Tee.html">Brice::History::Tee</a>
+  
+    <li><a href="../../Brice/Shortcuts.html">Brice::Shortcuts</a>
+  
+    <li><a href="../../Brice/Shortcuts/ObjectShortcuts.html">Brice::Shortcuts::ObjectShortcuts</a>
+  
+    <li><a href="../../Brice/Version.html">Brice::Version</a>
+  
+    <li><a href="../../IRB.html">IRB</a>
+  
+    <li><a href="../../IRB/Context.html">IRB::Context</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Brice::History::Tee</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-extended" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">extended</span><span
+            class="method-args">(base)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
 
           
-          <div class="method-heading">
-            <span class="method-name">extended</span><span
-              class="method-args">(base)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="extended-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/history.rb, line 116</span>
+          <div class="method-source-code" id="extended-source">
+            <pre><span class="ruby-comment"># File lib/brice/history.rb, line 116</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">extended</span>(<span class="ruby-identifier">base</span>)
   <span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">base</span>
     <span class="ruby-identifier">alias_method</span> <span class="ruby-value">:push_without_tee</span>,   <span class="ruby-value">:&lt;&lt;</span>
@@ -200,188 +188,173 @@
     <span class="ruby-identifier">alias_method</span> <span class="ruby-value">:push</span>, <span class="ruby-value">:push_m_with_tee</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- extended-source -->
-            
-          </div>
-
+          </div><!-- extended-source -->
           
+        </div>
 
-          
-        </div><!-- extended-method -->
+        
 
-      
-      </div><!-- public-class-method-details -->
+        
+      </div><!-- extended-method -->
+
     
-      <div id="public-instance-method-details" class="method-section section">
-        <h3 class="section-header">Public Instance Methods</h3>
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
 
-      
-        <div id="push_m_with_tee-method" class="method-detail ">
-          <a name="method-i-push_m_with_tee"></a>
+    
+      <div id="method-i-push_m_with_tee" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">push_m_with_tee</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
 
           
-          <div class="method-heading">
-            <span class="method-name">push_m_with_tee</span><span
-              class="method-args">(*args)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="push_m_with_tee-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/history.rb, line 143</span>
+          <div class="method-source-code" id="push_m_with_tee-source">
+            <pre><span class="ruby-comment"># File lib/brice/history.rb, line 143</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">push_m_with_tee</span>(*<span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">_tee_delete</span>(*<span class="ruby-identifier">args</span>)
 
   <span class="ruby-identifier">tee</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">push_m_without_tee</span>(*<span class="ruby-identifier">args</span>)
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- push_m_with_tee-source -->
-            
-          </div>
+          </div><!-- push_m_with_tee-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- push_m_with_tee-method -->
+
+    
+      <div id="method-i-push_with_tee" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">push_with_tee</span><span
+            class="method-args">(arg)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
           
 
           
-        </div><!-- push_m_with_tee-method -->
-
-      
-        <div id="push_with_tee-method" class="method-detail ">
-          <a name="method-i-push_with_tee"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">push_with_tee</span><span
-              class="method-args">(arg)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="push_with_tee-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/history.rb, line 136</span>
+          <div class="method-source-code" id="push_with_tee-source">
+            <pre><span class="ruby-comment"># File lib/brice/history.rb, line 136</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">push_with_tee</span>(<span class="ruby-identifier">arg</span>)
   <span class="ruby-identifier">_tee_delete</span>(<span class="ruby-identifier">arg</span>)
 
   <span class="ruby-identifier">tee</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">arg</span>
   <span class="ruby-identifier">push_without_tee</span>(<span class="ruby-identifier">arg</span>)
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- push_with_tee-source -->
-            
-          </div>
+          </div><!-- push_with_tee-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- push_with_tee-method -->
+
+    
+      <div id="method-i-tee" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">tee</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
           
 
           
-        </div><!-- push_with_tee-method -->
-
-      
-        <div id="tee-method" class="method-detail ">
-          <a name="method-i-tee"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">tee</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="tee-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/history.rb, line 126</span>
+          <div class="method-source-code" id="tee-source">
+            <pre><span class="ruby-comment"># File lib/brice/history.rb, line 126</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">tee</span>
   <span class="ruby-ivar">@tee</span> <span class="ruby-operator">||=</span> []
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- tee-source -->
-            
-          </div>
+          </div><!-- tee-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- tee-method -->
+
+    
+      <div id="method-i-tee-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">tee!</span><span
+            class="method-args">() { |tee| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
           
 
           
-        </div><!-- tee-method -->
-
-      
-        <div id="tee-21-method" class="method-detail ">
-          <a name="method-i-tee-21"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">tee!</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="tee-21-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/history.rb, line 130</span>
+          <div class="method-source-code" id="tee-21-source">
+            <pre><span class="ruby-comment"># File lib/brice/history.rb, line 130</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">tee!</span>
   <span class="ruby-keyword">yield</span> <span class="ruby-identifier">tee</span>
 <span class="ruby-keyword">ensure</span>
   <span class="ruby-identifier">tee</span>.<span class="ruby-identifier">clear</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- tee-21-source -->
-            
-          </div>
-
+          </div><!-- tee-21-source -->
           
+        </div>
 
-          
-        </div><!-- tee-21-method -->
+        
 
-      
-      </div><!-- public-instance-method-details -->
+        
+      </div><!-- tee-21-method -->
+
     
-      <div id="private-instance-method-details" class="method-section section">
-        <h3 class="section-header">Private Instance Methods</h3>
+    </section><!-- public-instance-method-details -->
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Private Instance Methods</h3>
 
-      
-        <div id="_tee_delete-method" class="method-detail ">
-          <a name="method-i-_tee_delete"></a>
+    
+      <div id="method-i-_tee_delete" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">_tee_delete</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
 
           
-          <div class="method-heading">
-            <span class="method-name">_tee_delete</span><span
-              class="method-args">(*args)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="_tee_delete-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/history.rb, line 152</span>
+          <div class="method-source-code" id="_tee_delete-source">
+            <pre><span class="ruby-comment"># File lib/brice/history.rb, line 152</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">_tee_delete</span>(*<span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">args</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span> <span class="ruby-identifier">tee</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">arg</span>) }
 
@@ -393,29 +366,26 @@
 
   <span class="ruby-identifier">indexes</span>.<span class="ruby-identifier">reverse_each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">index</span><span class="ruby-operator">|</span> <span class="ruby-identifier">delete_at</span>(<span class="ruby-identifier">index</span>) }
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- _tee_delete-source -->
-            
-          </div>
-
+          </div><!-- _tee_delete-source -->
           
+        </div>
 
-          
-        </div><!-- _tee_delete-method -->
+        
 
-      
-      </div><!-- private-instance-method-details -->
+        
+      </div><!-- _tee_delete-method -->
+
     
-    </div><!-- 5Buntitled-5D -->
+    </section><!-- private-instance-method-details -->
   
+  </section><!-- 5Buntitled-5D -->
 
-  </div><!-- documentation -->
+</div><!-- documentation -->
 
-  <div id="validator-badges">
-    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
-    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
-      Rdoc Generator</a> 2</small>.</p>
-  </div>
 
-</body>
-</html>
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
 

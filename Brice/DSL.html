@@ -1,233 +1,227 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+
+<html>
 <head>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-  <title>Module: Brice::DSL</title>
+<title>Module: Brice::DSL</title>
 
-  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
 
-  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
 
-</head>
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
 <body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
 
-  <div id="metadata">
-    <div id="home-metadata">
-      <div id="home-section" class="section">
-        <h3 class="section-header">
-          <a href="../index.html">Home</a>
-          <a href="../index.html#classes">Classes</a>
-          <a href="../index.html#methods">Methods</a>
-        </h3>
-      </div>
-    </div>
 
-    <div id="file-metadata">
-      <div id="file-list-section" class="section">
-        <h3 class="section-header">In Files</h3>
-        <div class="section-body">
-          <ul>
-          
-            <li><a href="../lib/brice/dsl_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-              class="thickbox" title="lib/brice/dsl.rb">lib/brice/dsl.rb</a></li>
-          
-          </ul>
-        </div>
-      </div>
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
 
-      
-    </div>
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
 
-    <div id="class-metadata">
-      
 
-      
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/brice/dsl.rb
+  </ul>
+</nav>
 
-      
-
-      
-      <!-- Method Quickref -->
-      <div id="method-list-section" class="section">
-        <h3 class="section-header">Methods</h3>
-        <ul class="link-list">
-          
-          <li><a href="#method-i-brice">#brice</a></li>
-          
-          <li><a href="#method-i-brice_load">#brice_load</a></li>
-          
-          <li><a href="#method-i-brice_require">#brice_require</a></li>
-          
-          <li><a href="#method-i-brice_rescue">#brice_rescue</a></li>
-          
-          <li><a href="#method-i-brice_run_cmd">#brice_run_cmd</a></li>
-          
-          <li><a href="#method-i-define_irb_method">#define_irb_method</a></li>
-          
-          <li><a href="#method-i-irb_def">#irb_def</a></li>
-          
-          <li><a href="#method-i-irb_rc">#irb_rc</a></li>
-          
-        </ul>
-      </div>
-      
-
-      
-      <!-- Included Modules -->
-      <div id="includes-section" class="section">
-        <h3 class="section-header">Included Modules</h3>
-        <ul class="link-list">
-        
-        
-          <li><span class="include">Nuggets::Object::SilenceMixin</span></li>
-        
-        
-        </ul>
-      </div>
-      
-    </div>
-
-    <div id="project-metadata">
-      
-      
-      <div id="fileindex-section" class="section project-section">
-        <h3 class="section-header">Files</h3>
-        <ul>
-        
-          <li class="file"><a href="../COPYING.html">COPYING</a></li>
-        
-          <li class="file"><a href="../ChangeLog.html">ChangeLog</a></li>
-        
-          <li class="file"><a href="../README.html">README</a></li>
-        
-        </ul>
-      </div>
-      
-
-      <div id="classindex-section" class="section project-section">
-        <h3 class="section-header">Class/Module Index
-          <span class="search-toggle"><img src="../images/find.png"
-            height="16" width="16" alt="[+]"
-            title="show/hide quicksearch" /></span></h3>
-        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
-        <fieldset>
-          <legend>Quicksearch</legend>
-          <input type="text" name="quicksearch" value=""
-            class="quicksearch-field" />
-        </fieldset>
-        </form>
-
-        <ul class="link-list">
-        
-          <li><a href="../Brice.html">Brice</a></li>
-        
-          <li><a href="../Brice/Colours.html">Brice::Colours</a></li>
-        
-          <li><a href="../Brice/Colours/Colour.html">Brice::Colours::Colour</a></li>
-        
-          <li><a href="../Brice/Colours/PP.html">Brice::Colours::PP</a></li>
-        
-          <li><a href="../Brice/Colours/Tokenizer.html">Brice::Colours::Tokenizer</a></li>
-        
-          <li><a href="../Brice/Config.html">Brice::Config</a></li>
-        
-          <li><a href="../Brice/Config/PackageConfig.html">Brice::Config::PackageConfig</a></li>
-        
-          <li><a href="../Brice/DSL.html">Brice::DSL</a></li>
-        
-          <li><a href="../Brice/History.html">Brice::History</a></li>
-        
-          <li><a href="../Brice/History/Tee.html">Brice::History::Tee</a></li>
-        
-          <li><a href="../Brice/Shortcuts.html">Brice::Shortcuts</a></li>
-        
-          <li><a href="../Brice/Shortcuts/ObjectShortcuts.html">Brice::Shortcuts::ObjectShortcuts</a></li>
-        
-          <li><a href="../Brice/Version.html">Brice::Version</a></li>
-        
-          <li><a href="../IRB.html">IRB</a></li>
-        
-          <li><a href="../IRB/Context.html">IRB::Context</a></li>
-        
-        </ul>
-        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
-      </div>
-
-      
-    </div>
+    
   </div>
 
-  <div id="documentation">
-    <h1 class="module">Brice::DSL</h1>
+  <div id="class-metadata">
+    
+    
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
 
-    <div id="description" class="description">
-      
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Nuggets::Object::SilenceMixin</span>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-brice">#brice</a>
+    
+    <li><a href="#method-i-brice_load">#brice_load</a>
+    
+    <li><a href="#method-i-brice_require">#brice_require</a>
+    
+    <li><a href="#method-i-brice_rescue">#brice_rescue</a>
+    
+    <li><a href="#method-i-brice_run_cmd">#brice_run_cmd</a>
+    
+    <li><a href="#method-i-define_irb_method">#define_irb_method</a>
+    
+    <li><a href="#method-i-irb_def">#irb_def</a>
+    
+    <li><a href="#method-i-irb_rc">#irb_rc</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../COPYING.html">COPYING</a>
+  
+    <li class="file"><a href="../ChangeLog.html">ChangeLog</a>
+  
+    <li class="file"><a href="../README.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Brice.html">Brice</a>
+  
+    <li><a href="../Brice/Colours.html">Brice::Colours</a>
+  
+    <li><a href="../Brice/Colours/Colour.html">Brice::Colours::Colour</a>
+  
+    <li><a href="../Brice/Colours/PP.html">Brice::Colours::PP</a>
+  
+    <li><a href="../Brice/Colours/Tokenizer.html">Brice::Colours::Tokenizer</a>
+  
+    <li><a href="../Brice/Config.html">Brice::Config</a>
+  
+    <li><a href="../Brice/Config/PackageConfig.html">Brice::Config::PackageConfig</a>
+  
+    <li><a href="../Brice/DSL.html">Brice::DSL</a>
+  
+    <li><a href="../Brice/History.html">Brice::History</a>
+  
+    <li><a href="../Brice/History/Tee.html">Brice::History::Tee</a>
+  
+    <li><a href="../Brice/Shortcuts.html">Brice::Shortcuts</a>
+  
+    <li><a href="../Brice/Shortcuts/ObjectShortcuts.html">Brice::Shortcuts::ObjectShortcuts</a>
+  
+    <li><a href="../Brice/Version.html">Brice::Version</a>
+  
+    <li><a href="../IRB.html">IRB</a>
+  
+    <li><a href="../IRB/Context.html">IRB::Context</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Brice::DSL</h1>
+
+  <div id="description" class="description">
+    
 <p>Certain global helper methods for use inside IRb extensions. Also available
 inside the IRb session.</p>
 
-    </div><!-- description -->
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
 
     
+
     
+
     
-    <div id="5Buntitled-5D" class="documentation-section">
-      
 
-      
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
 
-      
-
-      
-
-      <!-- Methods -->
-      
-      <div id="public-instance-method-details" class="method-section section">
-        <h3 class="section-header">Public Instance Methods</h3>
-
-      
-        <div id="brice-method" class="method-detail ">
-          <a name="method-i-brice"></a>
-
+    
+      <div id="method-i-brice" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            brice(package)  # package == lib
+          </span>
           
+          <span class="method-click-advice">click to toggle source</span>
           
-          <div class="method-heading">
-            <span class="method-callseq">brice(package)  # package == lib</span>
-            
-            <span class="method-click-advice">click to toggle source</span>
-            
-          </div>
+        </div>
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            brice(package &rarr; lib)
+          </span>
           
-          <div class="method-heading">
-            <span class="method-callseq">brice(package => lib)</span>
-            
-          </div>
+        </div>
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            brice(package &rarr; [lib, ...])
+          </span>
           
-          <div class="method-heading">
-            <span class="method-callseq">brice(package => [lib, ...])</span>
-            
-          </div>
-          
-          
+        </div>
+        
+        
 
-          <div class="method-description">
-            
-            <p>Declare package <tt>package</tt>. Optionally load given libraries (see
+        <div class="method-description">
+          
+          <p>Declare package <code>package</code>. Optionally load given libraries (see
 below) and configure the package if it has been enabled/included.</p>
 
-<p><tt>package</tt> can be a String which already names the library to be
-loaded or a Hash of the form <tt>package =&gt; lib</tt> or <tt>package
-=&gt; [lib, ...]</tt>.</p>
-            
+<p><code>package</code> can be a String which already names the library to be
+loaded or a Hash of the form <code>package =&gt; lib</code> or
+<code>package =&gt; [lib, ...]</code>.</p>
+          
 
-            
-            <div class="method-source-code" id="brice-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/dsl.rb, line 131</span>
+          
+          <div class="method-source-code" id="brice-source">
+            <pre><span class="ruby-comment"># File lib/brice/dsl.rb, line 131</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">brice</span>(<span class="ruby-identifier">package</span>)
   <span class="ruby-identifier">package</span>, <span class="ruby-identifier">libs</span> = <span class="ruby-keyword">case</span> <span class="ruby-identifier">package</span>
     <span class="ruby-keyword">when</span> <span class="ruby-constant">Hash</span>
@@ -249,121 +243,118 @@ loaded or a Hash of the form <tt>package =&gt; lib</tt> or <tt>package
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- brice-source -->
-            
-          </div>
-
+          </div><!-- brice-source -->
           
+        </div>
 
-          
-        </div><!-- brice-method -->
+        
 
-      
-        <div id="brice_load-method" class="method-detail ">
-          <a name="method-i-brice_load"></a>
+        
+      </div><!-- brice-method -->
 
+    
+      <div id="method-i-brice_load" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            brice_load(filename, wrap = false)
+          </span>
           
+          <span class="method-click-advice">click to toggle source</span>
           
-          <div class="method-heading">
-            <span class="method-callseq">brice_load(filename, wrap = false)</span>
-            
-            <span class="method-click-advice">click to toggle source</span>
-            
-          </div>
-          
-          
+        </div>
+        
+        
 
-          <div class="method-description">
-            
-            <p>Kernel#load the file named <tt>filename</tt> and optionally execute block
-in case of success.</p>
-
-<p>Returns either the result of the executed method or of the block.</p>
-            
-
-            
-            <div class="method-source-code" id="brice_load-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/dsl.rb, line 109</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">brice_load</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">wrap</span> = <span class="ruby-keyword">false</span>, &amp;<span class="ruby-identifier">block</span>)
-  <span class="ruby-identifier">brice_rescue</span>(<span class="ruby-value">:load</span>, [<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">wrap</span>], &amp;<span class="ruby-identifier">block</span>)
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- brice_load-source -->
-            
-          </div>
-
+        <div class="method-description">
           
-
-          
-        </div><!-- brice_load-method -->
-
-      
-        <div id="brice_require-method" class="method-detail ">
-          <a name="method-i-brice_require"></a>
-
-          
-          
-          <div class="method-heading">
-            <span class="method-callseq">brice_require(string)</span>
-            
-            <span class="method-click-advice">click to toggle source</span>
-            
-          </div>
-          
-          
-
-          <div class="method-description">
-            
-            <p>Kernel#require the library named <tt>string</tt> and optionally execute
+          <p>Kernel#load the file named <code>filename</code> and optionally execute
 block in case of success.</p>
 
 <p>Returns either the result of the executed method or of the block.</p>
-            
+          
 
-            
-            <div class="method-source-code" id="brice_require-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/dsl.rb, line 98</span>
+          
+          <div class="method-source-code" id="brice_load-source">
+            <pre><span class="ruby-comment"># File lib/brice/dsl.rb, line 109</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">brice_load</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">wrap</span> = <span class="ruby-keyword">false</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">brice_rescue</span>(<span class="ruby-value">:load</span>, [<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">wrap</span>], &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- brice_load-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- brice_load-method -->
+
+    
+      <div id="method-i-brice_require" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            brice_require(string)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Kernel#require the library named <code>string</code> and optionally execute
+block in case of success.</p>
+
+<p>Returns either the result of the executed method or of the block.</p>
+          
+
+          
+          <div class="method-source-code" id="brice_require-source">
+            <pre><span class="ruby-comment"># File lib/brice/dsl.rb, line 98</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">brice_require</span>(<span class="ruby-identifier">string</span>, &amp;<span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">brice_rescue</span>(<span class="ruby-value">:require</span>, [<span class="ruby-identifier">string</span>], <span class="ruby-constant">LoadError</span>, &amp;<span class="ruby-identifier">block</span>)
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- brice_require-source -->
-            
-          </div>
+          </div><!-- brice_require-source -->
+          
+        </div>
 
-          
+        
 
-          
-        </div><!-- brice_require-method -->
+        
+      </div><!-- brice_require-method -->
 
-      
-        <div id="brice_rescue-method" class="method-detail ">
-          <a name="method-i-brice_rescue"></a>
+    
+      <div id="method-i-brice_rescue" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            brice_rescue(what, args = [], error = Exception)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
 
+        <div class="method-description">
           
-          
-          <div class="method-heading">
-            <span class="method-callseq">brice_rescue(what, args = [], error = Exception)</span>
-            
-            <span class="method-click-advice">click to toggle source</span>
-            
-          </div>
-          
-          
-
-          <div class="method-description">
-            
-            <p>Call <tt>what</tt> with <tt>args</tt> and rescue potential <tt>error</tt>,
-optionally executing block in case of success. Gives a nicer error location
-instead of the full backtrace.</p>
+          <p>Call <code>what</code> with <code>args</code> and rescue potential
+<code>error</code>, optionally executing block in case of success. Gives a
+nicer error location instead of the full backtrace.</p>
 
 <p>Returns either the result of the executed method or of the block.</p>
-            
+          
 
-            
-            <div class="method-source-code" id="brice_rescue-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/dsl.rb, line 72</span>
+          
+          <div class="method-source-code" id="brice_rescue-source">
+            <pre><span class="ruby-comment"># File lib/brice/dsl.rb, line 72</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">brice_rescue</span>(<span class="ruby-identifier">what</span>, <span class="ruby-identifier">args</span> = [], <span class="ruby-identifier">error</span> = <span class="ruby-constant">Exception</span>)
   <span class="ruby-identifier">res</span> = <span class="ruby-identifier">send</span>(<span class="ruby-identifier">what</span>, *<span class="ruby-identifier">args</span>)
 
@@ -374,7 +365,7 @@ instead of the full backtrace.</p>
   <span class="ruby-keyword">unless</span> <span class="ruby-constant">Brice</span>.<span class="ruby-identifier">quiet</span>
     <span class="ruby-comment"># FIXME: ideally, we'd want the __FILE__ and __LINE__ of the</span>
     <span class="ruby-comment"># rc file where the error occurred.</span>
-    <span class="ruby-identifier">location</span> = <span class="ruby-identifier">caller</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp">%{(?:\A|/)lib/brice[/.]}</span> }
+    <span class="ruby-identifier">location</span> = <span class="ruby-identifier">caller</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp">%r{(?:\A|/)lib/brice[/.]}</span> }
     <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;#{err.class}: #{err} [#{location}]&quot;</span>
 
     <span class="ruby-identifier">warn</span> <span class="ruby-identifier">err</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
@@ -382,109 +373,107 @@ instead of the full backtrace.</p>
     }.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-constant">Brice</span>.<span class="ruby-identifier">verbose</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- brice_rescue-source -->
-            
-          </div>
+          </div><!-- brice_rescue-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- brice_rescue-method -->
+
+    
+      <div id="method-i-brice_run_cmd" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            brice_run_cmd(cmd, env = {})
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Runs <code>cmd</code> with ENV modified according to <code>env</code>.</p>
           
 
           
-        </div><!-- brice_rescue-method -->
-
-      
-        <div id="brice_run_cmd-method" class="method-detail ">
-          <a name="method-i-brice_run_cmd"></a>
-
-          
-          
-          <div class="method-heading">
-            <span class="method-callseq">brice_run_cmd(cmd, env = {})</span>
-            
-            <span class="method-click-advice">click to toggle source</span>
-            
-          </div>
-          
-          
-
-          <div class="method-description">
-            
-            <p>Runs <tt>cmd</tt> with ENV modified according to <tt>env</tt>.</p>
-            
-
-            
-            <div class="method-source-code" id="brice_run_cmd-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/dsl.rb, line 117</span>
+          <div class="method-source-code" id="brice_run_cmd-source">
+            <pre><span class="ruby-comment"># File lib/brice/dsl.rb, line 117</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">brice_run_cmd</span>(<span class="ruby-identifier">cmd</span>, <span class="ruby-identifier">env</span> = {})
-  <span class="ruby-constant">ENV</span>.<span class="ruby-identifier">with</span>(<span class="ruby-identifier">env</span>) { <span class="ruby-node">%{#{cmd}}</span> }
+  <span class="ruby-constant">ENV</span>.<span class="ruby-identifier">with</span>(<span class="ruby-identifier">env</span>) { <span class="ruby-node">%x{#{cmd}}</span> }
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- brice_run_cmd-source -->
-            
-          </div>
+          </div><!-- brice_run_cmd-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- brice_run_cmd-method -->
+
+    
+      <div id="method-i-define_irb_method" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">define_irb_method</span><span
+            class="method-args">(symbol, method = nil, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
           
 
           
-        </div><!-- brice_run_cmd-method -->
+        </div>
 
-      
-        <div id="define_irb_method-method" class="method-detail method-alias">
-          <a name="method-i-define_irb_method"></a>
+        
 
-          
-          <div class="method-heading">
-            <span class="method-name">define_irb_method</span><span
-              class="method-args">(symbol, method = nil, &block)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
+        
+        <div class="aliases">
+          Alias for: <a href="DSL.html#method-i-irb_def">irb_def</a>
+        </div>
+        
+      </div><!-- define_irb_method-method -->
 
-          <div class="method-description">
-            
-            
-            
+    
+      <div id="method-i-irb_def" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            irb_def(symbol) { ... }
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            irb_def(symbol, method)
+          </span>
+          
+        </div>
+        
+        
 
-            
-          </div>
-
+        <div class="method-description">
           
-
-          
-          <div class="aliases">
-            Alias for: <a href="DSL.html#method-i-irb_def">irb_def</a>
-          </div>
-          
-        </div><!-- define_irb_method-method -->
-
-      
-        <div id="irb_def-method" class="method-detail ">
-          <a name="method-i-irb_def"></a>
-
-          
-          
-          <div class="method-heading">
-            <span class="method-callseq">irb_def(symbol) { ... }</span>
-            
-            <span class="method-click-advice">click to toggle source</span>
-            
-          </div>
-          
-          <div class="method-heading">
-            <span class="method-callseq">irb_def(symbol, method)</span>
-            
-          </div>
-          
+          <p>Define a method for use inside the IRb session.</p>
           
 
-          <div class="method-description">
-            
-            <p>Define a method for use inside the IRb session.</p>
-            
-
-            
-            <div class="method-source-code" id="irb_def-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/dsl.rb, line 54</span>
+          
+          <div class="method-source-code" id="irb_def-source">
+            <pre><span class="ruby-comment"># File lib/brice/dsl.rb, line 54</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">irb_def</span>(<span class="ruby-identifier">symbol</span>, <span class="ruby-identifier">method</span> = <span class="ruby-keyword">nil</span>, &amp;<span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">irb_rc</span> {
     <span class="ruby-constant">Object</span>.<span class="ruby-identifier">instance_eval</span> {
@@ -492,69 +481,65 @@ instead of the full backtrace.</p>
     }
   }
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- irb_def-source -->
-            
-          </div>
+          </div><!-- irb_def-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="DSL.html#method-i-define_irb_method">define_irb_method</a>
+        </div>
+        
+
+        
+      </div><!-- irb_def-method -->
+
+    
+      <div id="method-i-irb_rc" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            irb_rc { ... }
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Add IRB_RC proc (to be executed whenever a (sub-)session is started).</p>
+          
 
           
-          <div class="aliases">
-            Also aliased as: <a href="DSL.html#method-i-define_irb_method">define_irb_method</a>
-          </div>
-          
-
-          
-        </div><!-- irb_def-method -->
-
-      
-        <div id="irb_rc-method" class="method-detail ">
-          <a name="method-i-irb_rc"></a>
-
-          
-          
-          <div class="method-heading">
-            <span class="method-callseq">irb_rc { ... }</span>
-            
-            <span class="method-click-advice">click to toggle source</span>
-            
-          </div>
-          
-          
-
-          <div class="method-description">
-            
-            <p>Add IRB_RC proc (to be executed whenever a (sub-)session is started).</p>
-            
-
-            
-            <div class="method-source-code" id="irb_rc-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/dsl.rb, line 45</span>
+          <div class="method-source-code" id="irb_rc-source">
+            <pre><span class="ruby-comment"># File lib/brice/dsl.rb, line 45</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">irb_rc</span>(&amp;<span class="ruby-identifier">block</span>)
   <span class="ruby-constant">Brice</span>.<span class="ruby-identifier">irb_rc</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">block</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- irb_rc-source -->
-            
-          </div>
-
+          </div><!-- irb_rc-source -->
           
+        </div>
 
-          
-        </div><!-- irb_rc-method -->
+        
 
-      
-      </div><!-- public-instance-method-details -->
+        
+      </div><!-- irb_rc-method -->
+
     
-    </div><!-- 5Buntitled-5D -->
+    </section><!-- public-instance-method-details -->
   
+  </section><!-- 5Buntitled-5D -->
 
-  </div><!-- documentation -->
+</div><!-- documentation -->
 
-  <div id="validator-badges">
-    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
-    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
-      Rdoc Generator</a> 2</small>.</p>
-  </div>
 
-</body>
-</html>
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
 

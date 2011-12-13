@@ -1,195 +1,183 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+
+<html>
 <head>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-  <title>Module: Brice::Shortcuts::ObjectShortcuts</title>
+<title>Module: Brice::Shortcuts::ObjectShortcuts</title>
 
-  <link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
 
-  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
 
-</head>
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
 <body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
 
-  <div id="metadata">
-    <div id="home-metadata">
-      <div id="home-section" class="section">
-        <h3 class="section-header">
-          <a href="../../index.html">Home</a>
-          <a href="../../index.html#classes">Classes</a>
-          <a href="../../index.html#methods">Methods</a>
-        </h3>
-      </div>
-    </div>
 
-    <div id="file-metadata">
-      <div id="file-list-section" class="section">
-        <h3 class="section-header">In Files</h3>
-        <div class="section-body">
-          <ul>
-          
-            <li><a href="../../lib/brice/shortcuts_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-              class="thickbox" title="lib/brice/shortcuts.rb">lib/brice/shortcuts.rb</a></li>
-          
-          </ul>
-        </div>
-      </div>
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
 
-      
-    </div>
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
 
-    <div id="class-metadata">
-      
 
-      
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/brice/shortcuts.rb
+  </ul>
+</nav>
 
-      
-
-      
-      <!-- Method Quickref -->
-      <div id="method-list-section" class="section">
-        <h3 class="section-header">Methods</h3>
-        <ul class="link-list">
-          
-          <li><a href="#method-i-aorta">#aorta</a></li>
-          
-          <li><a href="#method-i-cgrep">#cgrep</a></li>
-          
-          <li><a href="#method-i-mgrep">#mgrep</a></li>
-          
-          <li><a href="#method-i-po">#po</a></li>
-          
-          <li><a href="#method-i-poc">#poc</a></li>
-          
-        </ul>
-      </div>
-      
-
-      
-    </div>
-
-    <div id="project-metadata">
-      
-      
-      <div id="fileindex-section" class="section project-section">
-        <h3 class="section-header">Files</h3>
-        <ul>
-        
-          <li class="file"><a href="../../COPYING.html">COPYING</a></li>
-        
-          <li class="file"><a href="../../ChangeLog.html">ChangeLog</a></li>
-        
-          <li class="file"><a href="../../README.html">README</a></li>
-        
-        </ul>
-      </div>
-      
-
-      <div id="classindex-section" class="section project-section">
-        <h3 class="section-header">Class/Module Index
-          <span class="search-toggle"><img src="../../images/find.png"
-            height="16" width="16" alt="[+]"
-            title="show/hide quicksearch" /></span></h3>
-        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
-        <fieldset>
-          <legend>Quicksearch</legend>
-          <input type="text" name="quicksearch" value=""
-            class="quicksearch-field" />
-        </fieldset>
-        </form>
-
-        <ul class="link-list">
-        
-          <li><a href="../../Brice.html">Brice</a></li>
-        
-          <li><a href="../../Brice/Colours.html">Brice::Colours</a></li>
-        
-          <li><a href="../../Brice/Colours/Colour.html">Brice::Colours::Colour</a></li>
-        
-          <li><a href="../../Brice/Colours/PP.html">Brice::Colours::PP</a></li>
-        
-          <li><a href="../../Brice/Colours/Tokenizer.html">Brice::Colours::Tokenizer</a></li>
-        
-          <li><a href="../../Brice/Config.html">Brice::Config</a></li>
-        
-          <li><a href="../../Brice/Config/PackageConfig.html">Brice::Config::PackageConfig</a></li>
-        
-          <li><a href="../../Brice/DSL.html">Brice::DSL</a></li>
-        
-          <li><a href="../../Brice/History.html">Brice::History</a></li>
-        
-          <li><a href="../../Brice/History/Tee.html">Brice::History::Tee</a></li>
-        
-          <li><a href="../../Brice/Shortcuts.html">Brice::Shortcuts</a></li>
-        
-          <li><a href="../../Brice/Shortcuts/ObjectShortcuts.html">Brice::Shortcuts::ObjectShortcuts</a></li>
-        
-          <li><a href="../../Brice/Version.html">Brice::Version</a></li>
-        
-          <li><a href="../../IRB.html">IRB</a></li>
-        
-          <li><a href="../../IRB/Context.html">IRB::Context</a></li>
-        
-        </ul>
-        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
-      </div>
-
-      
-    </div>
+    
   </div>
 
-  <div id="documentation">
-    <h1 class="module">Brice::Shortcuts::ObjectShortcuts</h1>
-
-    <div id="description" class="description">
-      
-    </div><!-- description -->
-
+  <div id="class-metadata">
     
     
     
-    <div id="5Buntitled-5D" class="documentation-section">
-      
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
 
-      
+  <ul class="link-list">
+    
+    <li><a href="#method-i-aorta">#aorta</a>
+    
+    <li><a href="#method-i-cgrep">#cgrep</a>
+    
+    <li><a href="#method-i-mgrep">#mgrep</a>
+    
+    <li><a href="#method-i-po">#po</a>
+    
+    <li><a href="#method-i-poc">#poc</a>
+    
+  </ul>
+</nav>
 
-      
+  </div>
 
-      
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
 
-      <!-- Methods -->
-      
-      <div id="public-instance-method-details" class="method-section section">
-        <h3 class="section-header">Public Instance Methods</h3>
+  <ul>
+  
+    <li class="file"><a href="../../COPYING.html">COPYING</a>
+  
+    <li class="file"><a href="../../ChangeLog.html">ChangeLog</a>
+  
+    <li class="file"><a href="../../README.html">README</a>
+  
+  </ul>
+</nav>
 
-      
-        <div id="aorta-method" class="method-detail ">
-          <a name="method-i-aorta"></a>
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
 
+  <ul class="link-list">
+  
+    <li><a href="../../Brice.html">Brice</a>
+  
+    <li><a href="../../Brice/Colours.html">Brice::Colours</a>
+  
+    <li><a href="../../Brice/Colours/Colour.html">Brice::Colours::Colour</a>
+  
+    <li><a href="../../Brice/Colours/PP.html">Brice::Colours::PP</a>
+  
+    <li><a href="../../Brice/Colours/Tokenizer.html">Brice::Colours::Tokenizer</a>
+  
+    <li><a href="../../Brice/Config.html">Brice::Config</a>
+  
+    <li><a href="../../Brice/Config/PackageConfig.html">Brice::Config::PackageConfig</a>
+  
+    <li><a href="../../Brice/DSL.html">Brice::DSL</a>
+  
+    <li><a href="../../Brice/History.html">Brice::History</a>
+  
+    <li><a href="../../Brice/History/Tee.html">Brice::History::Tee</a>
+  
+    <li><a href="../../Brice/Shortcuts.html">Brice::Shortcuts</a>
+  
+    <li><a href="../../Brice/Shortcuts/ObjectShortcuts.html">Brice::Shortcuts::ObjectShortcuts</a>
+  
+    <li><a href="../../Brice/Version.html">Brice::Version</a>
+  
+    <li><a href="../../IRB.html">IRB</a>
+  
+    <li><a href="../../IRB/Context.html">IRB::Context</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Brice::Shortcuts::ObjectShortcuts</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-aorta" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">aorta</span><span
+            class="method-args">(obj = self, editor = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
           
-          <div class="method-heading">
-            <span class="method-name">aorta</span><span
-              class="method-args">(obj = self, editor = nil)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p>Cf. &lt;<a
+          <p>Cf. &lt;<a
 href="http://rubyforge.org/snippet/detail.php?type=snippet&id=22">rubyforge.org/snippet/detail.php?type=snippet&id=22</a>&gt;</p>
-            
+          
 
-            
-            <div class="method-source-code" id="aorta-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/shortcuts.rb, line 115</span>
+          
+          <div class="method-source-code" id="aorta-source">
+            <pre><span class="ruby-comment"># File lib/brice/shortcuts.rb, line 117</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">aorta</span>(<span class="ruby-identifier">obj</span> = <span class="ruby-keyword">self</span>, <span class="ruby-identifier">editor</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-identifier">tempfile</span> = <span class="ruby-constant">Tempfile</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'aorta'</span>)
   <span class="ruby-constant">YAML</span>.<span class="ruby-identifier">dump</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-identifier">tempfile</span>)
@@ -214,175 +202,162 @@ href="http://rubyforge.org/snippet/detail.php?type=snippet&id=22">rubyforge.org/
   <span class="ruby-identifier">tempfile</span>.<span class="ruby-identifier">unlink</span>
   <span class="ruby-identifier">content</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- aorta-source -->
-            
-          </div>
+          </div><!-- aorta-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- aorta-method -->
+
+    
+      <div id="method-i-cgrep" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cgrep</span><span
+            class="method-args">(needle)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
           
 
           
-        </div><!-- aorta-method -->
-
-      
-        <div id="cgrep-method" class="method-detail ">
-          <a name="method-i-cgrep"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">cgrep</span><span
-              class="method-args">(needle)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="cgrep-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/shortcuts.rb, line 82</span>
+          <div class="method-source-code" id="cgrep-source">
+            <pre><span class="ruby-comment"># File lib/brice/shortcuts.rb, line 82</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">cgrep</span>(<span class="ruby-identifier">needle</span>)
-  <span class="ruby-identifier">needle</span> = <span class="ruby-node">%{#{Regexp.escape(needle)}}</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">needle</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Regexp</span>)
-
+  <span class="ruby-identifier">needle</span> = <span class="ruby-node">%r{#{Regexp.escape(needle)}}</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">needle</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Regexp</span>)
+  <span class="ruby-identifier">klass</span> = <span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Class</span>) <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>
   <span class="ruby-identifier">res</span> = []
 
-  <span class="ruby-constant">ObjectSpace</span>.<span class="ruby-identifier">each_object</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">obj</span><span class="ruby-operator">|</span>
-    <span class="ruby-keyword">if</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Class</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">obj</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-keyword">self</span>
-      <span class="ruby-identifier">name</span> = <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">name</span>
-      <span class="ruby-identifier">res</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">needle</span>
-    <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">ObjectSpace</span>.<span class="ruby-identifier">each_object</span>(<span class="ruby-constant">Class</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">obj</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">obj</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">klass</span>
+
+    <span class="ruby-identifier">name</span> = <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">name</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">needle</span>
+
+    <span class="ruby-identifier">res</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">name</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">inspect</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">name</span>)
   }
 
   <span class="ruby-identifier">res</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- cgrep-source -->
-            
-          </div>
+          </div><!-- cgrep-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- cgrep-method -->
+
+    
+      <div id="method-i-mgrep" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mgrep</span><span
+            class="method-args">(needle)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
           
 
           
-        </div><!-- cgrep-method -->
-
-      
-        <div id="mgrep-method" class="method-detail ">
-          <a name="method-i-mgrep"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">mgrep</span><span
-              class="method-args">(needle)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="mgrep-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/shortcuts.rb, line 97</span>
+          <div class="method-source-code" id="mgrep-source">
+            <pre><span class="ruby-comment"># File lib/brice/shortcuts.rb, line 99</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">mgrep</span>(<span class="ruby-identifier">needle</span>)
   <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">grep</span>(
-    <span class="ruby-identifier">needle</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Regexp</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">needle</span> <span class="ruby-operator">:</span> <span class="ruby-node">%{#{Regexp.escape(needle)}}</span>
+    <span class="ruby-identifier">needle</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Regexp</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">needle</span> <span class="ruby-operator">:</span> <span class="ruby-node">%r{#{Regexp.escape(needle)}}</span>
   )
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- mgrep-source -->
-            
-          </div>
-
+          </div><!-- mgrep-source -->
           
+        </div>
 
+        
+
+        
+      </div><!-- mgrep-method -->
+
+    
+      <div id="method-i-po" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">po</span><span
+            class="method-args">(obj = self)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
           
-        </div><!-- mgrep-method -->
-
-      
-        <div id="po-method" class="method-detail ">
-          <a name="method-i-po"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">po</span><span
-              class="method-args">(obj = self)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p>Print object methods, sorted by name. (excluding methods that exist in the
+          <p>Print object methods, sorted by name. (excluding methods that exist in the
 class Object)</p>
-            
+          
 
-            
-            <div class="method-source-code" id="po-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/shortcuts.rb, line 105</span>
+          
+          <div class="method-source-code" id="po-source">
+            <pre><span class="ruby-comment"># File lib/brice/shortcuts.rb, line 107</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">po</span>(<span class="ruby-identifier">obj</span> = <span class="ruby-keyword">self</span>)
   <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">methods</span>.<span class="ruby-identifier">sort</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Object</span>.<span class="ruby-identifier">methods</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- po-source -->
-            
-          </div>
+          </div><!-- po-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- po-method -->
+
+    
+      <div id="method-i-poc" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">poc</span><span
+            class="method-args">(obj = self)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Print object constants, sorted by name.</p>
           
 
           
-        </div><!-- po-method -->
-
-      
-        <div id="poc-method" class="method-detail ">
-          <a name="method-i-poc"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">poc</span><span
-              class="method-args">(obj = self)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p>Print object constants, sorted by name.</p>
-            
-
-            
-            <div class="method-source-code" id="poc-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/shortcuts.rb, line 110</span>
+          <div class="method-source-code" id="poc-source">
+            <pre><span class="ruby-comment"># File lib/brice/shortcuts.rb, line 112</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">poc</span>(<span class="ruby-identifier">obj</span> = <span class="ruby-keyword">self</span>)
   <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">constants</span>.<span class="ruby-identifier">sort</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:constants</span>)
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- poc-source -->
-            
-          </div>
-
+          </div><!-- poc-source -->
           
+        </div>
 
-          
-        </div><!-- poc-method -->
+        
 
-      
-      </div><!-- public-instance-method-details -->
+        
+      </div><!-- poc-method -->
+
     
-    </div><!-- 5Buntitled-5D -->
+    </section><!-- public-instance-method-details -->
   
+  </section><!-- 5Buntitled-5D -->
 
-  </div><!-- documentation -->
+</div><!-- documentation -->
 
-  <div id="validator-badges">
-    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
-    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
-      Rdoc Generator</a> 2</small>.</p>
-  </div>
 
-</body>
-</html>
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
 

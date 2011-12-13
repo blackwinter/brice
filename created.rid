@@ -1,21 +1,21 @@
-Tue, 09 Aug 2011 18:06:52 +0200
+Tue, 13 Dec 2011 10:04:17 +0100
 lib/brice/rc/040_colours.rb	Mon, 08 Aug 2011 16:56:04 +0200
-lib/brice/dsl.rb	Tue, 09 Aug 2011 17:26:46 +0200
 lib/brice/rc/080_rails.rb	Fri, 05 Aug 2011 17:13:35 +0200
 lib/brice/rc/020_libs.rb	Mon, 08 Aug 2011 16:04:28 +0200
+lib/brice/dsl.rb	Tue, 09 Aug 2011 17:26:46 +0200
 COPYING	Fri, 29 Apr 2011 12:23:06 +0200
 lib/brice/rc/060_init.rb	Mon, 08 Aug 2011 16:11:00 +0200
 lib/brice/colours.rb	Tue, 09 Aug 2011 13:57:30 +0200
-README	Tue, 09 Aug 2011 18:06:16 +0200
-lib/brice/rc/070_prompt.rb	Mon, 08 Aug 2011 15:58:22 +0200
-lib/brice/shortcuts.rb	Tue, 09 Aug 2011 18:05:27 +0200
+README	Tue, 13 Dec 2011 10:03:36 +0100
 lib/brice.rb	Tue, 09 Aug 2011 13:06:58 +0200
-lib/brice/rc/030_history.rb	Tue, 09 Aug 2011 11:49:54 +0200
+lib/brice/shortcuts.rb	Thu, 11 Aug 2011 10:49:08 +0200
+lib/brice/rc/070_prompt.rb	Mon, 08 Aug 2011 15:58:22 +0200
+lib/brice/history.rb	Thu, 11 Aug 2011 15:37:40 +0200
+lib/brice/version.rb	Tue, 13 Dec 2011 10:03:49 +0100
 lib/brice/rc/090_devel.rb	Mon, 17 Nov 2008 18:39:09 +0100
-lib/brice/version.rb	Tue, 09 Aug 2011 18:06:21 +0200
-lib/brice/history.rb	Tue, 09 Aug 2011 13:45:16 +0200
-lib/brice/rc/050_shortcuts.rb	Mon, 08 Aug 2011 16:48:35 +0200
-lib/brice/rc/010_added_methods.rb	Fri, 05 Aug 2011 16:46:20 +0200
+lib/brice/rc/030_history.rb	Tue, 09 Aug 2011 11:49:54 +0200
 lib/brice/init.rb	Fri, 05 Dec 2008 12:24:45 +0100
+lib/brice/rc/010_added_methods.rb	Fri, 05 Aug 2011 16:46:20 +0200
+lib/brice/rc/050_shortcuts.rb	Mon, 08 Aug 2011 16:48:35 +0200
 ChangeLog	Fri, 14 Nov 2008 13:29:14 +0100
-lib/brice/config.rb	Mon, 08 Aug 2011 16:41:11 +0200
+lib/brice/config.rb	Tue, 13 Dec 2011 10:00:12 +0100

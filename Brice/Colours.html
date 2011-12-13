@@ -1,242 +1,216 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+
+<html>
 <head>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-  <title>Module: Brice::Colours</title>
+<title>Module: Brice::Colours</title>
 
-  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
 
-  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
 
-</head>
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
 <body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
 
-  <div id="metadata">
-    <div id="home-metadata">
-      <div id="home-section" class="section">
-        <h3 class="section-header">
-          <a href="../index.html">Home</a>
-          <a href="../index.html#classes">Classes</a>
-          <a href="../index.html#methods">Methods</a>
-        </h3>
-      </div>
-    </div>
 
-    <div id="file-metadata">
-      <div id="file-list-section" class="section">
-        <h3 class="section-header">In Files</h3>
-        <div class="section-body">
-          <ul>
-          
-            <li><a href="../lib/brice/colours_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-              class="thickbox" title="lib/brice/colours.rb">lib/brice/colours.rb</a></li>
-          
-          </ul>
-        </div>
-      </div>
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
 
-      
-    </div>
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
 
-    <div id="class-metadata">
-      
 
-      
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/brice/colours.rb
+  </ul>
+</nav>
 
-      
-      <!-- Namespace Contents -->
-      <div id="namespace-list-section" class="section">
-        <h3 class="section-header">Namespace</h3>
-        <ul class="link-list">
-          
-          <li><span class="type">MODULE</span> <a href="Colours/Colour.html">Brice::Colours::Colour</a></li>
-          
-          <li><span class="type">MODULE</span> <a href="Colours/PP.html">Brice::Colours::PP</a></li>
-          
-          <li><span class="type">MODULE</span> <a href="Colours/Tokenizer.html">Brice::Colours::Tokenizer</a></li>
-          
-        </ul>
-      </div>
-      
-
-      
-      <!-- Method Quickref -->
-      <div id="method-list-section" class="section">
-        <h3 class="section-header">Methods</h3>
-        <ul class="link-list">
-          
-          <li><a href="#method-i-colourize">#colourize</a></li>
-          
-          <li><a href="#method-i-colourize_string">#colourize_string</a></li>
-          
-          <li><a href="#method-i-colours">#colours</a></li>
-          
-          <li><a href="#method-i-colours-3D">#colours=</a></li>
-          
-          <li><a href="#method-i-disable">#disable</a></li>
-          
-          <li><a href="#method-i-disable_irb">#disable_irb</a></li>
-          
-          <li><a href="#method-i-disable_pp">#disable_pp</a></li>
-          
-          <li><a href="#method-i-enable_irb">#enable_irb</a></li>
-          
-          <li><a href="#method-i-enable_pp">#enable_pp</a></li>
-          
-          <li><a href="#method-i-init">#init</a></li>
-          
-          <li><a href="#method-i-inspect_value_with_colour">#inspect_value_with_colour</a></li>
-          
-          <li><a href="#method-i-output_value_with_colour">#output_value_with_colour</a></li>
-          
-        </ul>
-      </div>
-      
-
-      
-    </div>
-
-    <div id="project-metadata">
-      
-      
-      <div id="fileindex-section" class="section project-section">
-        <h3 class="section-header">Files</h3>
-        <ul>
-        
-          <li class="file"><a href="../COPYING.html">COPYING</a></li>
-        
-          <li class="file"><a href="../ChangeLog.html">ChangeLog</a></li>
-        
-          <li class="file"><a href="../README.html">README</a></li>
-        
-        </ul>
-      </div>
-      
-
-      <div id="classindex-section" class="section project-section">
-        <h3 class="section-header">Class/Module Index
-          <span class="search-toggle"><img src="../images/find.png"
-            height="16" width="16" alt="[+]"
-            title="show/hide quicksearch" /></span></h3>
-        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
-        <fieldset>
-          <legend>Quicksearch</legend>
-          <input type="text" name="quicksearch" value=""
-            class="quicksearch-field" />
-        </fieldset>
-        </form>
-
-        <ul class="link-list">
-        
-          <li><a href="../Brice.html">Brice</a></li>
-        
-          <li><a href="../Brice/Colours.html">Brice::Colours</a></li>
-        
-          <li><a href="../Brice/Colours/Colour.html">Brice::Colours::Colour</a></li>
-        
-          <li><a href="../Brice/Colours/PP.html">Brice::Colours::PP</a></li>
-        
-          <li><a href="../Brice/Colours/Tokenizer.html">Brice::Colours::Tokenizer</a></li>
-        
-          <li><a href="../Brice/Config.html">Brice::Config</a></li>
-        
-          <li><a href="../Brice/Config/PackageConfig.html">Brice::Config::PackageConfig</a></li>
-        
-          <li><a href="../Brice/DSL.html">Brice::DSL</a></li>
-        
-          <li><a href="../Brice/History.html">Brice::History</a></li>
-        
-          <li><a href="../Brice/History/Tee.html">Brice::History::Tee</a></li>
-        
-          <li><a href="../Brice/Shortcuts.html">Brice::Shortcuts</a></li>
-        
-          <li><a href="../Brice/Shortcuts/ObjectShortcuts.html">Brice::Shortcuts::ObjectShortcuts</a></li>
-        
-          <li><a href="../Brice/Version.html">Brice::Version</a></li>
-        
-          <li><a href="../IRB.html">IRB</a></li>
-        
-          <li><a href="../IRB/Context.html">IRB::Context</a></li>
-        
-        </ul>
-        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
-      </div>
-
-      
-    </div>
+    
   </div>
 
-  <div id="documentation">
-    <h1 class="module">Brice::Colours</h1>
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
 
-    <div id="description" class="description">
-      
+  <ul class="link-list">
+    
+    <li><a href="#method-i-colourize">#colourize</a>
+    
+    <li><a href="#method-i-colourize_string">#colourize_string</a>
+    
+    <li><a href="#method-i-colours">#colours</a>
+    
+    <li><a href="#method-i-colours-3D">#colours=</a>
+    
+    <li><a href="#method-i-disable">#disable</a>
+    
+    <li><a href="#method-i-disable_irb">#disable_irb</a>
+    
+    <li><a href="#method-i-disable_pp">#disable_pp</a>
+    
+    <li><a href="#method-i-enable_irb">#enable_irb</a>
+    
+    <li><a href="#method-i-enable_pp">#enable_pp</a>
+    
+    <li><a href="#method-i-init">#init</a>
+    
+    <li><a href="#method-i-inspect_value_with_colour">#inspect_value_with_colour</a>
+    
+    <li><a href="#method-i-output_value_with_colour">#output_value_with_colour</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../COPYING.html">COPYING</a>
+  
+    <li class="file"><a href="../ChangeLog.html">ChangeLog</a>
+  
+    <li class="file"><a href="../README.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Brice.html">Brice</a>
+  
+    <li><a href="../Brice/Colours.html">Brice::Colours</a>
+  
+    <li><a href="../Brice/Colours/Colour.html">Brice::Colours::Colour</a>
+  
+    <li><a href="../Brice/Colours/PP.html">Brice::Colours::PP</a>
+  
+    <li><a href="../Brice/Colours/Tokenizer.html">Brice::Colours::Tokenizer</a>
+  
+    <li><a href="../Brice/Config.html">Brice::Config</a>
+  
+    <li><a href="../Brice/Config/PackageConfig.html">Brice::Config::PackageConfig</a>
+  
+    <li><a href="../Brice/DSL.html">Brice::DSL</a>
+  
+    <li><a href="../Brice/History.html">Brice::History</a>
+  
+    <li><a href="../Brice/History/Tee.html">Brice::History::Tee</a>
+  
+    <li><a href="../Brice/Shortcuts.html">Brice::Shortcuts</a>
+  
+    <li><a href="../Brice/Shortcuts/ObjectShortcuts.html">Brice::Shortcuts::ObjectShortcuts</a>
+  
+    <li><a href="../Brice/Version.html">Brice::Version</a>
+  
+    <li><a href="../IRB.html">IRB</a>
+  
+    <li><a href="../IRB/Context.html">IRB::Context</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Brice::Colours</h1>
+
+  <div id="description" class="description">
+    
 <p>Add colour support to IRb.</p>
 
-    </div><!-- description -->
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
 
     
+
     
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="DEFAULT_COLOURS">DEFAULT_COLOURS
+        
+        <dd class="description"><p>Default IRb colour scheme.</p>
+        
+      
+        <dt id="TESTING_COLOURS">TESTING_COLOURS
+        
+        <dd class="description"><p>Fruity testing colours.</p>
+        
+      
+      </dl>
+    </section>
     
-    <div id="5Buntitled-5D" class="documentation-section">
-      
 
-      
+    
 
-      
-      <!-- Constants -->
-      <div id="constants-list" class="section">
-        <h3 class="section-header">Constants</h3>
-        <dl>
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-colourize" class="method-detail ">
         
-          <dt><a name="DEFAULT_COLOURS">DEFAULT_COLOURS</a></dt>
-          
-          <dd class="description"><p>Default IRb colour scheme.</p></dd>
-          
+        <div class="method-heading">
+          <span class="method-name">colourize</span><span
+            class="method-args">(str)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
         
-          <dt><a name="TESTING_COLOURS">TESTING_COLOURS</a></dt>
+
+        <div class="method-description">
           
-          <dd class="description"><p>Fruity testing colours.</p></dd>
-          
-        
-        </dl>
-      </div>
-      
-
-      
-
-      <!-- Methods -->
-      
-      <div id="public-instance-method-details" class="method-section section">
-        <h3 class="section-header">Public Instance Methods</h3>
-
-      
-        <div id="colourize-method" class="method-detail ">
-          <a name="method-i-colourize"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">colourize</span><span
-              class="method-args">(str)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+          <p>Colourize the results of inspect</p>
           
 
-          <div class="method-description">
-            
-            <p>Colourize the results of inspect</p>
-            
-
-            
-            <div class="method-source-code" id="colourize-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/colours.rb, line 213</span>
+          
+          <div class="method-source-code" id="colourize-source">
+            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 213</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">colourize</span>(<span class="ruby-identifier">str</span>)
   <span class="ruby-identifier">res</span> = <span class="ruby-string">''</span>
 
@@ -248,169 +222,154 @@
 <span class="ruby-keyword">rescue</span>
   <span class="ruby-identifier">str</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- colourize-source -->
-            
-          </div>
+          </div><!-- colourize-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- colourize-method -->
+
+    
+      <div id="method-i-colourize_string" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">colourize_string</span><span
+            class="method-args">(str, colour)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return a string with the given colour.</p>
           
 
           
-        </div><!-- colourize-method -->
-
-      
-        <div id="colourize_string-method" class="method-detail ">
-          <a name="method-i-colourize_string"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">colourize_string</span><span
-              class="method-args">(str, colour)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p>Return a string with the given colour.</p>
-            
-
-            
-            <div class="method-source-code" id="colourize_string-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/colours.rb, line 208</span>
+          <div class="method-source-code" id="colourize_string-source">
+            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 208</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">colourize_string</span>(<span class="ruby-identifier">str</span>, <span class="ruby-identifier">colour</span>)
   (<span class="ruby-identifier">col</span> = <span class="ruby-constant">Colour</span>[<span class="ruby-identifier">colour</span>]) <span class="ruby-operator">?</span> <span class="ruby-node">&quot;#{col}#{str}#{Colour[:reset]}&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">str</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- colourize_string-source -->
-            
-          </div>
+          </div><!-- colourize_string-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- colourize_string-method -->
+
+    
+      <div id="method-i-colours" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">colours</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get current colour map</p>
           
 
           
-        </div><!-- colourize_string-method -->
-
-      
-        <div id="colours-method" class="method-detail ">
-          <a name="method-i-colours"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">colours</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p>Get current colour map</p>
-            
-
-            
-            <div class="method-source-code" id="colours-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/colours.rb, line 203</span>
+          <div class="method-source-code" id="colours-source">
+            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 203</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">colours</span>
   <span class="ruby-ivar">@colours</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">DEFAULT_COLOURS</span>.<span class="ruby-identifier">dup</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- colours-source -->
-            
-          </div>
+          </div><!-- colours-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- colours-method -->
+
+    
+      <div id="method-i-colours-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">colours=</span><span
+            class="method-args">(hash)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Set colour map to hash</p>
           
 
           
-        </div><!-- colours-method -->
-
-      
-        <div id="colours-3D-method" class="method-detail ">
-          <a name="method-i-colours-3D"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">colours=</span><span
-              class="method-args">(hash)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p>Set colour map to hash</p>
-            
-
-            
-            <div class="method-source-code" id="colours-3D-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/colours.rb, line 198</span>
+          <div class="method-source-code" id="colours-3D-source">
+            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 198</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">colours=</span>(<span class="ruby-identifier">hash</span>)
   <span class="ruby-ivar">@colours</span> = <span class="ruby-identifier">hash</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- colours-3D-source -->
-            
-          </div>
+          </div><!-- colours-3D-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- colours-3D-method -->
+
+    
+      <div id="method-i-disable" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">disable</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
           
 
           
-        </div><!-- colours-3D-method -->
-
-      
-        <div id="disable-method" class="method-detail ">
-          <a name="method-i-disable"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">disable</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="disable-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/colours.rb, line 101</span>
+          <div class="method-source-code" id="disable-source">
+            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 101</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">disable</span>
   <span class="ruby-identifier">disable_irb</span>
   <span class="ruby-identifier">disable_pp</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- disable-source -->
-            
-          </div>
+          </div><!-- disable-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- disable-method -->
+
+    
+      <div id="method-i-disable_irb" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">disable_irb</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Disable colourized IRb results.</p>
           
 
           
-        </div><!-- disable-method -->
-
-      
-        <div id="disable_irb-method" class="method-detail ">
-          <a name="method-i-disable_irb"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">disable_irb</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p>Disable colourized IRb results.</p>
-            
-
-            
-            <div class="method-source-code" id="disable_irb-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/colours.rb, line 139</span>
+          <div class="method-source-code" id="disable_irb-source">
+            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 139</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">disable_irb</span>
   <span class="ruby-keyword">if</span> <span class="ruby-constant">IRB</span>.<span class="ruby-identifier">const_defined?</span>(<span class="ruby-value">:Inspector</span>)
     <span class="ruby-constant">IRB</span><span class="ruby-operator">::</span><span class="ruby-constant">Inspector</span>.<span class="ruby-identifier">class_eval</span> {
@@ -426,36 +385,33 @@
     }
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- disable_irb-source -->
-            
-          </div>
+          </div><!-- disable_irb-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- disable_irb-method -->
+
+    
+      <div id="method-i-disable_pp" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">disable_pp</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
           
 
           
-        </div><!-- disable_irb-method -->
-
-      
-        <div id="disable_pp-method" class="method-detail ">
-          <a name="method-i-disable_pp"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">disable_pp</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="disable_pp-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/colours.rb, line 185</span>
+          <div class="method-source-code" id="disable_pp-source">
+            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 185</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">disable_pp</span>
   <span class="ruby-constant">PP</span>.<span class="ruby-identifier">class_eval</span> {
     <span class="ruby-keyword">if</span> <span class="ruby-identifier">method_defined?</span>(<span class="ruby-value">:pp_without_colour</span>)
@@ -467,36 +423,33 @@
     <span class="ruby-keyword">end</span>
   }
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- disable_pp-source -->
-            
-          </div>
+          </div><!-- disable_pp-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- disable_pp-method -->
+
+    
+      <div id="method-i-enable_irb" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">enable_irb</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Enable colourized IRb results.</p>
           
 
           
-        </div><!-- disable_pp-method -->
-
-      
-        <div id="enable_irb-method" class="method-detail ">
-          <a name="method-i-enable_irb"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">enable_irb</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p>Enable colourized IRb results.</p>
-            
-
-            
-            <div class="method-source-code" id="enable_irb-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/colours.rb, line 107</span>
+          <div class="method-source-code" id="enable_irb-source">
+            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 107</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">enable_irb</span>
   <span class="ruby-keyword">if</span> <span class="ruby-constant">IRB</span>.<span class="ruby-identifier">const_defined?</span>(<span class="ruby-value">:Inspector</span>)
     <span class="ruby-constant">IRB</span><span class="ruby-operator">::</span><span class="ruby-constant">Inspector</span>.<span class="ruby-identifier">class_eval</span> {
@@ -527,36 +480,33 @@
     }
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- enable_irb-source -->
-            
-          </div>
+          </div><!-- enable_irb-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- enable_irb-method -->
+
+    
+      <div id="method-i-enable_pp" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">enable_pp</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
           
 
           
-        </div><!-- enable_irb-method -->
-
-      
-        <div id="enable_pp-method" class="method-detail ">
-          <a name="method-i-enable_pp"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">enable_pp</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="enable_pp-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/colours.rb, line 155</span>
+          <div class="method-source-code" id="enable_pp-source">
+            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 155</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">enable_pp</span>
   <span class="ruby-identifier">require</span> <span class="ruby-string">'pp'</span>
 
@@ -586,134 +536,122 @@
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- enable_pp-source -->
-            
-          </div>
+          </div><!-- enable_pp-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- enable_pp-method -->
+
+    
+      <div id="method-i-init" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">init</span><span
+            class="method-args">(opt = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
           
 
           
-        </div><!-- enable_pp-method -->
-
-      
-        <div id="init-method" class="method-detail ">
-          <a name="method-i-init"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">init</span><span
-              class="method-args">(opt = {})</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="init-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/colours.rb, line 94</span>
+          <div class="method-source-code" id="init-source">
+            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 94</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">init</span>(<span class="ruby-identifier">opt</span> = {})
   <span class="ruby-identifier">enable_irb</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Brice</span>.<span class="ruby-identifier">opt</span>(<span class="ruby-identifier">opt</span>, <span class="ruby-value">:irb</span>, <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">tty?</span>)
   <span class="ruby-identifier">enable_pp</span>  <span class="ruby-keyword">if</span> <span class="ruby-constant">Brice</span>.<span class="ruby-identifier">opt</span>(<span class="ruby-identifier">opt</span>, <span class="ruby-value">:pp</span>,  <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">tty?</span>)
 
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">colours</span> = <span class="ruby-constant">Brice</span>.<span class="ruby-identifier">opt</span>(<span class="ruby-identifier">opt</span>, <span class="ruby-value">:colours</span>, <span class="ruby-identifier">colours</span>)
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- init-source -->
-            
-          </div>
+          </div><!-- init-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- init-method -->
+
+    
+      <div id="method-i-inspect_value_with_colour" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inspect_value_with_colour</span><span
+            class="method-args">(value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
           
 
           
-        </div><!-- init-method -->
-
-      
-        <div id="inspect_value_with_colour-method" class="method-detail ">
-          <a name="method-i-inspect_value_with_colour"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">inspect_value_with_colour</span><span
-              class="method-args">(value)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="inspect_value_with_colour-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/colours.rb, line 113</span>
+          <div class="method-source-code" id="inspect_value_with_colour-source">
+            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 113</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">inspect_value_with_colour</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-constant">Colours</span>.<span class="ruby-identifier">colourize</span>(<span class="ruby-identifier">inspect_value_without_colour</span>(<span class="ruby-identifier">value</span>))
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- inspect_value_with_colour-source -->
-            
-          </div>
+          </div><!-- inspect_value_with_colour-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- inspect_value_with_colour-method -->
+
+    
+      <div id="method-i-output_value_with_colour" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">output_value_with_colour</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
           
 
           
-        </div><!-- inspect_value_with_colour-method -->
-
-      
-        <div id="output_value_with_colour-method" class="method-detail ">
-          <a name="method-i-output_value_with_colour"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">output_value_with_colour</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="output_value_with_colour-source">
-<pre>
-<span class="ruby-comment"># File lib/brice/colours.rb, line 125</span>
+          <div class="method-source-code" id="output_value_with_colour-source">
+            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 125</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">output_value_with_colour</span>
   <span class="ruby-identifier">value</span> = <span class="ruby-ivar">@context</span>.<span class="ruby-identifier">last_value</span>
   <span class="ruby-identifier">value</span> = <span class="ruby-constant">Colours</span>.<span class="ruby-identifier">colourize</span>(<span class="ruby-identifier">value</span>.<span class="ruby-identifier">inspect</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@context</span>.<span class="ruby-identifier">inspect?</span>
 
   <span class="ruby-identifier">printf</span>(<span class="ruby-ivar">@context</span>.<span class="ruby-identifier">return_format</span>, <span class="ruby-identifier">value</span>)
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- output_value_with_colour-source -->
-            
-          </div>
-
+          </div><!-- output_value_with_colour-source -->
           
+        </div>
 
-          
-        </div><!-- output_value_with_colour-method -->
+        
 
-      
-      </div><!-- public-instance-method-details -->
+        
+      </div><!-- output_value_with_colour-method -->
+
     
-    </div><!-- 5Buntitled-5D -->
+    </section><!-- public-instance-method-details -->
   
+  </section><!-- 5Buntitled-5D -->
 
-  </div><!-- documentation -->
+</div><!-- documentation -->
 
-  <div id="validator-badges">
-    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
-    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
-      Rdoc Generator</a> 2</small>.</p>
-  </div>
 
-</body>
-</html>
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
 
