@@ -10,11 +10,13 @@ brice 'prompt' => nil do |config|
       }
     }
 
-    alias_method :_brice_original_evaluate, :evaluate
+    if Object.const_defined?(:Benchmark)
+      alias_method :_brice_original_evaluate, :evaluate
 
-    # Capture execution time
-    def evaluate(line, line_no)
-      @runtime = Benchmark.realtime { _brice_original_evaluate(line, line_no) }
+      # Capture execution time
+      def evaluate(*args)
+        @runtime = Benchmark.realtime { _brice_original_evaluate(*args) }
+      end
     end
   end
 
@@ -30,18 +32,21 @@ brice 'prompt' => nil do |config|
   prefix = "#{RUBY_VERSION}"
   prefix << "p#{RUBY_PATCHLEVEL}" if defined?(RUBY_PATCHLEVEL)
 
+  prompt_return = Object.const_defined?(:Benchmark) ?
+    lambda { |rt| "#{rt} => %s\n" } : "=> %s\n"
+
   IRB.conf[:PROMPT].update(
     :BRICE_SIMPLE => {
       :PROMPT_I => '  ',
       :PROMPT_S => '  ',
       :PROMPT_C => '  ',
-      :RETURN   => lambda { |rt| "#{rt} => %s\n" }
+      :RETURN   => prompt_return
     },
     :BRICE_VERBOSE => {
       :PROMPT_I => "#{prefix}> ",
       :PROMPT_S => "#{prefix}> ",
       :PROMPT_C => "#{prefix}> ",
-      :RETURN   => lambda { |rt| "#{rt} => %s\n" }
+      :RETURN   => prompt_return
     }
   )
 
