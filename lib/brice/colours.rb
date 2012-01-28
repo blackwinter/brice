@@ -3,7 +3,7 @@
 #                                                                             #
 # A component of brice, the extra cool IRb goodness donator                   #
 #                                                                             #
-# Copyright (C) 2008-2011 Jens Wille                                          #
+# Copyright (C) 2008-2012 Jens Wille                                          #
 #                                                                             #
 # Authors:                                                                    #
 #     Jens Wille <jens.wille@uni-koeln.de>                                    #
@@ -29,6 +29,10 @@ require 'brice'
 module Brice
 
   # Add colour support to IRb.
+  #
+  # Set your own colours with <tt>config.colours.opt = { :colours => { ... } }</tt>
+  # or modify the default scheme (DEFAULT_COLOURS) with <tt>config.colours.opt =
+  # { :colours => Brice::Colours::DEFAULT_COLOURS.merge(...) }</tt>.
 
   module Colours
 

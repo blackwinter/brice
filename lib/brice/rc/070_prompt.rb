@@ -1,4 +1,4 @@
-# Prompt configuration
+# Configure the IRb prompt
 
 brice 'prompt' => nil do |config|
 

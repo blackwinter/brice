@@ -1,8 +1,8 @@
-# Load AddedMethods[http://added_methods.rubyforge.org/] if one
-# (or both) of the following environment variables has been set:
+# Load AddedMethods[http://blackwinter.github.com/added_methods] if
+# one (or both) of the following environment variables has been set:
 #
-# <tt>WATCH_FOR_ADDED_METHODS</tt>::    Regular expression or <tt>true</tt>
-# <tt>WATCH_FOR_ADDED_METHODS_IN</tt>:: Space- or comma-delimited list of class names
+# +WATCH_FOR_ADDED_METHODS+::    Regular expression or +true+
+# +WATCH_FOR_ADDED_METHODS_IN+:: Space- or comma-delimited list of class names
 
 brice 'added_methods' do |config|
 

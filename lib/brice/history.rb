@@ -3,7 +3,7 @@
 #                                                                             #
 # A component of brice, the extra cool IRb goodness donator                   #
 #                                                                             #
-# Copyright (C) 2008-2011 Jens Wille                                          #
+# Copyright (C) 2008-2012 Jens Wille                                          #
 #                                                                             #
 # Authors:                                                                    #
 #     Jens Wille <jens.wille@uni-koeln.de>                                    #
@@ -29,6 +29,18 @@ require 'brice'
 module Brice
 
   # IRb history support.
+  #
+  # Configure with <tt>config.history.opt = { ... }</tt>, where the following
+  # keys are recognized (see DEFAULTS):
+  #
+  # <tt>:path</tt>::  The path to your +.irb_history+ file.
+  # <tt>:size</tt>::  The number of entries to keep in the history file.
+  # <tt>:perms</tt>:: The mode to open the history file with.
+  # <tt>:uniq</tt>::  Whether only unique history entries shall be saved.
+  #                   May also be <tt>:reverse</tt> to keep the most recent
+  #                   ones.
+  # <tt>:merge</tt>:: Whether to preserve, i.e. merge, the history across
+  #                   overlapping sessions.
 
   class History
 

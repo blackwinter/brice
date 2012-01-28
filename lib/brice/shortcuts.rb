@@ -3,7 +3,7 @@
 #                                                                             #
 # A component of brice, the extra cool IRb goodness donator                   #
 #                                                                             #
-# Copyright (C) 2008-2011 Jens Wille                                          #
+# Copyright (C) 2008-2012 Jens Wille                                          #
 #                                                                             #
 # Authors:                                                                    #
 #     Jens Wille <jens.wille@uni-koeln.de>                                    #
@@ -30,6 +30,11 @@ require 'brice'
 module Brice
 
   # Convenient shortcut methods.
+  #
+  # Set <tt>config.shortcuts.opt = { :object => false }</tt> to disable
+  # ObjectShortcuts, or <tt>config.shortcuts.opt = { :ri => false }</tt>
+  # to disable #ri shortcuts.
+
   module Shortcuts
 
     extend self

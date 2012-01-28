@@ -7,12 +7,13 @@ This documentation refers to brice version 0.2.3
 
 == DESCRIPTION
 
-Enhances your IRb experience by adding new functionality and by providing
-a framework that you can utilize to add your own extensions. It comes with
-a set of pre-selected features (see the files in {lib/rc}[link:../lib/rc]),
-but is highly configurable in that regard.
+Enhances your IRb experience by adding new functionality and by
+providing a framework that you can utilize to add your own extensions.
+It comes with a set of pre-selected features (see the files in
+{lib/brice/rc}[link:../lib/brice/rc]), but is highly configurable
+in that regard.
 
-Add this to your <tt>.irbrc</tt> and receive the default goodness:
+Add this to your <tt>~/.irbrc</tt> and receive the default goodness:
 
   require 'rubygems'
   require 'brice/init'  # equivalent to: require 'brice'; Brice.init
@@ -35,6 +36,32 @@ Please note that further changes to the configuration for brice can't be
 guaranteed to have any effect after <tt>Brice.init</tt> has been called.
 
 
+== DEFAULT FEATURES
+
++added_methods+:: Loads AddedMethods[http://blackwinter.github.com/added_methods]
+                  if one (or both) of the following environment variables has
+                  been set:
+
+                  +WATCH_FOR_ADDED_METHODS+::    Regular expression or +true+
+                  +WATCH_FOR_ADDED_METHODS_IN+:: Space- or comma-delimited list of class names
++libs+::          Loads libraries, either a set of default ones or those you
+                  configure with <tt>config.libs = %w[...]</tt>.
++history+::       Configures IRb history support. See Brice::History for more
+                  information.
++colours+::       Configures IRb colour support. See Brice::Colours for more
+                  information.
++shortcuts+::     Includes convenient shortcut methods. See Brice::Shortcuts
+                  and Brice::Shortcuts::ObjectShortcuts for more information.
++init+::          Does some basic initialization for IRb.
++prompt+::        Configures the IRb prompt, providing <tt>:BRICE_SIMPLE</tt>
+                  and <tt>:BRICE_VERBOSE</tt> prompt modes.
++rails+::         Provides some Rails settings, such as adding the
+                  <tt>:BRICE_RAILS</tt> prompt mode, setting the Rails logger
+                  to +STDOUT+, and defining convenience accessors for your
+                  models.
++devel+::         Provides some useful settings when developing Ruby libraries.
+
+
 == LINKS
 
 <b></b>
@@ -50,7 +77,7 @@ RubyForge project:: http://rubyforge.org/projects/prometheus
 
 == LICENSE AND COPYRIGHT
 
-Copyright (C) 2008-2011 Jens Wille
+Copyright (C) 2008-2012 Jens Wille
 
 brice is free software: you can redistribute it and/or modify it under the
 terms of the GNU Affero General Public License as published by the Free
