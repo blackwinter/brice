@@ -3,7 +3,7 @@
 #                                                                             #
 # A component of brice, the extra cool IRb goodness donator                   #
 #                                                                             #
-# Copyright (C) 2008-2011 Jens Wille                                          #
+# Copyright (C) 2008-2012 Jens Wille                                          #
 #                                                                             #
 # Authors:                                                                    #
 #     Jens Wille <jens.wille@uni-koeln.de>                                    #
@@ -62,21 +62,22 @@ module Brice
     alias_method :define_irb_method, :irb_def
 
     # call-seq:
-    #   brice_rescue(what, args = [], error = Exception)
+    #   brice_rescue(what[, args[, error[, quiet]]])
     #
     # Call +what+ with +args+ and rescue potential +error+, optionally
     # executing block in case of success. Gives a nicer error location
-    # instead of the full backtrace.
+    # instead of the full backtrace. Doesn't warn about any errors when
+    # +quiet+ is +true+.
     #
     # Returns either the result of the executed method or of the block.
-    def brice_rescue(what, args = [], error = Exception)
+    def brice_rescue(what, args = [], error = Exception, quiet = Brice.quiet)
       res = send(what, *args)
 
       block_given? ? yield : res
     rescue Exception => err
       raise unless err.is_a?(error)
 
-      unless Brice.quiet
+      unless quiet
         # FIXME: ideally, we'd want the __FILE__ and __LINE__ of the
         # rc file where the error occurred.
         location = caller.find { |c| c !~ %r{(?:\A|/)lib/brice[/.]} }
@@ -89,25 +90,29 @@ module Brice
     end
 
     # call-seq:
-    #   brice_require(string)
+    #   brice_require(string[, quiet])
+    #   brice_require(string[, quiet]) { ... }
     #
     # Kernel#require the library named +string+ and optionally execute
-    # block in case of success.
+    # the block in case of success. Doesn't warn about load errors when
+    # +quiet+ is +true+.
     #
     # Returns either the result of the executed method or of the block.
-    def brice_require(string, &block)
-      brice_rescue(:require, [string], LoadError, &block)
+    def brice_require(string, quiet = Brice.quiet, &block)
+      brice_rescue(:require, [string], LoadError, quiet, &block)
     end
 
     # call-seq:
-    #   brice_load(filename, wrap = false)
+    #   brice_load(filename[, wrap[, quiet]])
+    #   brice_load(filename[, wrap[, quiet]]) { ... }
     #
-    # Kernel#load the file named +filename+ and optionally execute
-    # block in case of success.
+    # Kernel#load the file named +filename+ with argument +wrap+ and
+    # optionally execute the block in case of success. Doesn't warn
+    # about load errors when +quiet+ is +true+.
     #
     # Returns either the result of the executed method or of the block.
-    def brice_load(filename, wrap = false, &block)
-      brice_rescue(:load, [filename, wrap], &block)
+    def brice_load(filename, wrap = false, quiet = Brice.quiet, &block)
+      brice_rescue(:load, [filename, wrap], Exception, quiet, &block)
     end
 
     # call-seq:
