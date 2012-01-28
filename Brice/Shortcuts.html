@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>Module: Brice::Shortcuts</title>
+<title>module Brice::Shortcuts - brice Application documentation (v0.2.4)</title>
 
 <link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
 
@@ -142,6 +142,11 @@
     
 <p>Convenient shortcut methods.</p>
 
+<p>Set <code>config.shortcuts.opt = { :object =&gt; false }</code> to disable
+<a href="Shortcuts/ObjectShortcuts.html">ObjectShortcuts</a>, or
+<code>config.shortcuts.opt = { :ri =&gt; false }</code> to disable <a
+href="Shortcuts.html#method-i-ri">ri</a> shortcuts.</p>
+
   </div><!-- description -->
 
   
@@ -178,7 +183,7 @@
 
           
           <div class="method-source-code" id="init-source">
-            <pre><span class="ruby-comment"># File lib/brice/shortcuts.rb, line 37</span>
+            <pre><span class="ruby-comment"># File lib/brice/shortcuts.rb, line 42</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">init</span>(<span class="ruby-identifier">opt</span> = {})
   <span class="ruby-identifier">init_object</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Brice</span>.<span class="ruby-identifier">opt</span>(<span class="ruby-identifier">opt</span>, <span class="ruby-value">:object</span>)
   <span class="ruby-identifier">init_ri</span>     <span class="ruby-keyword">if</span> <span class="ruby-constant">Brice</span>.<span class="ruby-identifier">opt</span>(<span class="ruby-identifier">opt</span>, <span class="ruby-value">:ri</span>)
@@ -209,7 +214,7 @@
 
           
           <div class="method-source-code" id="init_object-source">
-            <pre><span class="ruby-comment"># File lib/brice/shortcuts.rb, line 42</span>
+            <pre><span class="ruby-comment"># File lib/brice/shortcuts.rb, line 47</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">init_object</span>
   <span class="ruby-constant">Object</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:include</span>, <span class="ruby-constant">ObjectShortcuts</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -239,7 +244,7 @@
 
           
           <div class="method-source-code" id="init_ri-source">
-            <pre><span class="ruby-comment"># File lib/brice/shortcuts.rb, line 46</span>
+            <pre><span class="ruby-comment"># File lib/brice/shortcuts.rb, line 51</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">init_ri</span>
   <span class="ruby-constant">Module</span>.<span class="ruby-identifier">class_eval</span> {
     <span class="ruby-keyword">def</span> <span class="ruby-identifier">ri</span>(*<span class="ruby-identifier">args</span>)
@@ -247,13 +252,13 @@
     <span class="ruby-keyword">end</span>
 
     <span class="ruby-keyword">def</span> <span class="ruby-identifier">ri!</span>(*<span class="ruby-identifier">args</span>)
-      <span class="ruby-identifier">opts</span>, <span class="ruby-identifier">args</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">partition</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/\A--/</span> }
+      <span class="ruby-identifier">opts</span>, <span class="ruby-identifier">args</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">partition</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r\A--/</span> }
 
       <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">map!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span>
         <span class="ruby-identifier">arg</span>, <span class="ruby-identifier">method</span> = <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-keyword">nil</span>
 
         <span class="ruby-identifier">delim</span> = [[<span class="ruby-string">'#'</span>, <span class="ruby-value">:instance_method</span>], [<span class="ruby-string">'::'</span>, <span class="ruby-value">:method</span>]].<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>, <span class="ruby-identifier">m</span><span class="ruby-operator">|</span>
-          <span class="ruby-identifier">match</span>  = <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-node">/\A#{i}/</span>, <span class="ruby-string">''</span>)
+          <span class="ruby-identifier">match</span>  = <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-node">%r\A#{i}/</span>, <span class="ruby-string">''</span>)
           <span class="ruby-identifier">method</span> = <span class="ruby-keyword">begin</span>; <span class="ruby-identifier">send</span>(<span class="ruby-identifier">m</span>, <span class="ruby-identifier">arg</span>); <span class="ruby-keyword">rescue</span> <span class="ruby-constant">NameError</span>; <span class="ruby-keyword">end</span>
 
           <span class="ruby-keyword">break</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">match</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">method</span>
@@ -297,7 +302,7 @@
 
           
           <div class="method-source-code" id="ri-source">
-            <pre><span class="ruby-comment"># File lib/brice/shortcuts.rb, line 48</span>
+            <pre><span class="ruby-comment"># File lib/brice/shortcuts.rb, line 53</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">ri</span>(*<span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">ri!</span>(<span class="ruby-string">'--no-pager'</span>, *<span class="ruby-identifier">args</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -327,15 +332,15 @@
 
           
           <div class="method-source-code" id="ri-21-source">
-            <pre><span class="ruby-comment"># File lib/brice/shortcuts.rb, line 52</span>
+            <pre><span class="ruby-comment"># File lib/brice/shortcuts.rb, line 57</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">ri!</span>(*<span class="ruby-identifier">args</span>)
-  <span class="ruby-identifier">opts</span>, <span class="ruby-identifier">args</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">partition</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/\A--/</span> }
+  <span class="ruby-identifier">opts</span>, <span class="ruby-identifier">args</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">partition</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r\A--/</span> }
 
   <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">map!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">arg</span>, <span class="ruby-identifier">method</span> = <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-keyword">nil</span>
 
     <span class="ruby-identifier">delim</span> = [[<span class="ruby-string">'#'</span>, <span class="ruby-value">:instance_method</span>], [<span class="ruby-string">'::'</span>, <span class="ruby-value">:method</span>]].<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>, <span class="ruby-identifier">m</span><span class="ruby-operator">|</span>
-      <span class="ruby-identifier">match</span>  = <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-node">/\A#{i}/</span>, <span class="ruby-string">''</span>)
+      <span class="ruby-identifier">match</span>  = <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-node">%r\A#{i}/</span>, <span class="ruby-string">''</span>)
       <span class="ruby-identifier">method</span> = <span class="ruby-keyword">begin</span>; <span class="ruby-identifier">send</span>(<span class="ruby-identifier">m</span>, <span class="ruby-identifier">arg</span>); <span class="ruby-keyword">rescue</span> <span class="ruby-constant">NameError</span>; <span class="ruby-keyword">end</span>
 
       <span class="ruby-keyword">break</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">match</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">method</span>
@@ -365,7 +370,7 @@
 
 <footer id="validator-badges">
   <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
   <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
 </footer>
 

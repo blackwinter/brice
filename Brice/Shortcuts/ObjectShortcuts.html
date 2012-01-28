@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>Module: Brice::Shortcuts::ObjectShortcuts</title>
+<title>module Brice::Shortcuts::ObjectShortcuts - brice Application documentation (v0.2.4)</title>
 
 <link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
 
@@ -177,13 +177,13 @@ href="http://rubyforge.org/snippet/detail.php?type=snippet&id=22">rubyforge.org/
 
           
           <div class="method-source-code" id="aorta-source">
-            <pre><span class="ruby-comment"># File lib/brice/shortcuts.rb, line 117</span>
+            <pre><span class="ruby-comment"># File lib/brice/shortcuts.rb, line 122</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">aorta</span>(<span class="ruby-identifier">obj</span> = <span class="ruby-keyword">self</span>, <span class="ruby-identifier">editor</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-identifier">tempfile</span> = <span class="ruby-constant">Tempfile</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'aorta'</span>)
   <span class="ruby-constant">YAML</span>.<span class="ruby-identifier">dump</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-identifier">tempfile</span>)
   <span class="ruby-identifier">tempfile</span>.<span class="ruby-identifier">close</span>
 
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">editor</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">which_command</span>(<span class="ruby-node">]
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">editor</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">which_command</span>(<span class="ruby-node">%W[
     #{ENV['VISUAL']}
     #{ENV['EDITOR']}
     /usr/bin/sensible-editor
@@ -228,7 +228,7 @@ href="http://rubyforge.org/snippet/detail.php?type=snippet&id=22">rubyforge.org/
 
           
           <div class="method-source-code" id="cgrep-source">
-            <pre><span class="ruby-comment"># File lib/brice/shortcuts.rb, line 82</span>
+            <pre><span class="ruby-comment"># File lib/brice/shortcuts.rb, line 87</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">cgrep</span>(<span class="ruby-identifier">needle</span>)
   <span class="ruby-identifier">needle</span> = <span class="ruby-node">%r{#{Regexp.escape(needle)}}</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">needle</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Regexp</span>)
   <span class="ruby-identifier">klass</span> = <span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Class</span>) <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>
@@ -271,7 +271,7 @@ href="http://rubyforge.org/snippet/detail.php?type=snippet&id=22">rubyforge.org/
 
           
           <div class="method-source-code" id="mgrep-source">
-            <pre><span class="ruby-comment"># File lib/brice/shortcuts.rb, line 99</span>
+            <pre><span class="ruby-comment"># File lib/brice/shortcuts.rb, line 104</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">mgrep</span>(<span class="ruby-identifier">needle</span>)
   <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">grep</span>(
     <span class="ruby-identifier">needle</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Regexp</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">needle</span> <span class="ruby-operator">:</span> <span class="ruby-node">%r{#{Regexp.escape(needle)}}</span>
@@ -304,7 +304,7 @@ class Object)</p>
 
           
           <div class="method-source-code" id="po-source">
-            <pre><span class="ruby-comment"># File lib/brice/shortcuts.rb, line 107</span>
+            <pre><span class="ruby-comment"># File lib/brice/shortcuts.rb, line 112</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">po</span>(<span class="ruby-identifier">obj</span> = <span class="ruby-keyword">self</span>)
   <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">methods</span>.<span class="ruby-identifier">sort</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Object</span>.<span class="ruby-identifier">methods</span>
 <span class="ruby-keyword">end</span></pre>
@@ -334,7 +334,7 @@ class Object)</p>
 
           
           <div class="method-source-code" id="poc-source">
-            <pre><span class="ruby-comment"># File lib/brice/shortcuts.rb, line 112</span>
+            <pre><span class="ruby-comment"># File lib/brice/shortcuts.rb, line 117</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">poc</span>(<span class="ruby-identifier">obj</span> = <span class="ruby-keyword">self</span>)
   <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">constants</span>.<span class="ruby-identifier">sort</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:constants</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -357,7 +357,7 @@ class Object)</p>
 
 <footer id="validator-badges">
   <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
   <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
 </footer>
 
