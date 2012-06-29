@@ -7,8 +7,9 @@ brice 'prompt' => nil do |config|
       alias_method "_brice_original_#{name}", name
 
       define_method(name) {
-        ivar = instance_variable_get("@#{name}")
-        ivar.respond_to?(:call) ? ivar['%.4f' % @runtime ||= 0] : ivar
+        (v = instance_variable_get("@#{name}")).respond_to?(:call) ? v[
+          (t = @_brice_tms) ? '%.4f (%.4f)' % [t.total, t.real] : 'n/a'
+        ] : v
       }
     }
 
@@ -16,8 +17,8 @@ brice 'prompt' => nil do |config|
       alias_method :_brice_original_evaluate, :evaluate
 
       # Capture execution time
-      def evaluate(*args)
-        @runtime = Benchmark.realtime { _brice_original_evaluate(*args) }
+      def evaluate(*a)
+        @_brice_tms = Benchmark.measure { _brice_original_evaluate(*a) }
       end
     end
   end
