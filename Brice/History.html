@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>class Brice::History - brice Application documentation (v0.2.4)</title>
+<title>class Brice::History - brice Application documentation (v0.2.5)</title>
 
 <link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
 
@@ -332,7 +332,7 @@ href="History.html#DEFAULTS">DEFAULTS</a>):</p>
   <span class="ruby-ivar">@libedit</span> = <span class="ruby-keyword">begin</span>
     <span class="ruby-constant">Readline</span>.<span class="ruby-identifier">emacs_editing_mode</span>
     <span class="ruby-keyword">true</span>
-  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">NotImplementedError</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">NotImplementedError</span>, <span class="ruby-constant">NoMethodError</span>
     <span class="ruby-keyword">false</span>
   <span class="ruby-keyword">end</span>
 

@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>class IRB::Context - brice Application documentation (v0.2.4)</title>
+<title>class IRB::Context - brice Application documentation (v0.2.5)</title>
 
 <link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
 
@@ -162,7 +162,7 @@
         
         <div class="method-heading">
           <span class="method-name">evaluate</span><span
-            class="method-args">(*args)</span>
+            class="method-args">(*a)</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
         
@@ -174,9 +174,9 @@
 
           
           <div class="method-source-code" id="evaluate-source">
-            <pre><span class="ruby-comment"># File lib/brice/rc/070_prompt.rb, line 17</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">evaluate</span>(*<span class="ruby-identifier">args</span>)
-  <span class="ruby-ivar">@runtime</span> = <span class="ruby-constant">Benchmark</span>.<span class="ruby-identifier">realtime</span> { <span class="ruby-identifier">_brice_original_evaluate</span>(*<span class="ruby-identifier">args</span>) }
+            <pre><span class="ruby-comment"># File lib/brice/rc/070_prompt.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">evaluate</span>(*<span class="ruby-identifier">a</span>)
+  <span class="ruby-ivar">@_brice_tms</span> = <span class="ruby-constant">Benchmark</span>.<span class="ruby-identifier">measure</span> { <span class="ruby-identifier">_brice_original_evaluate</span>(*<span class="ruby-identifier">a</span>) }
 <span class="ruby-keyword">end</span></pre>
           </div><!-- evaluate-source -->
           
