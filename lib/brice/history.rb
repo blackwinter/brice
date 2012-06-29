@@ -75,7 +75,7 @@ module Brice
       @libedit = begin
         Readline.emacs_editing_mode
         true
-      rescue NotImplementedError
+      rescue NotImplementedError, NoMethodError
         false
       end
 
