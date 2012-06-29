@@ -4,6 +4,8 @@ brice 'prompt' => nil do |config|
 
   class IRB::Context
     %w[prompt_i prompt_s prompt_c prompt_n return_format].each { |name|
+      alias_method "_brice_original_#{name}", name
+
       define_method(name) {
         ivar = instance_variable_get("@#{name}")
         ivar.respond_to?(:call) ? ivar['%.4f' % @runtime ||= 0] : ivar
