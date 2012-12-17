@@ -53,7 +53,7 @@ module Brice
     # Define a method for use inside the IRb session.
     def irb_def(symbol, method = nil, &block)
       irb_rc {
-        Object.instance_eval {
+        IRB::ExtendCommandBundle.class_eval {
           define_method(symbol, method || block)
         }
       }
