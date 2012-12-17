@@ -79,7 +79,7 @@ brice 'rails' => nil do |config|
 
         klass
       rescue NameError
-        super
+        super(method, *args)
       end
     }
   end
