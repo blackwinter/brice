@@ -74,19 +74,21 @@ module Brice
       res = send(what, *args)
 
       block_given? ? yield : res
-    rescue Exception => err
-      raise unless err.is_a?(error)
+    rescue error => err
+      return if quiet
 
-      unless quiet
-        # FIXME: ideally, we'd want the __FILE__ and __LINE__ of the
-        # rc file where the error occurred.
-        location = caller.find { |c| c !~ %r{(?:\A|/)lib/brice[/.]} }
-        warn "#{err.class}: #{err} [#{location}]"
+      # ideally, we'd want the __FILE__ and __LINE__
+      # of the rc file where the error occurred.
+      location = caller.find { |c|
+        c =~ %r{(?:\A|/)lib/brice/rc/} ||
+        c !~ %r{(?:\A|/)lib/brice[/.]}
+      }
 
-        warn err.backtrace.map { |line|
-          "        from #{line}"
-        }.join("\n") if Brice.verbose
-      end
+      warn "#{err.class}: #{err} [#{location}]"
+
+      warn err.backtrace.map { |line|
+        "        from #{line}"
+      }.join("\n") if Brice.verbose
     end
 
     # call-seq:
