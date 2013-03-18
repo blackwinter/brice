@@ -42,7 +42,7 @@ module Brice
   BRICE_HOME = File.join(ENV.user_home, '.brice')
 
   @verbose = false
-  @quiet   = false
+  @quiet   = true
 
   extend self
   include DSL
