@@ -2,7 +2,7 @@
 
 == VERSION
 
-This documentation refers to brice version 0.2.6
+This documentation refers to brice version 0.2.7
 
 
 == DESCRIPTION
@@ -77,7 +77,7 @@ RubyForge project:: http://rubyforge.org/projects/prometheus
 
 == LICENSE AND COPYRIGHT
 
-Copyright (C) 2008-2012 Jens Wille
+Copyright (C) 2008-2013 Jens Wille
 
 brice is free software: you can redistribute it and/or modify it under the
 terms of the GNU Affero General Public License as published by the Free

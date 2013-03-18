@@ -3,7 +3,7 @@
 #                                                                             #
 # brice -- Extra cool IRb goodness for the masses                             #
 #                                                                             #
-# Copyright (C) 2008-2011 Jens Wille                                          #
+# Copyright (C) 2008-2013 Jens Wille                                          #
 #                                                                             #
 # Authors:                                                                    #
 #     Jens Wille <jens.wille@gmail.com>                                       #
