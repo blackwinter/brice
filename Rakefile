@@ -13,7 +13,7 @@ begin
       :version      => Brice::VERSION,
       :summary      => %q{Extra cool IRb goodness for the masses},
       :author       => %q{Jens Wille},
-      :email        => %q{jens.wille@uni-koeln.de},
+      :email        => %q{jens.wille@gmail.com},
       :dependencies => [['ruby-nuggets', '>= 0.5.2']]
     }
   }}
