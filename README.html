@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>README - brice Application documentation (v0.2.5)</title>
+<title>README - brice Application documentation (v0.2.7)</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -41,6 +41,23 @@
 
   <ul id="search-results" class="initially-hidden"></ul>
 </nav>
+
+
+  
+<div id="table-of-contents">
+  <nav class="section">
+    <h3 class="section-header">Table of Contents</h3>
+    <ul>
+      <li><a href="#label-brice+-+Extra+cool+IRb+goodness+for+the+masses">brice - Extra cool IRb goodness for the masses</a>
+      <li><a href="#label-VERSION">VERSION</a>
+      <li><a href="#label-DESCRIPTION">DESCRIPTION</a>
+      <li><a href="#label-DEFAULT+FEATURES">DEFAULT FEATURES</a>
+      <li><a href="#label-LINKS">LINKS</a>
+      <li><a href="#label-AUTHORS">AUTHORS</a>
+      <li><a href="#label-LICENSE+AND+COPYRIGHT">LICENSE AND COPYRIGHT</a>
+    </ul>
+  </nav>
+</div>
 
 
   <div id="project-metadata">
@@ -101,13 +118,13 @@
 
 <div id="documentation" class="description">
   
-<h1 id="label-brice+-+Extra+cool+IRb+goodness+for+the+masses">brice - Extra cool IRb goodness for the masses</h1>
+<h1 id="label-brice+-+Extra+cool+IRb+goodness+for+the+masses">brice - Extra cool IRb goodness for the masses<span><a href="#label-brice+-+Extra+cool+IRb+goodness+for+the+masses">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
 
-<h2 id="label-VERSION">VERSION</h2>
+<h2 id="label-VERSION">VERSION<span><a href="#label-VERSION">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
-<p>This documentation refers to brice version 0.2.5</p>
+<p>This documentation refers to brice version 0.2.7</p>
 
-<h2 id="label-DESCRIPTION">DESCRIPTION</h2>
+<h2 id="label-DESCRIPTION">DESCRIPTION<span><a href="#label-DESCRIPTION">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
 <p>Enhances your IRb experience by adding new functionality and by providing a
 framework that you can utilize to add your own extensions. It comes with a
@@ -117,14 +134,14 @@ that regard.</p>
 
 <p>Add this to your <code>~/.irbrc</code> and receive the default goodness:</p>
 
-<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'rubygems'</span>
-<span class="ruby-identifier">require</span> <span class="ruby-string">'brice/init'</span>  <span class="ruby-comment"># equivalent to: require 'brice'; Brice.init</span>
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;rubygems&#39;</span>
+<span class="ruby-identifier">require</span> <span class="ruby-string">&#39;brice/init&#39;</span>  <span class="ruby-comment"># equivalent to: require &#39;brice&#39;; Brice.init</span>
 </pre>
 
 <p>Or get some more control over the configuration:</p>
 
-<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'rubygems'</span>
-<span class="ruby-identifier">require</span> <span class="ruby-string">'brice'</span>
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;rubygems&#39;</span>
+<span class="ruby-identifier">require</span> <span class="ruby-string">&#39;brice&#39;</span>
 
 <span class="ruby-constant">Brice</span>.<span class="ruby-identifier">init</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">config</span><span class="ruby-operator">|</span>
   <span class="ruby-operator">...</span>
@@ -138,11 +155,11 @@ configure, and how.</p>
 <code>~/.brice</code> directory. See <a
 href="Brice/DSL.html">Brice::DSL</a> for helpers provided.</p>
 
-<p>Please note that further changes to the configuration for brice can’t be
-guaranteed to have any effect after <code>Brice.init</code> has been
+<p>Please note that further changes to the configuration for brice can&#39;t
+be guaranteed to have any effect after <code>Brice.init</code> has been
 called.</p>
 
-<h2 id="label-DEFAULT+FEATURES">DEFAULT FEATURES</h2>
+<h2 id="label-DEFAULT+FEATURES">DEFAULT FEATURES<span><a href="#label-DEFAULT+FEATURES">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 <dl class="rdoc-list note-list"><dt>added_methods
 <dd>
 <p>Loads <a
@@ -190,7 +207,7 @@ convenience accessors for your models.</p>
 <p>Provides some useful settings when developing Ruby libraries.</p>
 </dd></dl>
 
-<h2 id="label-LINKS">LINKS</h2>
+<h2 id="label-LINKS">LINKS<span><a href="#label-LINKS">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
 <p></p>
 <dl class="rdoc-list note-list"><dt>Documentation
@@ -207,15 +224,15 @@ href="http://github.com/blackwinter/brice">github.com/blackwinter/brice</a></p>
 href="http://rubyforge.org/projects/prometheus">rubyforge.org/projects/prometheus</a></p>
 </dd></dl>
 
-<h2 id="label-AUTHORS">AUTHORS</h2>
+<h2 id="label-AUTHORS">AUTHORS<span><a href="#label-AUTHORS">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 <ul><li>
 <p>Jens Wille &lt;<a
-href="mailto:jens.wille@uni-koeln.de">jens.wille@uni-koeln.de</a>&gt;</p>
+href="mailto:jens.wille@gmail.com">jens.wille@gmail.com</a>&gt;</p>
 </li></ul>
 
-<h2 id="label-LICENSE+AND+COPYRIGHT">LICENSE AND COPYRIGHT</h2>
+<h2 id="label-LICENSE+AND+COPYRIGHT">LICENSE AND COPYRIGHT<span><a href="#label-LICENSE+AND+COPYRIGHT">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
-<p>Copyright (C) 2008-2012 Jens Wille</p>
+<p>Copyright (C) 2008-2013 Jens Wille</p>
 
 <p>brice is free software: you can redistribute it and/or modify it under the
 terms of the GNU Affero General Public License as published by the Free
@@ -229,7 +246,7 @@ more details.</p>
 
 <p>You should have received a copy of the GNU Affero General Public License
 along with brice. If not, see &lt;<a
-href="http://www.gnu.org/licenses/">www.gnu.org/licenses/</a>&gt;.</p>
+href="http://www.gnu.org/licenses">www.gnu.org/licenses</a>/&gt;.</p>
 
 </div>
 
@@ -237,7 +254,7 @@ href="http://www.gnu.org/licenses/">www.gnu.org/licenses/</a>&gt;.</p>
 
 <footer id="validator-badges">
   <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
   <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
 </footer>
 

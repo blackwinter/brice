@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>module Brice - brice Application documentation (v0.2.5)</title>
+<title>module Brice - brice Application documentation (v0.2.7)</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -43,17 +43,22 @@
 </nav>
 
 
+  
+
   <div id="file-metadata">
     <nav id="file-list-section" class="section">
   <h3 class="section-header">Defined In</h3>
   <ul>
     <li>lib/brice.rb
-    <li>lib/brice/dsl.rb
-    <li>lib/brice/config.rb
     <li>lib/brice/colours.rb
+    <li>lib/brice/config.rb
+    <li>lib/brice/dsl.rb
     <li>lib/brice/history.rb
-    <li>lib/brice/version.rb
+    <li>lib/brice/rc/030_history.rb
+    <li>lib/brice/rc/040_colours.rb
+    <li>lib/brice/rc/050_shortcuts.rb
     <li>lib/brice/shortcuts.rb
+    <li>lib/brice/version.rb
   </ul>
 </nav>
 
@@ -76,33 +81,34 @@
   </ul>
 </nav>
 
+    
     <!-- Method Quickref -->
 <nav id="method-list-section" class="section">
   <h3 class="section-header">Methods</h3>
 
   <ul class="link-list">
     
-    <li><a href="#method-i-config-3D">#config=</a>
+    <li ><a href="#method-i-config-3D">#config=</a>
     
-    <li><a href="#method-i-custom_extensions">#custom_extensions</a>
+    <li ><a href="#method-i-custom_extensions">#custom_extensions</a>
     
-    <li><a href="#method-i-finalize_irb_rc-21">#finalize_irb_rc!</a>
+    <li ><a href="#method-i-finalize_irb_rc-21">#finalize_irb_rc!</a>
     
-    <li><a href="#method-i-find_rc_files">#find_rc_files</a>
+    <li ><a href="#method-i-find_rc_files">#find_rc_files</a>
     
-    <li><a href="#method-i-have-3F">#have?</a>
+    <li ><a href="#method-i-have-3F">#have?</a>
     
-    <li><a href="#method-i-include-3F">#include?</a>
+    <li ><a href="#method-i-include-3F">#include?</a>
     
-    <li><a href="#method-i-init">#init</a>
+    <li ><a href="#method-i-init">#init</a>
     
-    <li><a href="#method-i-load_custom_extensions">#load_custom_extensions</a>
+    <li ><a href="#method-i-load_custom_extensions">#load_custom_extensions</a>
     
-    <li><a href="#method-i-load_rc_files">#load_rc_files</a>
+    <li ><a href="#method-i-load_rc_files">#load_rc_files</a>
     
-    <li><a href="#method-i-opt">#opt</a>
+    <li ><a href="#method-i-opt">#opt</a>
     
-    <li><a href="#method-i-rc_files">#rc_files</a>
+    <li ><a href="#method-i-rc_files">#rc_files</a>
     
   </ul>
 </nav>
@@ -291,6 +297,7 @@
           <p>Set config to <code>config</code>. Raises a TypeError if
 <code>config</code> is not a <a href="Brice/Config.html">Brice::Config</a>.</p>
           
+          
 
           
           <div class="method-source-code" id="config-3D-source">
@@ -330,6 +337,7 @@
           
           <p>Get the custom extension files.</p>
           
+          
 
           
           <div class="method-source-code" id="custom_extensions-source">
@@ -352,11 +360,12 @@
         <div class="method-heading">
           <span class="method-name">have?</span><span
             class="method-args">(package)</span>
-          <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
         <div class="method-description">
+          
           
           
           
@@ -398,6 +407,7 @@
         <div class="method-description">
           
           <p>See whether package <code>package</code> is enabled/included.</p>
+          
           
 
           
@@ -446,6 +456,7 @@
           <p>Initialize <a href="Brice.html">Brice</a> and optionally configure any
 packages.</p>
           
+          
 
           
           <div class="method-source-code" id="init-source">
@@ -454,7 +465,7 @@ packages.</p>
   <span class="ruby-ivar">@irb_rc</span> = []
 
   <span class="ruby-ivar">@config</span> = <span class="ruby-constant">Config</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">rc_files</span>(<span class="ruby-keyword">true</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">rc</span><span class="ruby-operator">|</span>
-    <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">rc</span>, <span class="ruby-string">'.rb'</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">%r\A\d+_/</span>, <span class="ruby-string">''</span>)
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">rc</span>, <span class="ruby-string">&#39;.rb&#39;</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/\A\d+_/</span>, <span class="ruby-string">&#39;&#39;</span>)
   })
 
   <span class="ruby-identifier">options</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
@@ -501,6 +512,7 @@ packages.</p>
           <p>Returns the value of <code>opt</code> at <code>key</code> if present, or
 <code>default</code> otherwise.</p>
           
+          
 
           
           <div class="method-source-code" id="opt-source">
@@ -536,6 +548,7 @@ packages.</p>
           
           <p>Get the extension files, optionally including custom extensions if
 <code>include_custom_extensions</code> is true.</p>
+          
           
 
           
@@ -579,6 +592,7 @@ packages.</p>
           
           <p>Generate proc for IRB_RC from all added procs.</p>
           
+          
 
           
           <div class="method-source-code" id="finalize_irb_rc-21-source">
@@ -616,6 +630,7 @@ packages.</p>
           
           <p>Find the actual extension files in <code>dir</code>.</p>
           
+          
 
           
           <div class="method-source-code" id="find_rc_files-source">
@@ -650,6 +665,7 @@ packages.</p>
         <div class="method-description">
           
           <p>Load the custom extension files.</p>
+          
           
 
           
@@ -690,6 +706,7 @@ packages.</p>
           <p>Load the extension files, optionally including custom extensions if
 <code>include_custom_extensions</code> is true.</p>
           
+          
 
           
           <div class="method-source-code" id="load_rc_files-source">
@@ -723,7 +740,7 @@ packages.</p>
 
 <footer id="validator-badges">
   <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
   <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
 </footer>
 

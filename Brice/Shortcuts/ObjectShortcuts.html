@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>module Brice::Shortcuts::ObjectShortcuts - brice Application documentation (v0.2.5)</title>
+<title>module Brice::Shortcuts::ObjectShortcuts - brice Application documentation (v0.2.7)</title>
 
 <link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
 
@@ -43,6 +43,8 @@
 </nav>
 
 
+  
+
   <div id="file-metadata">
     <nav id="file-list-section" class="section">
   <h3 class="section-header">Defined In</h3>
@@ -58,21 +60,22 @@
     
     
     
+    
     <!-- Method Quickref -->
 <nav id="method-list-section" class="section">
   <h3 class="section-header">Methods</h3>
 
   <ul class="link-list">
     
-    <li><a href="#method-i-aorta">#aorta</a>
+    <li ><a href="#method-i-aorta">#aorta</a>
     
-    <li><a href="#method-i-cgrep">#cgrep</a>
+    <li ><a href="#method-i-cgrep">#cgrep</a>
     
-    <li><a href="#method-i-mgrep">#mgrep</a>
+    <li ><a href="#method-i-mgrep">#mgrep</a>
     
-    <li><a href="#method-i-po">#po</a>
+    <li ><a href="#method-i-po">#po</a>
     
-    <li><a href="#method-i-poc">#poc</a>
+    <li ><a href="#method-i-poc">#poc</a>
     
   </ul>
 </nav>
@@ -165,7 +168,9 @@
         <div class="method-heading">
           <span class="method-name">aorta</span><span
             class="method-args">(obj = self, editor = nil)</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -174,18 +179,19 @@
           <p>Cf. &lt;<a
 href="http://rubyforge.org/snippet/detail.php?type=snippet&id=22">rubyforge.org/snippet/detail.php?type=snippet&id=22</a>&gt;</p>
           
+          
 
           
           <div class="method-source-code" id="aorta-source">
             <pre><span class="ruby-comment"># File lib/brice/shortcuts.rb, line 122</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">aorta</span>(<span class="ruby-identifier">obj</span> = <span class="ruby-keyword">self</span>, <span class="ruby-identifier">editor</span> = <span class="ruby-keyword">nil</span>)
-  <span class="ruby-identifier">tempfile</span> = <span class="ruby-constant">Tempfile</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'aorta'</span>)
+  <span class="ruby-identifier">tempfile</span> = <span class="ruby-constant">Tempfile</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;aorta&#39;</span>)
   <span class="ruby-constant">YAML</span>.<span class="ruby-identifier">dump</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-identifier">tempfile</span>)
   <span class="ruby-identifier">tempfile</span>.<span class="ruby-identifier">close</span>
 
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">editor</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">which_command</span>(<span class="ruby-node">%W[
-    #{ENV['VISUAL']}
-    #{ENV['EDITOR']}
+    #{ENV[&#39;VISUAL&#39;]}
+    #{ENV[&#39;EDITOR&#39;]}
     /usr/bin/sensible-editor
     /usr/bin/xdg-open
     open
@@ -194,7 +200,7 @@ href="http://rubyforge.org/snippet/detail.php?type=snippet&id=22">rubyforge.org/
     <span class="ruby-identifier">system</span>(<span class="ruby-identifier">editor</span>, <span class="ruby-identifier">path</span> = <span class="ruby-identifier">tempfile</span>.<span class="ruby-identifier">path</span>)
     <span class="ruby-keyword">return</span> <span class="ruby-identifier">obj</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">path</span>)
   <span class="ruby-keyword">else</span>
-    <span class="ruby-identifier">warn</span> <span class="ruby-string">'No suitable editor found. Please specify.'</span>
+    <span class="ruby-identifier">warn</span> <span class="ruby-string">&#39;No suitable editor found. Please specify.&#39;</span>
     <span class="ruby-keyword">return</span> <span class="ruby-identifier">obj</span>
   <span class="ruby-keyword">end</span>
 
@@ -217,11 +223,14 @@ href="http://rubyforge.org/snippet/detail.php?type=snippet&id=22">rubyforge.org/
         <div class="method-heading">
           <span class="method-name">cgrep</span><span
             class="method-args">(needle)</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
         <div class="method-description">
+          
           
           
           
@@ -260,11 +269,14 @@ href="http://rubyforge.org/snippet/detail.php?type=snippet&id=22">rubyforge.org/
         <div class="method-heading">
           <span class="method-name">mgrep</span><span
             class="method-args">(needle)</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
         <div class="method-description">
+          
           
           
           
@@ -292,7 +304,9 @@ href="http://rubyforge.org/snippet/detail.php?type=snippet&id=22">rubyforge.org/
         <div class="method-heading">
           <span class="method-name">po</span><span
             class="method-args">(obj = self)</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -300,6 +314,7 @@ href="http://rubyforge.org/snippet/detail.php?type=snippet&id=22">rubyforge.org/
           
           <p>Print object methods, sorted by name. (excluding methods that exist in the
 class Object)</p>
+          
           
 
           
@@ -323,13 +338,16 @@ class Object)</p>
         <div class="method-heading">
           <span class="method-name">poc</span><span
             class="method-args">(obj = self)</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
         <div class="method-description">
           
           <p>Print object constants, sorted by name.</p>
+          
           
 
           
@@ -357,7 +375,7 @@ class Object)</p>
 
 <footer id="validator-badges">
   <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
   <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
 </footer>
 

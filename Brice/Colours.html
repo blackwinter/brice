@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>module Brice::Colours - brice Application documentation (v0.2.5)</title>
+<title>module Brice::Colours - brice Application documentation (v0.2.7)</title>
 
 <link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
 
@@ -43,6 +43,8 @@
 </nav>
 
 
+  
+
   <div id="file-metadata">
     <nav id="file-list-section" class="section">
   <h3 class="section-header">Defined In</h3>
@@ -58,35 +60,36 @@
     
     
     
+    
     <!-- Method Quickref -->
 <nav id="method-list-section" class="section">
   <h3 class="section-header">Methods</h3>
 
   <ul class="link-list">
     
-    <li><a href="#method-i-colourize">#colourize</a>
+    <li ><a href="#method-i-colourize">#colourize</a>
     
-    <li><a href="#method-i-colourize_string">#colourize_string</a>
+    <li ><a href="#method-i-colourize_string">#colourize_string</a>
     
-    <li><a href="#method-i-colours">#colours</a>
+    <li ><a href="#method-i-colours">#colours</a>
     
-    <li><a href="#method-i-colours-3D">#colours=</a>
+    <li ><a href="#method-i-colours-3D">#colours=</a>
     
-    <li><a href="#method-i-disable">#disable</a>
+    <li ><a href="#method-i-disable">#disable</a>
     
-    <li><a href="#method-i-disable_irb">#disable_irb</a>
+    <li ><a href="#method-i-disable_irb">#disable_irb</a>
     
-    <li><a href="#method-i-disable_pp">#disable_pp</a>
+    <li ><a href="#method-i-disable_pp">#disable_pp</a>
     
-    <li><a href="#method-i-enable_irb">#enable_irb</a>
+    <li ><a href="#method-i-enable_irb">#enable_irb</a>
     
-    <li><a href="#method-i-enable_pp">#enable_pp</a>
+    <li ><a href="#method-i-enable_pp">#enable_pp</a>
     
-    <li><a href="#method-i-init">#init</a>
+    <li ><a href="#method-i-init">#init</a>
     
-    <li><a href="#method-i-inspect_value_with_colour">#inspect_value_with_colour</a>
+    <li ><a href="#method-i-inspect_value_with_colour">#inspect_value_with_colour</a>
     
-    <li><a href="#method-i-output_value_with_colour">#output_value_with_colour</a>
+    <li ><a href="#method-i-output_value_with_colour">#output_value_with_colour</a>
     
   </ul>
 </nav>
@@ -157,8 +160,7 @@
 <p>Add colour support to IRb.</p>
 
 <p>Set your own colours with <code>config.colours.opt = { :colours =&gt; { ...
-} }</code> or modify the default scheme (<a
-href="Colours.html#DEFAULT_COLOURS">DEFAULT_COLOURS</a>) with
+} }</code> or modify the default scheme (DEFAULT_COLOURS) with
 <code>config.colours.opt = { :colours =&gt;
 Brice::Colours::DEFAULT_COLOURS.merge(...) }</code>.</p>
 
@@ -205,7 +207,9 @@ Brice::Colours::DEFAULT_COLOURS.merge(...) }</code>.</p>
         <div class="method-heading">
           <span class="method-name">colourize</span><span
             class="method-args">(str)</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -213,12 +217,13 @@ Brice::Colours::DEFAULT_COLOURS.merge(...) }</code>.</p>
           
           <p>Colourize the results of inspect</p>
           
+          
 
           
           <div class="method-source-code" id="colourize-source">
             <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 217</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">colourize</span>(<span class="ruby-identifier">str</span>)
-  <span class="ruby-identifier">res</span> = <span class="ruby-string">''</span>
+  <span class="ruby-identifier">res</span> = <span class="ruby-string">&#39;&#39;</span>
 
   <span class="ruby-constant">Tokenizer</span>.<span class="ruby-identifier">tokenize</span>(<span class="ruby-identifier">str</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">token</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">res</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">colourize_string</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">colours</span>[<span class="ruby-identifier">token</span>])
@@ -243,13 +248,16 @@ Brice::Colours::DEFAULT_COLOURS.merge(...) }</code>.</p>
         <div class="method-heading">
           <span class="method-name">colourize_string</span><span
             class="method-args">(str, colour)</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
         <div class="method-description">
           
           <p>Return a string with the given colour.</p>
+          
           
 
           
@@ -273,13 +281,16 @@ Brice::Colours::DEFAULT_COLOURS.merge(...) }</code>.</p>
         <div class="method-heading">
           <span class="method-name">colours</span><span
             class="method-args">()</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
         <div class="method-description">
           
           <p>Get current colour map</p>
+          
           
 
           
@@ -303,13 +314,16 @@ Brice::Colours::DEFAULT_COLOURS.merge(...) }</code>.</p>
         <div class="method-heading">
           <span class="method-name">colours=</span><span
             class="method-args">(hash)</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
         <div class="method-description">
           
           <p>Set colour map to hash</p>
+          
           
 
           
@@ -333,11 +347,14 @@ Brice::Colours::DEFAULT_COLOURS.merge(...) }</code>.</p>
         <div class="method-heading">
           <span class="method-name">disable</span><span
             class="method-args">()</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
         <div class="method-description">
+          
           
           
           
@@ -364,13 +381,16 @@ Brice::Colours::DEFAULT_COLOURS.merge(...) }</code>.</p>
         <div class="method-heading">
           <span class="method-name">disable_irb</span><span
             class="method-args">()</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
         <div class="method-description">
           
           <p>Disable colourized IRb results.</p>
+          
           
 
           
@@ -406,11 +426,14 @@ Brice::Colours::DEFAULT_COLOURS.merge(...) }</code>.</p>
         <div class="method-heading">
           <span class="method-name">disable_pp</span><span
             class="method-args">()</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
         <div class="method-description">
+          
           
           
           
@@ -444,13 +467,16 @@ Brice::Colours::DEFAULT_COLOURS.merge(...) }</code>.</p>
         <div class="method-heading">
           <span class="method-name">enable_irb</span><span
             class="method-args">()</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
         <div class="method-description">
           
           <p>Enable colourized IRb results.</p>
+          
           
 
           
@@ -501,11 +527,14 @@ Brice::Colours::DEFAULT_COLOURS.merge(...) }</code>.</p>
         <div class="method-heading">
           <span class="method-name">enable_pp</span><span
             class="method-args">()</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
         <div class="method-description">
+          
           
           
           
@@ -514,14 +543,14 @@ Brice::Colours::DEFAULT_COLOURS.merge(...) }</code>.</p>
           <div class="method-source-code" id="enable_pp-source">
             <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 159</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">enable_pp</span>
-  <span class="ruby-identifier">require</span> <span class="ruby-string">'pp'</span>
+  <span class="ruby-identifier">require</span> <span class="ruby-string">&#39;pp&#39;</span>
 
   <span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">PP</span>
     <span class="ruby-keyword">unless</span> <span class="ruby-identifier">method_defined?</span>(<span class="ruby-value">:pp_with_colour</span>)
       <span class="ruby-identifier">alias_method</span> <span class="ruby-value">:pp_without_colour</span>, <span class="ruby-value">:pp</span>
 
       <span class="ruby-keyword">def</span> <span class="ruby-identifier">pp_with_colour</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-identifier">out</span> = <span class="ruby-identifier">$&gt;</span>, <span class="ruby-identifier">width</span> = <span class="ruby-value">79</span>)
-        <span class="ruby-identifier">res</span> = <span class="ruby-identifier">pp_without_colour</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-identifier">str</span> = <span class="ruby-string">''</span>, <span class="ruby-identifier">width</span>)
+        <span class="ruby-identifier">res</span> = <span class="ruby-identifier">pp_without_colour</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-identifier">str</span> = <span class="ruby-string">&#39;&#39;</span>, <span class="ruby-identifier">width</span>)
         <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Colours</span>.<span class="ruby-identifier">colourize</span>(<span class="ruby-identifier">str</span>)
         <span class="ruby-identifier">res</span>
       <span class="ruby-keyword">end</span>
@@ -533,7 +562,7 @@ Brice::Colours::DEFAULT_COLOURS.merge(...) }</code>.</p>
       <span class="ruby-identifier">alias_method</span> <span class="ruby-value">:singleline_pp_without_colour</span>, <span class="ruby-value">:singleline_pp</span>
 
       <span class="ruby-keyword">def</span> <span class="ruby-identifier">singleline_pp_with_colour</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-identifier">out</span> = <span class="ruby-identifier">$&gt;</span>)
-        <span class="ruby-identifier">res</span> = <span class="ruby-identifier">singleline_pp_without_colour</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-identifier">str</span> = <span class="ruby-string">''</span>)
+        <span class="ruby-identifier">res</span> = <span class="ruby-identifier">singleline_pp_without_colour</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-identifier">str</span> = <span class="ruby-string">&#39;&#39;</span>)
         <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Colours</span>.<span class="ruby-identifier">colourize</span>(<span class="ruby-identifier">str</span>)
         <span class="ruby-identifier">res</span>
       <span class="ruby-keyword">end</span>
@@ -557,11 +586,14 @@ Brice::Colours::DEFAULT_COLOURS.merge(...) }</code>.</p>
         <div class="method-heading">
           <span class="method-name">init</span><span
             class="method-args">(opt = {})</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
         <div class="method-description">
+          
           
           
           
@@ -590,11 +622,14 @@ Brice::Colours::DEFAULT_COLOURS.merge(...) }</code>.</p>
         <div class="method-heading">
           <span class="method-name">inspect_value_with_colour</span><span
             class="method-args">(value)</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
         <div class="method-description">
+          
           
           
           
@@ -620,11 +655,14 @@ Brice::Colours::DEFAULT_COLOURS.merge(...) }</code>.</p>
         <div class="method-heading">
           <span class="method-name">output_value_with_colour</span><span
             class="method-args">()</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
         <div class="method-description">
+          
           
           
           
@@ -657,7 +695,7 @@ Brice::Colours::DEFAULT_COLOURS.merge(...) }</code>.</p>
 
 <footer id="validator-badges">
   <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
   <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
 </footer>
 
