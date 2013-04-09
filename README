@@ -67,7 +67,7 @@ guaranteed to have any effect after <tt>Brice.init</tt> has been called.
 <b></b>
 Documentation:: http://blackwinter.github.com/brice
 Source code::   http://github.com/blackwinter/brice
-RubyGem::       http://rubygem.org/gems/brice
+RubyGem::       http://rubygems.org/gems/brice
 
 
 == AUTHORS
