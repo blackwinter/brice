@@ -4,16 +4,13 @@ begin
   require 'hen'
 
   Hen.lay! {{
-    :rubyforge => {
-      :project => %q{prometheus},
-      :package => %q{brice}
-    },
-
     :gem => {
+      :name         => %q{brice},
       :version      => Brice::VERSION,
       :summary      => %q{Extra cool IRb goodness for the masses},
       :author       => %q{Jens Wille},
       :email        => %q{jens.wille@gmail.com},
+      :homepage     => :blackwinter,
       :dependencies => [['ruby-nuggets', '>= 0.5.2']]
     }
   }}
