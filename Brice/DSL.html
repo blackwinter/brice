@@ -225,7 +225,7 @@ loaded or a Hash of the form <code>package =&gt; lib</code> or
 
           
           <div class="method-source-code" id="brice-source">
-            <pre><span class="ruby-comment"># File lib/brice/dsl.rb, line 136</span>
+            <pre><span class="ruby-comment"># File lib/brice/dsl.rb, line 138</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">brice</span>(<span class="ruby-identifier">package</span>)
   <span class="ruby-identifier">package</span>, <span class="ruby-identifier">libs</span> = <span class="ruby-keyword">case</span> <span class="ruby-identifier">package</span>
     <span class="ruby-keyword">when</span> <span class="ruby-constant">Hash</span>
@@ -291,7 +291,7 @@ Doesn&#39;t warn about load errors when <code>quiet</code> is
 
           
           <div class="method-source-code" id="brice_load-source">
-            <pre><span class="ruby-comment"># File lib/brice/dsl.rb, line 114</span>
+            <pre><span class="ruby-comment"># File lib/brice/dsl.rb, line 116</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">brice_load</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">wrap</span> = <span class="ruby-keyword">false</span>, <span class="ruby-identifier">quiet</span> = <span class="ruby-constant">Brice</span>.<span class="ruby-identifier">quiet</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">brice_rescue</span>(<span class="ruby-value">:load</span>, [<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">wrap</span>], <span class="ruby-constant">Exception</span>, <span class="ruby-identifier">quiet</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -338,7 +338,7 @@ the block in case of success. Doesn&#39;t warn about load errors when
 
           
           <div class="method-source-code" id="brice_require-source">
-            <pre><span class="ruby-comment"># File lib/brice/dsl.rb, line 101</span>
+            <pre><span class="ruby-comment"># File lib/brice/dsl.rb, line 103</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">brice_require</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">quiet</span> = <span class="ruby-constant">Brice</span>.<span class="ruby-identifier">quiet</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">brice_rescue</span>(<span class="ruby-value">:require</span>, [<span class="ruby-identifier">string</span>], <span class="ruby-constant">LoadError</span>, <span class="ruby-identifier">quiet</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -384,19 +384,21 @@ any errors when <code>quiet</code> is <code>true</code>.</p>
   <span class="ruby-identifier">res</span> = <span class="ruby-identifier">send</span>(<span class="ruby-identifier">what</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
 
   <span class="ruby-identifier">block_given?</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">res</span>
-<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">err</span>
-  <span class="ruby-identifier">raise</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">err</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-identifier">error</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-identifier">error</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">err</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">quiet</span>
 
-  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">quiet</span>
-    <span class="ruby-comment"># FIXME: ideally, we&#39;d want the __FILE__ and __LINE__ of the</span>
-    <span class="ruby-comment"># rc file where the error occurred.</span>
-    <span class="ruby-identifier">location</span> = <span class="ruby-identifier">caller</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp">%r{(?:\A|/)lib/brice[/.]}</span> }
-    <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;#{err.class}: #{err} [#{location}]&quot;</span>
+  <span class="ruby-comment"># ideally, we&#39;d want the __FILE__ and __LINE__</span>
+  <span class="ruby-comment"># of the rc file where the error occurred.</span>
+  <span class="ruby-identifier">location</span> = <span class="ruby-identifier">caller</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">c</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r{(?:\A|/)lib/brice/rc/}</span> <span class="ruby-operator">||</span>
+    <span class="ruby-identifier">c</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp">%r{(?:\A|/)lib/brice[/.]}</span>
+  }
 
-    <span class="ruby-identifier">warn</span> <span class="ruby-identifier">err</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
-      <span class="ruby-node">&quot;        from #{line}&quot;</span>
-    }.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-constant">Brice</span>.<span class="ruby-identifier">verbose</span>
-  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;#{err.class}: #{err} [#{location}]&quot;</span>
+
+  <span class="ruby-identifier">warn</span> <span class="ruby-identifier">err</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+    <span class="ruby-node">&quot;        from #{line}&quot;</span>
+  }.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-constant">Brice</span>.<span class="ruby-identifier">verbose</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- brice_rescue-source -->
           
@@ -430,7 +432,7 @@ any errors when <code>quiet</code> is <code>true</code>.</p>
 
           
           <div class="method-source-code" id="brice_run_cmd-source">
-            <pre><span class="ruby-comment"># File lib/brice/dsl.rb, line 122</span>
+            <pre><span class="ruby-comment"># File lib/brice/dsl.rb, line 124</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">brice_run_cmd</span>(<span class="ruby-identifier">cmd</span>, <span class="ruby-identifier">env</span> = {})
   <span class="ruby-constant">ENV</span>.<span class="ruby-identifier">with</span>(<span class="ruby-identifier">env</span>) { <span class="ruby-node">%x{#{cmd}}</span> }
 <span class="ruby-keyword">end</span></pre>
@@ -568,7 +570,7 @@ any errors when <code>quiet</code> is <code>true</code>.</p>
 
 <footer id="validator-badges">
   <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.1.
   <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
 </footer>
 
