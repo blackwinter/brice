@@ -10,7 +10,6 @@ brice 'libs' => nil do |config|
       yaml
       tempfile
       benchmark
-      backports
       what_methods
       irb/completion
     ].each { |lib| brice_require lib, true }
