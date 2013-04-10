@@ -4,7 +4,7 @@ module Brice
 
     MAJOR = 0
     MINOR = 2
-    TINY  = 7
+    TINY  = 8
 
     class << self
 
