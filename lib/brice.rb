@@ -3,7 +3,7 @@
 #                                                                             #
 # brice -- Extra cool IRb goodness for the masses                             #
 #                                                                             #
-# Copyright (C) 2008-2013 Jens Wille                                          #
+# Copyright (C) 2008-2014 Jens Wille                                          #
 #                                                                             #
 # Authors:                                                                    #
 #     Jens Wille <jens.wille@gmail.com>                                       #
@@ -145,7 +145,7 @@ module Brice
       brice_load rc
     }
 
-    include_custom_extensions ? res += load_custom_extensions : res
+    include_custom_extensions ? res + load_custom_extensions : res
   end
 
   # call-seq:
@@ -164,7 +164,7 @@ module Brice
   #
   # Find the actual extension files in +dir+.
   def find_rc_files(dir = RC_DIR)
-    File.directory?(dir) ? Dir["#{dir}/*.rb"].sort : []
+    File.directory?(dir) ? Dir["#{dir}/**/*.rb"].sort : []
   end
 
   # call-seq:
