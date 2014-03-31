@@ -3,7 +3,7 @@
 #                                                                             #
 # A component of brice, the extra cool IRb goodness donator                   #
 #                                                                             #
-# Copyright (C) 2008-2011 Jens Wille                                          #
+# Copyright (C) 2008-2014 Jens Wille                                          #
 #                                                                             #
 # Authors:                                                                    #
 #     Jens Wille <jens.wille@gmail.com>                                       #
@@ -62,7 +62,7 @@ module Brice
 
     def initialize(packages = [])
       @packages = Hash.new { |h, k| h[k] = PackageConfig.new }
-      packages.each { |package| self[package] }
+      self.include(*packages)
     end
 
     # call-seq:
