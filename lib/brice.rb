@@ -127,7 +127,7 @@ module Brice
   # Returns the value of +opt+ at +key+ if present, or +default+
   # otherwise.
   def opt(opt, key, default = true)
-    opt.is_a?(Hash) && opt.has_key?(key) ? opt[key] : default
+    opt.is_a?(Hash) && opt.key?(key) ? opt[key] : default
   end
 
   private

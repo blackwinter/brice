@@ -3,7 +3,7 @@
 #                                                                             #
 # A component of brice, the extra cool IRb goodness donator                   #
 #                                                                             #
-# Copyright (C) 2008-2012 Jens Wille                                          #
+# Copyright (C) 2008-2014 Jens Wille                                          #
 #                                                                             #
 # Authors:                                                                    #
 #     Jens Wille <jens.wille@gmail.com>                                       #
@@ -254,7 +254,7 @@ module Brice
 
       # Return the escape code for a given colour.
       def escape(key)
-        "\033[#{COLOURS[key]}m" if COLOURS.has_key?(key)
+        "\033[#{COLOURS[key]}m" if COLOURS.key?(key)
       end
 
       alias_method :[], :escape
