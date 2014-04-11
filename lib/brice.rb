@@ -88,7 +88,7 @@ module Brice
     if config.is_a?(Config)
       @config = config
     else
-      raise TypeError, "expected Brice::Config, got #{config.class}"
+      raise TypeError, "Brice::Config expected, got #{config.class}"
     end
   end
 
