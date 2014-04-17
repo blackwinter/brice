@@ -3,6 +3,8 @@ $:.unshift('lib') unless $:.first == 'lib'
 require 'tempfile'
 
 RSpec.configure { |config|
+  config.expect_with(:rspec) { |c| c.syntax = [:should, :expect] }
+
   config.before(:each) { open_tempfile }
   config.after(:each) { close_tempfile }
 
