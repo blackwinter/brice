@@ -2,73 +2,72 @@
 
 <html>
 <head>
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="UTF-8">
 
-<title>class Brice::History - brice Application documentation (v0.2.9)</title>
+<title>class Brice::History - brice Application documentation (v0.3.0)</title>
 
-<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+<link href="../fonts.css" rel="stylesheet">
+<link href="../rdoc.css" rel="stylesheet">
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../";
 </script>
 
-<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/search_index.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/searcher.js"></script>
+<script src="../js/darkfish.js"></script>
 
 
-<body id="top" class="class">
-<nav id="metadata">
-  <nav id="home-section" class="section">
-  <h3 class="section-header">
-    <a href="../index.html">Home</a>
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
     <a href="../table_of_contents.html#classes">Classes</a>
     <a href="../table_of_contents.html#methods">Methods</a>
-  </h3>
-</nav>
+  </div>
+</div>
 
-
-  <nav id="search-section" class="section project-section" class="initially-hidden">
+    <div id="search-section" role="search" class="project-section initially-hidden">
   <form action="#" method="get" accept-charset="utf-8">
-    <h3 class="section-header">
-      <input type="text" name="search" placeholder="Search" id="search-field"
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
              title="Type to search, Up and Down to navigate, Enter to load">
-    </h3>
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
   </form>
+</div>
 
-  <ul id="search-results" class="initially-hidden"></ul>
-</nav>
-
+  </div>
 
   
-
-  <div id="file-metadata">
-    <nav id="file-list-section" class="section">
-  <h3 class="section-header">Defined In</h3>
-  <ul>
-    <li>lib/brice/history.rb
-  </ul>
-</nav>
-
-    
-  </div>
 
   <div id="class-metadata">
     
-    <nav id="parent-class-section" class="section">
-  <h3 class="section-header">Parent</h3>
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
   
   <p class="link">Object
   
-</nav>
+</div>
 
     
-    <!-- Extension Modules -->
-<nav id="extends-section" class="section">
-  <h3 class="section-header">Extended With Modules</h3>
+    <div id="extends-section" class="nav-section">
+  <h3>Extended With Modules</h3>
 
   <ul class="link-list">
     
@@ -77,13 +76,13 @@
   
   
   </ul>
-</nav>
+</div>
 
     <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
 
-  <ul class="link-list">
+  <ul class="link-list" role="directory">
     
     <li ><a href="#method-c-init">::init</a>
     
@@ -100,70 +99,17 @@
     <li ><a href="#method-i-save_history">#save_history</a>
     
   </ul>
-</nav>
-
-  </div>
-
-  <div id="project-metadata">
-    <nav id="fileindex-section" class="section project-section">
-  <h3 class="section-header">Pages</h3>
-
-  <ul>
-  
-    <li class="file"><a href="../COPYING.html">COPYING</a>
-  
-    <li class="file"><a href="../ChangeLog.html">ChangeLog</a>
-  
-    <li class="file"><a href="../README.html">README</a>
-  
-  </ul>
-</nav>
-
-    <nav id="classindex-section" class="section project-section">
-  <h3 class="section-header">Class and Module Index</h3>
-
-  <ul class="link-list">
-  
-    <li><a href="../Brice.html">Brice</a>
-  
-    <li><a href="../Brice/Colours.html">Brice::Colours</a>
-  
-    <li><a href="../Brice/Colours/Colour.html">Brice::Colours::Colour</a>
-  
-    <li><a href="../Brice/Colours/PP.html">Brice::Colours::PP</a>
-  
-    <li><a href="../Brice/Colours/Tokenizer.html">Brice::Colours::Tokenizer</a>
-  
-    <li><a href="../Brice/Config.html">Brice::Config</a>
-  
-    <li><a href="../Brice/Config/PackageConfig.html">Brice::Config::PackageConfig</a>
-  
-    <li><a href="../Brice/DSL.html">Brice::DSL</a>
-  
-    <li><a href="../Brice/History.html">Brice::History</a>
-  
-    <li><a href="../Brice/History/Tee.html">Brice::History::Tee</a>
-  
-    <li><a href="../Brice/Shortcuts.html">Brice::Shortcuts</a>
-  
-    <li><a href="../Brice/Shortcuts/ObjectShortcuts.html">Brice::Shortcuts::ObjectShortcuts</a>
-  
-    <li><a href="../Brice/Version.html">Brice::Version</a>
-  
-    <li><a href="../IRB.html">IRB</a>
-  
-    <li><a href="../IRB/Context.html">IRB::Context</a>
-  
-  </ul>
-</nav>
+</div>
 
   </div>
 </nav>
 
-<div id="documentation">
-  <h1 class="class">class Brice::History</h1>
+<main role="main" aria-labelledby="class-Brice::History">
+  <h1 id="class-Brice::History" class="class">
+    class Brice::History
+  </h1>
 
-  <div id="description" class="description">
+  <section class="description">
     
 <p>IRb history support.</p>
 
@@ -188,7 +134,7 @@ href="History.html#DEFAULTS">DEFAULTS</a>):</p>
 <p>Whether to preserve, i.e. merge, the history across overlapping sessions.</p>
 </dd></dl>
 
-  </div><!-- description -->
+  </section>
 
   
   
@@ -199,14 +145,15 @@ href="History.html#DEFAULTS">DEFAULTS</a>):</p>
     
 
     
-    <!-- Constants -->
-    <section id="constants-list" class="section">
-      <h3 class="section-header">Constants</h3>
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
       <dl>
       
         <dt id="DEFAULTS">DEFAULTS
         
-        <dd class="description">
+        <dd>
         
       
       </dl>
@@ -215,10 +162,11 @@ href="History.html#DEFAULTS">DEFAULTS</a>):</p>
 
     
 
-    <!-- Methods -->
     
-     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Class Methods</h3>
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
 
     
       <div id="method-c-init" class="method-detail ">
@@ -244,14 +192,14 @@ href="History.html#DEFAULTS">DEFAULTS</a>):</p>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">init</span>(<span class="ruby-identifier">opt</span> = {})
   <span class="ruby-identifier">new</span>(<span class="ruby-identifier">opt</span>)
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- init-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- init-method -->
+      </div>
 
     
       <div id="method-c-new" class="method-detail ">
@@ -284,20 +232,22 @@ href="History.html#DEFAULTS">DEFAULTS</a>):</p>
 
   <span class="ruby-identifier">init_history</span>(<span class="ruby-identifier">history</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">history</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- new-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- new-method -->
+      </div>
 
     
-    </section><!-- public-class-method-details -->
+    </section>
   
-     <section id="private-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Private Instance Methods</h3>
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
 
     
       <div id="method-i-extend_history" class="method-detail ">
@@ -323,14 +273,14 @@ href="History.html#DEFAULTS">DEFAULTS</a>):</p>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">extend_history</span>
   <span class="ruby-ivar">@history</span>.<span class="ruby-identifier">extend</span>(<span class="ruby-constant">Tee</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@merge</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@history</span>; <span class="ruby-operator">!</span><span class="ruby-identifier">include?</span>(<span class="ruby-constant">Tee</span>); <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- extend_history-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- extend_history-method -->
+      </div>
 
     
       <div id="method-i-init_history" class="method-detail ">
@@ -368,14 +318,14 @@ href="History.html#DEFAULTS">DEFAULTS</a>):</p>
 
   <span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">at_exit</span> { <span class="ruby-identifier">save_history</span> }
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- init_history-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- init_history-method -->
+      </div>
 
     
       <div id="method-i-load_history" class="method-detail ">
@@ -405,14 +355,14 @@ href="History.html#DEFAULTS">DEFAULTS</a>):</p>
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@libedit</span>
   <span class="ruby-ivar">@first_line</span> = <span class="ruby-identifier">read_history</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-keyword">break</span> <span class="ruby-identifier">line</span> }
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- load_history-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- load_history-method -->
+      </div>
 
     
       <div id="method-i-read_history" class="method-detail ">
@@ -441,14 +391,14 @@ href="History.html#DEFAULTS">DEFAULTS</a>):</p>
     <span class="ruby-keyword">yield</span> <span class="ruby-identifier">line</span>
   }
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- read_history-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- read_history-method -->
+      </div>
 
     
       <div id="method-i-save_history" class="method-detail ">
@@ -489,26 +439,25 @@ href="History.html#DEFAULTS">DEFAULTS</a>):</p>
 
   <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-ivar">@path</span>, <span class="ruby-ivar">@perms</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-identifier">lines</span>) }
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- save_history-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- save_history-method -->
+      </div>
 
     
-    </section><!-- private-instance-method-details -->
+    </section>
   
-  </section><!-- 5Buntitled-5D -->
+  </section>
+</main>
 
-</div><!-- documentation -->
 
-
-<footer id="validator-badges">
-  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.1.
-  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

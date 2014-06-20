@@ -2,75 +2,64 @@
 
 <html>
 <head>
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="UTF-8">
 
-<title>module Brice - brice Application documentation (v0.2.9)</title>
+<title>module Brice - brice Application documentation (v0.3.0)</title>
 
-<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+<link href="./fonts.css" rel="stylesheet">
+<link href="./rdoc.css" rel="stylesheet">
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
 </script>
 
-<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
-<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+<script src="./js/jquery.js"></script>
+<script src="./js/navigation.js"></script>
+<script src="./js/search_index.js"></script>
+<script src="./js/search.js"></script>
+<script src="./js/searcher.js"></script>
+<script src="./js/darkfish.js"></script>
 
 
-<body id="top" class="module">
-<nav id="metadata">
-  <nav id="home-section" class="section">
-  <h3 class="section-header">
-    <a href="./index.html">Home</a>
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
     <a href="./table_of_contents.html#classes">Classes</a>
     <a href="./table_of_contents.html#methods">Methods</a>
-  </h3>
-</nav>
+  </div>
+</div>
 
-
-  <nav id="search-section" class="section project-section" class="initially-hidden">
+    <div id="search-section" role="search" class="project-section initially-hidden">
   <form action="#" method="get" accept-charset="utf-8">
-    <h3 class="section-header">
-      <input type="text" name="search" placeholder="Search" id="search-field"
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
              title="Type to search, Up and Down to navigate, Enter to load">
-    </h3>
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
   </form>
+</div>
 
-  <ul id="search-results" class="initially-hidden"></ul>
-</nav>
-
+  </div>
 
   
-
-  <div id="file-metadata">
-    <nav id="file-list-section" class="section">
-  <h3 class="section-header">Defined In</h3>
-  <ul>
-    <li>lib/brice.rb
-    <li>lib/brice/colours.rb
-    <li>lib/brice/config.rb
-    <li>lib/brice/dsl.rb
-    <li>lib/brice/history.rb
-    <li>lib/brice/rc/030_history.rb
-    <li>lib/brice/rc/040_colours.rb
-    <li>lib/brice/rc/050_shortcuts.rb
-    <li>lib/brice/shortcuts.rb
-    <li>lib/brice/version.rb
-  </ul>
-</nav>
-
-    
-  </div>
 
   <div id="class-metadata">
     
     
-    <!-- Included Modules -->
-<nav id="includes-section" class="section">
-  <h3 class="section-header">Included Modules</h3>
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
 
   <ul class="link-list">
   
@@ -79,14 +68,14 @@
   
   
   </ul>
-</nav>
+</div>
 
     
     <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
 
-  <ul class="link-list">
+  <ul class="link-list" role="directory">
     
     <li ><a href="#method-i-config-3D">#config=</a>
     
@@ -111,72 +100,19 @@
     <li ><a href="#method-i-rc_files">#rc_files</a>
     
   </ul>
-</nav>
-
-  </div>
-
-  <div id="project-metadata">
-    <nav id="fileindex-section" class="section project-section">
-  <h3 class="section-header">Pages</h3>
-
-  <ul>
-  
-    <li class="file"><a href="./COPYING.html">COPYING</a>
-  
-    <li class="file"><a href="./ChangeLog.html">ChangeLog</a>
-  
-    <li class="file"><a href="./README.html">README</a>
-  
-  </ul>
-</nav>
-
-    <nav id="classindex-section" class="section project-section">
-  <h3 class="section-header">Class and Module Index</h3>
-
-  <ul class="link-list">
-  
-    <li><a href="./Brice.html">Brice</a>
-  
-    <li><a href="./Brice/Colours.html">Brice::Colours</a>
-  
-    <li><a href="./Brice/Colours/Colour.html">Brice::Colours::Colour</a>
-  
-    <li><a href="./Brice/Colours/PP.html">Brice::Colours::PP</a>
-  
-    <li><a href="./Brice/Colours/Tokenizer.html">Brice::Colours::Tokenizer</a>
-  
-    <li><a href="./Brice/Config.html">Brice::Config</a>
-  
-    <li><a href="./Brice/Config/PackageConfig.html">Brice::Config::PackageConfig</a>
-  
-    <li><a href="./Brice/DSL.html">Brice::DSL</a>
-  
-    <li><a href="./Brice/History.html">Brice::History</a>
-  
-    <li><a href="./Brice/History/Tee.html">Brice::History::Tee</a>
-  
-    <li><a href="./Brice/Shortcuts.html">Brice::Shortcuts</a>
-  
-    <li><a href="./Brice/Shortcuts/ObjectShortcuts.html">Brice::Shortcuts::ObjectShortcuts</a>
-  
-    <li><a href="./Brice/Version.html">Brice::Version</a>
-  
-    <li><a href="./IRB.html">IRB</a>
-  
-    <li><a href="./IRB/Context.html">IRB::Context</a>
-  
-  </ul>
-</nav>
+</div>
 
   </div>
 </nav>
 
-<div id="documentation">
-  <h1 class="module">module Brice</h1>
+<main role="main" aria-labelledby="module-Brice">
+  <h1 id="module-Brice" class="module">
+    module Brice
+  </h1>
 
-  <div id="description" class="description">
+  <section class="description">
     
-  </div><!-- description -->
+  </section>
 
   
   
@@ -187,24 +123,25 @@
     
 
     
-    <!-- Constants -->
-    <section id="constants-list" class="section">
-      <h3 class="section-header">Constants</h3>
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
       <dl>
       
         <dt id="BRICE_HOME">BRICE_HOME
         
-        <dd class="description">
+        <dd>
         
       
         <dt id="RC_DIR">RC_DIR
         
-        <dd class="description">
+        <dd>
         
       
         <dt id="VERSION">VERSION
         
-        <dd class="description">
+        <dd>
         
       
       </dl>
@@ -212,9 +149,10 @@
     
 
     
-    <!-- Attributes -->
-    <section id="attribute-method-details" class="method-section section">
-      <h3 class="section-header">Attributes</h3>
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
 
       
       <div id="attribute-i-config" class="method-detail">
@@ -269,13 +207,14 @@
         </div>
       </div>
       
-    </section><!-- attribute-method-details -->
+    </section>
     
 
-    <!-- Methods -->
     
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Instance Methods</h3>
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
 
     
       <div id="method-i-config-3D" class="method-detail ">
@@ -306,17 +245,17 @@
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">config</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Config</span>)
     <span class="ruby-ivar">@config</span> = <span class="ruby-identifier">config</span>
   <span class="ruby-keyword">else</span>
-    <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-node">&quot;expected Brice::Config, got #{config.class}&quot;</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-node">&quot;Brice::Config expected, got #{config.class}&quot;</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- config-3D-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- config-3D-method -->
+      </div>
 
     
       <div id="method-i-custom_extensions" class="method-detail ">
@@ -345,14 +284,14 @@
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">custom_extensions</span>
   <span class="ruby-ivar">@custom_extensions</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">find_rc_files</span>(<span class="ruby-constant">BRICE_HOME</span>)
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- custom_extensions-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- custom_extensions-method -->
+      </div>
 
     
       <div id="method-i-have-3F" class="method-detail method-alias">
@@ -380,7 +319,7 @@
           Alias for: <a href="Brice.html#method-i-include-3F">include?</a>
         </div>
         
-      </div><!-- have-3F-method -->
+      </div>
 
     
       <div id="method-i-include-3F" class="method-detail ">
@@ -416,7 +355,7 @@
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">include?</span>(<span class="ruby-identifier">package</span>)
   <span class="ruby-identifier">config</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">package</span>)
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- include-3F-source -->
+          </div>
           
         </div>
 
@@ -427,7 +366,7 @@
         
 
         
-      </div><!-- include-3F-method -->
+      </div>
 
     
       <div id="method-i-init" class="method-detail ">
@@ -453,8 +392,7 @@
 
         <div class="method-description">
           
-          <p>Initialize <a href="Brice.html">Brice</a> and optionally configure any
-packages.</p>
+          <p>Initialize Brice and optionally configure any packages.</p>
           
           
 
@@ -483,14 +421,14 @@ packages.</p>
 
   <span class="ruby-identifier">config</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- init-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- init-method -->
+      </div>
 
     
       <div id="method-i-opt" class="method-detail ">
@@ -518,16 +456,16 @@ packages.</p>
           <div class="method-source-code" id="opt-source">
             <pre><span class="ruby-comment"># File lib/brice.rb, line 129</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">opt</span>(<span class="ruby-identifier">opt</span>, <span class="ruby-identifier">key</span>, <span class="ruby-identifier">default</span> = <span class="ruby-keyword">true</span>)
-  <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">key</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">opt</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">default</span>
+  <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">key</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">opt</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">default</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- opt-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- opt-method -->
+      </div>
 
     
       <div id="method-i-rc_files" class="method-detail ">
@@ -558,20 +496,22 @@ packages.</p>
   <span class="ruby-ivar">@rc_files</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">find_rc_files</span>
   <span class="ruby-identifier">include_custom_extensions</span> <span class="ruby-operator">?</span> <span class="ruby-ivar">@rc_files</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">custom_extensions</span> <span class="ruby-operator">:</span> <span class="ruby-ivar">@rc_files</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- rc_files-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- rc_files-method -->
+      </div>
 
     
-    </section><!-- public-instance-method-details -->
+    </section>
   
-     <section id="private-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Private Instance Methods</h3>
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
 
     
       <div id="method-i-finalize_irb_rc-21" class="method-detail ">
@@ -602,14 +542,14 @@ packages.</p>
     <span class="ruby-identifier">irb_rc</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">rc</span><span class="ruby-operator">|</span> <span class="ruby-identifier">rc</span>[<span class="ruby-identifier">context</span>] }
   } <span class="ruby-keyword">unless</span> <span class="ruby-identifier">irb_rc</span>.<span class="ruby-identifier">empty?</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- finalize_irb_rc-21-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- finalize_irb_rc-21-method -->
+      </div>
 
     
       <div id="method-i-find_rc_files" class="method-detail ">
@@ -636,16 +576,16 @@ packages.</p>
           <div class="method-source-code" id="find_rc_files-source">
             <pre><span class="ruby-comment"># File lib/brice.rb, line 166</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">find_rc_files</span>(<span class="ruby-identifier">dir</span> = <span class="ruby-constant">RC_DIR</span>)
-  <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">dir</span>) <span class="ruby-operator">?</span> <span class="ruby-constant">Dir</span>[<span class="ruby-node">&quot;#{dir}/*.rb&quot;</span>].<span class="ruby-identifier">sort</span> <span class="ruby-operator">:</span> []
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">dir</span>) <span class="ruby-operator">?</span> <span class="ruby-constant">Dir</span>[<span class="ruby-node">&quot;#{dir}/**/*.rb&quot;</span>].<span class="ruby-identifier">sort</span> <span class="ruby-operator">:</span> []
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- find_rc_files-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- find_rc_files-method -->
+      </div>
 
     
       <div id="method-i-load_custom_extensions" class="method-detail ">
@@ -677,14 +617,14 @@ packages.</p>
     <span class="ruby-identifier">brice_load</span> <span class="ruby-identifier">rc</span>
   }
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- load_custom_extensions-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- load_custom_extensions-method -->
+      </div>
 
     
       <div id="method-i-load_rc_files" class="method-detail ">
@@ -719,28 +659,27 @@ packages.</p>
     <span class="ruby-identifier">brice_load</span> <span class="ruby-identifier">rc</span>
   }
 
-  <span class="ruby-identifier">include_custom_extensions</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">res</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">load_custom_extensions</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">res</span>
+  <span class="ruby-identifier">include_custom_extensions</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">res</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">load_custom_extensions</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">res</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- load_rc_files-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- load_rc_files-method -->
+      </div>
 
     
-    </section><!-- private-instance-method-details -->
+    </section>
   
-  </section><!-- 5Buntitled-5D -->
+  </section>
+</main>
 
-</div><!-- documentation -->
 
-
-<footer id="validator-badges">
-  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.1.
-  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

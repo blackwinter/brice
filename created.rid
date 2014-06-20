@@ -1,15 +1,15 @@
-Thu, 19 Dec 2013 12:58:55 +0100
-README	Thu, 19 Dec 2013 12:56:38 +0100
+Fri, 20 Jun 2014 14:20:30 +0200
+README	Fri, 20 Jun 2014 14:16:56 +0200
 COPYING	Mon, 18 Mar 2013 10:58:52 +0100
 ChangeLog	Tue, 16 Apr 2013 12:19:20 +0200
-lib/brice.rb	Mon, 18 Mar 2013 11:41:26 +0100
+lib/brice.rb	Thu, 03 Apr 2014 12:26:51 +0200
 lib/brice/dsl.rb	Tue, 09 Apr 2013 13:31:19 +0200
 lib/brice/init.rb	Mon, 18 Mar 2013 11:38:39 +0100
 lib/brice/loud.rb	Mon, 18 Mar 2013 11:38:34 +0100
-lib/brice/config.rb	Mon, 18 Mar 2013 11:30:00 +0100
-lib/brice/colours.rb	Mon, 18 Mar 2013 16:21:01 +0100
+lib/brice/config.rb	Wed, 15 Jan 2014 13:27:23 +0100
+lib/brice/colours.rb	Wed, 15 Jan 2014 13:18:54 +0100
 lib/brice/history.rb	Mon, 18 Mar 2013 11:30:06 +0100
-lib/brice/version.rb	Thu, 19 Dec 2013 12:58:11 +0100
+lib/brice/version.rb	Fri, 20 Jun 2014 14:17:11 +0200
 lib/brice/shortcuts.rb	Mon, 18 Mar 2013 11:30:04 +0100
 lib/brice/rc/020_libs.rb	Wed, 10 Apr 2013 11:51:25 +0200
 lib/brice/rc/060_init.rb	Mon, 18 Mar 2013 10:58:52 +0100
