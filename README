@@ -2,7 +2,7 @@
 
 == VERSION
 
-This documentation refers to brice version 0.2.9
+This documentation refers to brice version 0.3.0
 
 
 == DESCRIPTION
@@ -64,7 +64,7 @@ guaranteed to have any effect after <tt>Brice.init</tt> has been called.
 
 == LINKS
 
-Documentation:: https://blackwinter.github.io/brice/
+Documentation:: https://blackwinter.github.com/brice
 Source code::   https://github.com/blackwinter/brice
 RubyGem::       https://rubygems.org/gems/brice
 
@@ -76,7 +76,7 @@ RubyGem::       https://rubygems.org/gems/brice
 
 == LICENSE AND COPYRIGHT
 
-Copyright (C) 2008-2013 Jens Wille
+Copyright (C) 2008-2014 Jens Wille
 
 brice is free software: you can redistribute it and/or modify it under the
 terms of the GNU Affero General Public License as published by the Free
