@@ -53,6 +53,6 @@ brice 'prompt' => nil do |config|
     }
   )
 
-  IRB.conf[:PROMPT_MODE] = :BRICE_VERBOSE
+  IRB.conf[:PROMPT_MODE] = :BRICE_VERBOSE if IRB.conf[:PROMPT_MODE] == :DEFAULT
 
 end
