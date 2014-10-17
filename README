@@ -65,6 +65,7 @@ guaranteed to have any effect after <tt>Brice.init</tt> has been called.
 Documentation:: https://blackwinter.github.com/brice
 Source code::   https://github.com/blackwinter/brice
 RubyGem::       https://rubygems.org/gems/brice
+Travis CI::     https://travis-ci.org/blackwinter/brice
 
 
 == AUTHORS
