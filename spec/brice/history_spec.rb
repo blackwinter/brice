@@ -1,5 +1,3 @@
-require 'brice/history'
-
 describe Brice::History do
 
   def hist
@@ -7,7 +5,7 @@ describe Brice::History do
   end
 
   def init_hist(opt = {})
-    @hist = Brice::History.new(opt.merge(:path => @path), hist)
+    @hist = Brice::History.new(opt.merge(path: @path), hist)
   end
 
   def saved_hist
@@ -23,8 +21,8 @@ describe Brice::History do
 
   describe 'no uniq, no merge' do
 
-    before :each do
-      init_hist(:uniq => false, :merge => false)
+    before do
+      init_hist(uniq: false, merge: false)
     end
 
     example { compare_hist(%w[]) }
@@ -37,8 +35,8 @@ describe Brice::History do
 
   describe 'uniq, no merge' do
 
-    before :each do
-      init_hist(:uniq => true, :merge => false)
+    before do
+      init_hist(uniq: true, merge: false)
     end
 
     example { compare_hist(%w[]) }
@@ -51,8 +49,8 @@ describe Brice::History do
 
   describe 'uniq, merge' do
 
-    before :each do
-      init_hist(:uniq => true, :merge => true)
+    before do
+      init_hist(uniq: true, merge: true)
     end
 
     example { compare_hist(%w[]) }
@@ -66,8 +64,8 @@ describe Brice::History do
 
   describe 'reverse uniq, no merge' do
 
-    before :each do
-      init_hist(:uniq => :reverse, :merge => false)
+    before do
+      init_hist(uniq: :reverse, merge: false)
     end
 
     example { compare_hist(%w[]) }
@@ -80,8 +78,8 @@ describe Brice::History do
 
   describe 'reverse uniq, merge' do
 
-    before :each do
-      init_hist(:uniq => :reverse, :merge => true)
+    before do
+      init_hist(uniq: :reverse, merge: true)
     end
 
     example { compare_hist(%w[]) }

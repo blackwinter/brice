@@ -25,7 +25,6 @@
 #++
 
 require 'ostruct'
-require 'brice'
 
 module Brice
 

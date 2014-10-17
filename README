@@ -15,12 +15,10 @@ in that regard.
 
 Add this to your <tt>~/.irbrc</tt> and receive the default goodness:
 
-  require 'rubygems'
   require 'brice/init'  # equivalent to: require 'brice'; Brice.init
 
 Or get some more control over the configuration:
 
-  require 'rubygems'
   require 'brice'
 
   Brice.init { |config|

@@ -27,15 +27,10 @@
 require 'irb'
 require 'nuggets/env/user_home'
 
-require 'brice/version'
+require_relative 'brice/dsl'
+require_relative 'brice/version'
 
 module Brice
-
-  autoload :Config,    'brice/config'
-  autoload :Colours,   'brice/colours'
-  autoload :DSL,       'brice/dsl'
-  autoload :History,   'brice/history'
-  autoload :Shortcuts, 'brice/shortcuts'
 
   RC_DIR = __FILE__.sub(/\.rb\z/, '/rc')
 
@@ -64,11 +59,8 @@ module Brice
     })
 
     options.each { |key, value|
-      if respond_to?(method = "#{key}=")
-        send(method, value)
-      else
-        raise ArgumentError, "illegal option: #{key}"
-      end
+      respond_to?(set = "#{key}=") ? send(set, value) :
+        raise(ArgumentError, "illegal option: #{key}")
     }
 
     yield config if block_given?
@@ -85,11 +77,8 @@ module Brice
   # Set config to +config+. Raises a TypeError if +config+ is not a
   # Brice::Config.
   def config=(config)
-    if config.is_a?(Config)
-      @config = config
-    else
-      raise TypeError, "Brice::Config expected, got #{config.class}"
-    end
+    config.is_a?(Config) ? @config = config :
+      raise(TypeError, "Brice::Config expected, got #{config.class}")
   end
 
   # call-seq:
@@ -178,3 +167,8 @@ module Brice
   end
 
 end
+
+require_relative 'brice/config'
+require_relative 'brice/colours'
+require_relative 'brice/history'
+require_relative 'brice/shortcuts'

@@ -3,7 +3,7 @@
 #                                                                             #
 # A component of brice, the extra cool IRb goodness donator                   #
 #                                                                             #
-# Copyright (C) 2008-2012 Jens Wille                                          #
+# Copyright (C) 2008-2014 Jens Wille                                          #
 #                                                                             #
 # Authors:                                                                    #
 #     Jens Wille <jens.wille@gmail.com>                                       #
@@ -25,9 +25,17 @@
 #++
 
 require 'nuggets/file/which'
-require 'brice'
 
 module Brice
+
+  EDITORS = %W[
+    #{ENV['VISUAL']}
+    #{ENV['EDITOR']}
+    /usr/bin/sensible-editor
+    /usr/bin/xdg-open
+    open
+    vi
+  ]
 
   # Convenient shortcut methods.
   #
@@ -55,7 +63,7 @@ module Brice
         end
 
         def ri!(*args)
-          opts, args = args.partition { |arg| arg.to_s =~ /\A--/ }
+          opts, args = args.partition { |arg| arg.to_s.start_with?('--') }
 
           args.empty? ? args << name : args.map! { |arg|
             arg, method = arg.to_s, nil
@@ -124,14 +132,7 @@ module Brice
         YAML.dump(obj, tempfile)
         tempfile.close
 
-        if editor ||= File.which_command(%W[
-          #{ENV['VISUAL']}
-          #{ENV['EDITOR']}
-          /usr/bin/sensible-editor
-          /usr/bin/xdg-open
-          open
-          vi
-        ])
+        if editor ||= File.which_command(EDITORS)
           system(editor, path = tempfile.path)
           return obj unless File.exists?(path)
         else

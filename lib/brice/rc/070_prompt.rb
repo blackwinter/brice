@@ -53,6 +53,6 @@ brice 'prompt' => nil do |config|
     }
   )
 
-  IRB.conf[:PROMPT_MODE] = RUBY_VERSION < '1.9' ? :BRICE_SIMPLE : :BRICE_VERBOSE
+  IRB.conf[:PROMPT_MODE] = :BRICE_VERBOSE
 
 end

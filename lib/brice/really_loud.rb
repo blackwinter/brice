@@ -1,2 +1,2 @@
 require 'brice'
-Brice.init(:quiet => false, :verbose => true)
+Brice.init(quiet: false, verbose: true)

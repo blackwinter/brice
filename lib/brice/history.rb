@@ -3,7 +3,7 @@
 #                                                                             #
 # A component of brice, the extra cool IRb goodness donator                   #
 #                                                                             #
-# Copyright (C) 2008-2012 Jens Wille                                          #
+# Copyright (C) 2008-2014 Jens Wille                                          #
 #                                                                             #
 # Authors:                                                                    #
 #     Jens Wille <jens.wille@gmail.com>                                       #
@@ -23,8 +23,6 @@
 #                                                                             #
 ###############################################################################
 #++
-
-require 'brice'
 
 module Brice
 

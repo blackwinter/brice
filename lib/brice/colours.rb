@@ -24,8 +24,6 @@
 ###############################################################################
 #++
 
-require 'brice'
-
 module Brice
 
   # Add colour support to IRb.
@@ -41,58 +39,58 @@ module Brice
     # Default IRb colour scheme.
     DEFAULT_COLOURS = {
       # delimiter colours
-      :comma              => :blue,
-      :refers             => :blue,
+      comma:              :blue,
+      refers:             :blue,
 
       # container colours (hash and array)
-      :open_hash          => :green,
-      :close_hash         => :green,
-      :open_array         => :green,
-      :close_array        => :green,
+      open_hash:          :green,
+      close_hash:         :green,
+      open_array:         :green,
+      close_array:        :green,
 
       # object colours
-      :open_object        => :light_red,
-      :object_class       => :white,
-      :object_addr_prefix => :blue,
-      :object_line_prefix => :blue,
-      :close_object       => :light_red,
+      open_object:        :light_red,
+      object_class:       :white,
+      object_addr_prefix: :blue,
+      object_line_prefix: :blue,
+      close_object:       :light_red,
 
       # symbol colours
-      :symbol             => :yellow,
-      :symbol_prefix      => :yellow,
+      symbol:             :yellow,
+      symbol_prefix:      :yellow,
 
       # string colours
-      :open_string        => :red,
-      :string             => :cyan,
-      :close_string       => :red,
+      open_string:        :red,
+      string:             :cyan,
+      close_string:       :red,
 
       # misc colours
-      :number             => :cyan,
-      :keyword            => :green,
-      :class              => :light_green,
-      :range              => :red,
-      :unknown            => :green
+      number:             :cyan,
+      keyword:            :green,
+      class:              :light_green,
+      range:              :red,
+      unknown:            :green
     }
 
     # Fruity testing colours.
     TESTING_COLOURS = {
-      :comma            => :red,
-      :refers           => :red,
-      :open_hash        => :blue,
-      :close_hash       => :blue,
-      :open_array       => :green,
-      :close_array      => :green,
-      :open_object      => :light_red,
-      :object_class     => :light_green,
-      :object_addr      => :purple,
-      :object_line      => :light_purple,
-      :close_object     => :light_red,
-      :symbol           => :yellow,
-      :symbol_prefix    => :yellow,
-      :number           => :cyan,
-      :string           => :cyan,
-      :keyword          => :white,
-      :range            => :light_blue
+      comma:              :red,
+      refers:             :red,
+      open_hash:          :blue,
+      close_hash:         :blue,
+      open_array:         :green,
+      close_array:        :green,
+      open_object:        :light_red,
+      object_class:       :light_green,
+      object_addr:        :purple,
+      object_line:        :light_purple,
+      close_object:       :light_red,
+      symbol:             :yellow,
+      symbol_prefix:      :yellow,
+      number:             :cyan,
+      string:             :cyan,
+      keyword:            :white,
+      range:              :light_blue
     }
 
     def init(opt = {})
@@ -109,51 +107,26 @@ module Brice
 
     # Enable colourized IRb results.
     def enable_irb
-      if IRB.const_defined?(:Inspector)
-        IRB::Inspector.class_eval {
-          unless method_defined?(:inspect_value_with_colour)
-            alias_method :inspect_value_without_colour, :inspect_value
+      IRB::Inspector.class_eval {
+        unless method_defined?(:inspect_value_with_colour)
+          alias_method :inspect_value_without_colour, :inspect_value
 
-            def inspect_value_with_colour(value)
-              Colours.colourize(inspect_value_without_colour(value))
-            end
+          def inspect_value_with_colour(value)
+            Colours.colourize(inspect_value_without_colour(value))
           end
+        end
 
-          alias_method :inspect_value, :inspect_value_with_colour
-        }
-      else
-        IRB::Irb.class_eval {
-          unless method_defined?(:output_value_with_colour)
-            alias_method :output_value_without_colour, :output_value
-
-            def output_value_with_colour
-              value = @context.last_value
-              value = Colours.colourize(value.inspect) if @context.inspect?
-
-              printf(@context.return_format, value)
-            end
-          end
-
-          alias_method :output_value, :output_value_with_colour
-        }
-      end
+        alias_method :inspect_value, :inspect_value_with_colour
+      }
     end
 
     # Disable colourized IRb results.
     def disable_irb
-      if IRB.const_defined?(:Inspector)
-        IRB::Inspector.class_eval {
-          if method_defined?(:inspect_value_without_colour)
-            alias_method :inspect_value, :inspect_value_without_colour
-          end
-        }
-      else
-        IRB::Irb.class_eval {
-          if method_defined?(:output_value_without_colour)
-            alias_method :output_value, :output_value_without_colour
-          end
-        }
-      end
+      IRB::Inspector.class_eval {
+        if method_defined?(:inspect_value_without_colour)
+          alias_method :inspect_value, :inspect_value_without_colour
+        end
+      }
     end
 
     def enable_pp
@@ -233,23 +206,23 @@ module Brice
       extend self
 
       COLOURS = {
-        :reset        => '0;0',
-        :black        => '0;30',
-        :red          => '0;31',
-        :green        => '0;32',
-        :brown        => '0;33',
-        :blue         => '0;34',
-        :cyan         => '0;36',
-        :purple       => '0;35',
-        :light_gray   => '0;37',
-        :dark_gray    => '1;30',
-        :light_red    => '1;31',
-        :light_green  => '1;32',
-        :yellow       => '1;33',
-        :light_blue   => '1;34',
-        :light_cyan   => '1;36',
-        :light_purple => '1;35',
-        :white        => '1;37'
+        reset:         '0;0',
+        black:         '0;30',
+        red:           '0;31',
+        green:         '0;32',
+        brown:         '0;33',
+        blue:          '0;34',
+        cyan:          '0;36',
+        purple:        '0;35',
+        light_gray:    '0;37',
+        dark_gray:     '1;30',
+        light_red:     '1;31',
+        light_green:   '1;32',
+        yellow:        '1;33',
+        light_blue:    '1;34',
+        light_cyan:    '1;36',
+        light_purple:  '1;35',
+        white:         '1;37'
       }
 
       # Return the escape code for a given colour.

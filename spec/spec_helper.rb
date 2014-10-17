@@ -1,5 +1,4 @@
-$:.unshift('lib') unless $:.first == 'lib'
-
+require 'brice'
 require 'tempfile'
 
 RSpec.configure { |config|
