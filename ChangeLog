@@ -6,6 +6,7 @@
 
 * Require at least Ruby 1.9.3.
 * Only set prompt if left at default.
+* Default package +added_methods+ now optional.
 
 == 0.0.1 [2008-11-14]
 
