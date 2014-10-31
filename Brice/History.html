@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>class Brice::History - brice Application documentation (v0.3.0)</title>
+<title>class Brice::History - brice Application documentation (v0.4.0)</title>
 
 <link href="../fonts.css" rel="stylesheet">
 <link href="../rdoc.css" rel="stylesheet">
@@ -188,7 +188,7 @@ href="History.html#DEFAULTS">DEFAULTS</a>):</p>
 
           
           <div class="method-source-code" id="init-source">
-            <pre><span class="ruby-comment"># File lib/brice/history.rb, line 55</span>
+            <pre><span class="ruby-comment"># File lib/brice/history.rb, line 53</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">init</span>(<span class="ruby-identifier">opt</span> = {})
   <span class="ruby-identifier">new</span>(<span class="ruby-identifier">opt</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -221,7 +221,7 @@ href="History.html#DEFAULTS">DEFAULTS</a>):</p>
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/brice/history.rb, line 59</span>
+            <pre><span class="ruby-comment"># File lib/brice/history.rb, line 57</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">opt</span> = {}, <span class="ruby-identifier">history</span> = <span class="ruby-keyword">defined?</span>(<span class="ruby-constant">Readline</span><span class="ruby-operator">::</span><span class="ruby-constant">HISTORY</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Readline</span><span class="ruby-operator">::</span><span class="ruby-constant">HISTORY</span>)
   <span class="ruby-constant">DEFAULTS</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">val</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-node">&quot;@#{key}&quot;</span>, <span class="ruby-constant">Brice</span>.<span class="ruby-identifier">opt</span>(<span class="ruby-identifier">opt</span>, <span class="ruby-identifier">key</span>, <span class="ruby-identifier">val</span>))
@@ -269,7 +269,7 @@ href="History.html#DEFAULTS">DEFAULTS</a>):</p>
 
           
           <div class="method-source-code" id="extend_history-source">
-            <pre><span class="ruby-comment"># File lib/brice/history.rb, line 103</span>
+            <pre><span class="ruby-comment"># File lib/brice/history.rb, line 101</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">extend_history</span>
   <span class="ruby-ivar">@history</span>.<span class="ruby-identifier">extend</span>(<span class="ruby-constant">Tee</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@merge</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@history</span>; <span class="ruby-operator">!</span><span class="ruby-identifier">include?</span>(<span class="ruby-constant">Tee</span>); <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
@@ -302,7 +302,7 @@ href="History.html#DEFAULTS">DEFAULTS</a>):</p>
 
           
           <div class="method-source-code" id="init_history-source">
-            <pre><span class="ruby-comment"># File lib/brice/history.rb, line 72</span>
+            <pre><span class="ruby-comment"># File lib/brice/history.rb, line 70</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">init_history</span>(<span class="ruby-identifier">history</span>)
   <span class="ruby-ivar">@history</span> = <span class="ruby-identifier">history</span>
 
@@ -347,7 +347,7 @@ href="History.html#DEFAULTS">DEFAULTS</a>):</p>
 
           
           <div class="method-source-code" id="load_history-source">
-            <pre><span class="ruby-comment"># File lib/brice/history.rb, line 95</span>
+            <pre><span class="ruby-comment"># File lib/brice/history.rb, line 93</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">load_history</span>(<span class="ruby-identifier">history</span> = <span class="ruby-ivar">@history</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">readable?</span>(<span class="ruby-ivar">@path</span>)
   <span class="ruby-identifier">read_history</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">history</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">line</span> }
@@ -384,7 +384,7 @@ href="History.html#DEFAULTS">DEFAULTS</a>):</p>
 
           
           <div class="method-source-code" id="read_history-source">
-            <pre><span class="ruby-comment"># File lib/brice/history.rb, line 88</span>
+            <pre><span class="ruby-comment"># File lib/brice/history.rb, line 86</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">read_history</span>
   <span class="ruby-constant">File</span>.<span class="ruby-identifier">foreach</span>(<span class="ruby-ivar">@path</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">line</span>.<span class="ruby-identifier">chomp!</span>
@@ -420,7 +420,7 @@ href="History.html#DEFAULTS">DEFAULTS</a>):</p>
 
           
           <div class="method-source-code" id="save_history-source">
-            <pre><span class="ruby-comment"># File lib/brice/history.rb, line 107</span>
+            <pre><span class="ruby-comment"># File lib/brice/history.rb, line 105</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">save_history</span>
   <span class="ruby-keyword">if</span> <span class="ruby-ivar">@merge</span>
     <span class="ruby-identifier">load_history</span>(<span class="ruby-identifier">lines</span> = [])
@@ -457,7 +457,7 @@ href="History.html#DEFAULTS">DEFAULTS</a>):</p>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

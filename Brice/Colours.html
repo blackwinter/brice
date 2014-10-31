@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>module Brice::Colours - brice Application documentation (v0.3.0)</title>
+<title>module Brice::Colours - brice Application documentation (v0.4.0)</title>
 
 <link href="../fonts.css" rel="stylesheet">
 <link href="../rdoc.css" rel="stylesheet">
@@ -88,8 +88,6 @@
     
     <li ><a href="#method-i-inspect_value_with_colour">#inspect_value_with_colour</a>
     
-    <li ><a href="#method-i-output_value_with_colour">#output_value_with_colour</a>
-    
   </ul>
 </div>
 
@@ -169,7 +167,7 @@ Brice::Colours::DEFAULT_COLOURS.merge(...) }</code>.</p>
 
           
           <div class="method-source-code" id="colourize-source">
-            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 217</span>
+            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 190</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">colourize</span>(<span class="ruby-identifier">str</span>)
   <span class="ruby-identifier">res</span> = <span class="ruby-string">&#39;&#39;</span>
 
@@ -210,7 +208,7 @@ Brice::Colours::DEFAULT_COLOURS.merge(...) }</code>.</p>
 
           
           <div class="method-source-code" id="colourize_string-source">
-            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 212</span>
+            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 185</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">colourize_string</span>(<span class="ruby-identifier">str</span>, <span class="ruby-identifier">colour</span>)
   (<span class="ruby-identifier">col</span> = <span class="ruby-constant">Colour</span>[<span class="ruby-identifier">colour</span>]) <span class="ruby-operator">?</span> <span class="ruby-node">&quot;#{col}#{str}#{Colour[:reset]}&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">str</span>
 <span class="ruby-keyword">end</span></pre>
@@ -243,7 +241,7 @@ Brice::Colours::DEFAULT_COLOURS.merge(...) }</code>.</p>
 
           
           <div class="method-source-code" id="colours-source">
-            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 207</span>
+            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 180</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">colours</span>
   <span class="ruby-ivar">@colours</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">DEFAULT_COLOURS</span>.<span class="ruby-identifier">dup</span>
 <span class="ruby-keyword">end</span></pre>
@@ -276,7 +274,7 @@ Brice::Colours::DEFAULT_COLOURS.merge(...) }</code>.</p>
 
           
           <div class="method-source-code" id="colours-3D-source">
-            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 202</span>
+            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 175</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">colours=</span>(<span class="ruby-identifier">hash</span>)
   <span class="ruby-ivar">@colours</span> = <span class="ruby-identifier">hash</span>
 <span class="ruby-keyword">end</span></pre>
@@ -309,7 +307,7 @@ Brice::Colours::DEFAULT_COLOURS.merge(...) }</code>.</p>
 
           
           <div class="method-source-code" id="disable-source">
-            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 105</span>
+            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 103</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">disable</span>
   <span class="ruby-identifier">disable_irb</span>
   <span class="ruby-identifier">disable_pp</span>
@@ -343,21 +341,13 @@ Brice::Colours::DEFAULT_COLOURS.merge(...) }</code>.</p>
 
           
           <div class="method-source-code" id="disable_irb-source">
-            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 143</span>
+            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 124</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">disable_irb</span>
-  <span class="ruby-keyword">if</span> <span class="ruby-constant">IRB</span>.<span class="ruby-identifier">const_defined?</span>(<span class="ruby-value">:Inspector</span>)
-    <span class="ruby-constant">IRB</span><span class="ruby-operator">::</span><span class="ruby-constant">Inspector</span>.<span class="ruby-identifier">class_eval</span> {
-      <span class="ruby-keyword">if</span> <span class="ruby-identifier">method_defined?</span>(<span class="ruby-value">:inspect_value_without_colour</span>)
-        <span class="ruby-identifier">alias_method</span> <span class="ruby-value">:inspect_value</span>, <span class="ruby-value">:inspect_value_without_colour</span>
-      <span class="ruby-keyword">end</span>
-    }
-  <span class="ruby-keyword">else</span>
-    <span class="ruby-constant">IRB</span><span class="ruby-operator">::</span><span class="ruby-constant">Irb</span>.<span class="ruby-identifier">class_eval</span> {
-      <span class="ruby-keyword">if</span> <span class="ruby-identifier">method_defined?</span>(<span class="ruby-value">:output_value_without_colour</span>)
-        <span class="ruby-identifier">alias_method</span> <span class="ruby-value">:output_value</span>, <span class="ruby-value">:output_value_without_colour</span>
-      <span class="ruby-keyword">end</span>
-    }
-  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">IRB</span><span class="ruby-operator">::</span><span class="ruby-constant">Inspector</span>.<span class="ruby-identifier">class_eval</span> {
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">method_defined?</span>(<span class="ruby-value">:inspect_value_without_colour</span>)
+      <span class="ruby-identifier">alias_method</span> <span class="ruby-value">:inspect_value</span>, <span class="ruby-value">:inspect_value_without_colour</span>
+    <span class="ruby-keyword">end</span>
+  }
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -388,7 +378,7 @@ Brice::Colours::DEFAULT_COLOURS.merge(...) }</code>.</p>
 
           
           <div class="method-source-code" id="disable_pp-source">
-            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 189</span>
+            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 162</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">disable_pp</span>
   <span class="ruby-constant">PP</span>.<span class="ruby-identifier">class_eval</span> {
     <span class="ruby-keyword">if</span> <span class="ruby-identifier">method_defined?</span>(<span class="ruby-value">:pp_without_colour</span>)
@@ -429,36 +419,19 @@ Brice::Colours::DEFAULT_COLOURS.merge(...) }</code>.</p>
 
           
           <div class="method-source-code" id="enable_irb-source">
-            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 111</span>
+            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 109</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">enable_irb</span>
-  <span class="ruby-keyword">if</span> <span class="ruby-constant">IRB</span>.<span class="ruby-identifier">const_defined?</span>(<span class="ruby-value">:Inspector</span>)
-    <span class="ruby-constant">IRB</span><span class="ruby-operator">::</span><span class="ruby-constant">Inspector</span>.<span class="ruby-identifier">class_eval</span> {
-      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">method_defined?</span>(<span class="ruby-value">:inspect_value_with_colour</span>)
-        <span class="ruby-identifier">alias_method</span> <span class="ruby-value">:inspect_value_without_colour</span>, <span class="ruby-value">:inspect_value</span>
+  <span class="ruby-constant">IRB</span><span class="ruby-operator">::</span><span class="ruby-constant">Inspector</span>.<span class="ruby-identifier">class_eval</span> {
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">method_defined?</span>(<span class="ruby-value">:inspect_value_with_colour</span>)
+      <span class="ruby-identifier">alias_method</span> <span class="ruby-value">:inspect_value_without_colour</span>, <span class="ruby-value">:inspect_value</span>
 
-        <span class="ruby-keyword">def</span> <span class="ruby-identifier">inspect_value_with_colour</span>(<span class="ruby-identifier">value</span>)
-          <span class="ruby-constant">Colours</span>.<span class="ruby-identifier">colourize</span>(<span class="ruby-identifier">inspect_value_without_colour</span>(<span class="ruby-identifier">value</span>))
-        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">def</span> <span class="ruby-identifier">inspect_value_with_colour</span>(<span class="ruby-identifier">value</span>)
+        <span class="ruby-constant">Colours</span>.<span class="ruby-identifier">colourize</span>(<span class="ruby-identifier">inspect_value_without_colour</span>(<span class="ruby-identifier">value</span>))
       <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
 
-      <span class="ruby-identifier">alias_method</span> <span class="ruby-value">:inspect_value</span>, <span class="ruby-value">:inspect_value_with_colour</span>
-    }
-  <span class="ruby-keyword">else</span>
-    <span class="ruby-constant">IRB</span><span class="ruby-operator">::</span><span class="ruby-constant">Irb</span>.<span class="ruby-identifier">class_eval</span> {
-      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">method_defined?</span>(<span class="ruby-value">:output_value_with_colour</span>)
-        <span class="ruby-identifier">alias_method</span> <span class="ruby-value">:output_value_without_colour</span>, <span class="ruby-value">:output_value</span>
-
-        <span class="ruby-keyword">def</span> <span class="ruby-identifier">output_value_with_colour</span>
-          <span class="ruby-identifier">value</span> = <span class="ruby-ivar">@context</span>.<span class="ruby-identifier">last_value</span>
-          <span class="ruby-identifier">value</span> = <span class="ruby-constant">Colours</span>.<span class="ruby-identifier">colourize</span>(<span class="ruby-identifier">value</span>.<span class="ruby-identifier">inspect</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@context</span>.<span class="ruby-identifier">inspect?</span>
-
-          <span class="ruby-identifier">printf</span>(<span class="ruby-ivar">@context</span>.<span class="ruby-identifier">return_format</span>, <span class="ruby-identifier">value</span>)
-        <span class="ruby-keyword">end</span>
-      <span class="ruby-keyword">end</span>
-
-      <span class="ruby-identifier">alias_method</span> <span class="ruby-value">:output_value</span>, <span class="ruby-value">:output_value_with_colour</span>
-    }
-  <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">alias_method</span> <span class="ruby-value">:inspect_value</span>, <span class="ruby-value">:inspect_value_with_colour</span>
+  }
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -489,7 +462,7 @@ Brice::Colours::DEFAULT_COLOURS.merge(...) }</code>.</p>
 
           
           <div class="method-source-code" id="enable_pp-source">
-            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 159</span>
+            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 132</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">enable_pp</span>
   <span class="ruby-identifier">require</span> <span class="ruby-string">&#39;pp&#39;</span>
 
@@ -548,7 +521,7 @@ Brice::Colours::DEFAULT_COLOURS.merge(...) }</code>.</p>
 
           
           <div class="method-source-code" id="init-source">
-            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 98</span>
+            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 96</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">init</span>(<span class="ruby-identifier">opt</span> = {})
   <span class="ruby-identifier">enable_irb</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Brice</span>.<span class="ruby-identifier">opt</span>(<span class="ruby-identifier">opt</span>, <span class="ruby-value">:irb</span>, <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">tty?</span>)
   <span class="ruby-identifier">enable_pp</span>  <span class="ruby-keyword">if</span> <span class="ruby-constant">Brice</span>.<span class="ruby-identifier">opt</span>(<span class="ruby-identifier">opt</span>, <span class="ruby-value">:pp</span>,  <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">tty?</span>)
@@ -584,45 +557,9 @@ Brice::Colours::DEFAULT_COLOURS.merge(...) }</code>.</p>
 
           
           <div class="method-source-code" id="inspect_value_with_colour-source">
-            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 117</span>
+            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 114</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">inspect_value_with_colour</span>(<span class="ruby-identifier">value</span>)
   <span class="ruby-constant">Colours</span>.<span class="ruby-identifier">colourize</span>(<span class="ruby-identifier">inspect_value_without_colour</span>(<span class="ruby-identifier">value</span>))
-<span class="ruby-keyword">end</span></pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
-    
-      <div id="method-i-output_value_with_colour" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">output_value_with_colour</span><span
-            class="method-args">()</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-          
-
-          
-          <div class="method-source-code" id="output_value_with_colour-source">
-            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 129</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">output_value_with_colour</span>
-  <span class="ruby-identifier">value</span> = <span class="ruby-ivar">@context</span>.<span class="ruby-identifier">last_value</span>
-  <span class="ruby-identifier">value</span> = <span class="ruby-constant">Colours</span>.<span class="ruby-identifier">colourize</span>(<span class="ruby-identifier">value</span>.<span class="ruby-identifier">inspect</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@context</span>.<span class="ruby-identifier">inspect?</span>
-
-  <span class="ruby-identifier">printf</span>(<span class="ruby-ivar">@context</span>.<span class="ruby-identifier">return_format</span>, <span class="ruby-identifier">value</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -642,7 +579,7 @@ Brice::Colours::DEFAULT_COLOURS.merge(...) }</code>.</p>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 
