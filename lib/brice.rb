@@ -54,14 +54,18 @@ module Brice
   def init(options = {})
     @irb_rc = []
 
-    @config = Config.new(rc_files(true).map { |rc|
-      File.basename(rc, '.rb').sub(/\A\d+_/, '')
-    })
-
     options.each { |key, value|
       respond_to?(set = "#{key}=") ? send(set, value) :
         raise(ArgumentError, "illegal option: #{key}")
     }
+
+    packages = rc_files(true).map { |rc|
+      File.basename(rc, '.rb').sub(/\A\d+_/, '')
+    }.reject { |rc| rc.end_with?('?') }
+
+    warn "Default packages: #{packages.join(', ')}" if verbose
+
+    @config = Config.new(packages)
 
     yield config if block_given?
 
