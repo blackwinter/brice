@@ -2,7 +2,7 @@
 
 = Revision history for brice
 
-== 0.4.0 [unreleased]
+== 0.4.0 [2014-10-31]
 
 * Require at least Ruby 1.9.3.
 * Only set prompt if left at default.
