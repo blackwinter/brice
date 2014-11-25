@@ -284,7 +284,7 @@ module Brice
                 when '>'  then yield :refers,      '=>' if last_char == '='
                 when '.'  then yield :range,       '..' if last_char == '.'
                 when '='  then nil
-                else           yield :unknown,     char
+                else           yield :unknown,     char if char
               end
             when :symbol
               if char =~ /[a-z0-9_!?]/  # should have =, but that messes up foo=>bar
