@@ -195,7 +195,8 @@ module Brice
       }
 
       res
-    rescue
+    rescue => err
+      warn "#{err.backtrace.first}: #{err} (#{err.class})"
       str
     end
 
