@@ -91,6 +91,8 @@ module Brice
     end
 
     def load_history(history = @history)
+      @first_line = nil
+
       return unless File.readable?(@path)
       read_history { |line| history << line }
 

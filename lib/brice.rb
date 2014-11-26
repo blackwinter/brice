@@ -123,6 +123,10 @@ module Brice
     opt.is_a?(Hash) && opt.key?(key) ? opt[key] : default
   end
 
+  def error(obj, met, err)
+    warn "Error in #{obj}##{met}: #{err.backtrace.first}: #{err} (#{err.class})"
+  end
+
   private
 
   # call-seq:

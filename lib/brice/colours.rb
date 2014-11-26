@@ -94,6 +94,8 @@ module Brice
     }
 
     def init(opt = {})
+      require 'ripper'
+
       enable_irb if Brice.opt(opt, :irb, STDOUT.tty?)
       enable_pp  if Brice.opt(opt, :pp,  STDOUT.tty?)
 
@@ -188,15 +190,11 @@ module Brice
 
     # Colourize the results of inspect
     def colourize(str)
-      res = ''
-
-      Tokenizer.tokenize(str) { |token, value|
+     ''.tap { |res| Tokenizer.tokenize(str.to_s) { |token, value|
         res << colourize_string(value, colours[token])
-      }
-
-      res
+      } }
     rescue => err
-      warn "#{err.backtrace.first}: #{err} (#{err.class})"
+      Brice.error(self, __method__, err)
       str
     end
 
@@ -237,144 +235,174 @@ module Brice
 
     # Tokenize an inspection string.
 
-    module Tokenizer
+    class Tokenizer
 
-      extend self
+      EVENT_MAP = {
+      # on_CHAR:            :unknown,
+      # on___end__:         :unknown,
+      # on_backref:         :unknown,
+      # on_backtick:        :unknown,
+        on_comma:           :comma,
+        on_comment:         :unknown,
+        on_const:           :class,
+      # on_cvar:            :unknown,
+      # on_embdoc:          :unknown,
+      # on_embdoc_beg:      :unknown,
+      # on_embdoc_end:      :unknown,
+      # on_embexpr_beg:     :unknown,
+      # on_embexpr_end:     :unknown,
+      # on_embvar:          :unknown,
+        on_float:           :number,
+      # on_gvar:            :unknown,
+      # on_heredoc_beg:     :unknown,
+      # on_heredoc_end:     :unknown,
+        on_ident:           :symbol,
+      # on_ignored_nl:      :unknown,
+        on_imaginary:       :number,
+        on_int:             :number,
+      # on_ivar:            :unknown,
+        on_kw:              :keyword,
+        on_label:           :unknown,
+        on_lbrace:          :open_hash,
+        on_lbracket:        :open_array,
+        on_lparen:          :unknown,
+      # on_nl:              :unknown,
+        on_op:              :refers,
+        on_period:          :comma,
+      # on_qsymbols_beg:    :unknown,
+      # on_qwords_beg:      :unknown,
+        on_rational:        :number,
+        on_rbrace:          :close_hash,
+        on_rbracket:        :close_array,
+        on_regexp_beg:      :unknown,
+        on_regexp_end:      :unknown,
+        on_rparen:          :unknown,
+        on_semicolon:       :comma,
+        on_sp:              :whitespace,
+        on_symbeg:          :symbol_prefix,
+      # on_symbols_beg:     :unknown,
+      # on_tlambda:         :unknown,
+      # on_tlambeg:         :unknown,
+        on_tstring_beg:     :open_string,
+        on_tstring_content: :string,
+        on_tstring_end:     :close_string,
+      # on_words_beg:       :unknown,
+      # on_words_sep:       :unknown
+      }
+
+      OBJECT_RE = %r{
+        \A
+        ( \#< )
+        ( .+ )
+        ( > )
+        \z
+      }x
+
+      OBJECT_CLASS_RE = %r{
+        \A
+        (?: \w | :: )+
+      }x
+
+      OBJECT_ADDR_RE = %r{
+        \A
+        ( : )
+        ( 0x [\hx]+ )
+        (?= \s | \z )
+      }x
+
+      IVAR_RE = %r{
+        \A
+        ( @ )
+        ( .+ )
+        \z
+      }x
+
+      RANGE_RE = %r{
+        \A
+        \.+
+        \z
+      }x
+
+      def self.tokenize(str, &block)
+        new(&block).tokenize(str)
+      end
+
+      def initialize(&block)
+        @block = block or raise ArgumentError, 'no block given'
+      end
+
+      attr_reader :block
 
       def tokenize(str)
-        raise ArgumentError, 'no block given' unless block_given?
+        return if str.empty?
+        return if enc_event(str)
 
-        chars = str.split(//)
-        char  = last_char = repeat = nil
-        states, value, index = [], '', 0
+        lex, prev = Ripper.lex(str), nil
 
-        reset = lambda { |*args|
-          states.pop
+        len = lex[-1][0][-1] + lex[-1][-1].bytesize
+        str, rest = str.byteslice(0, len), str.byteslice(len .. -1)
 
-          value  = ''
-          repeat = args.first unless args.empty?
+        return block[:unknown, rest] if str.empty?
+
+        lex.each { |_, event, tok|
+          sym_event(event, tok, prev) ||
+          obj_event(event, tok)       ||
+          rng_event(event, tok)       ||
+          var_event(event, tok)       ||
+          map_event(event, tok)
+
+          prev = event
         }
 
-        yield_last = lambda { |*args|
-          yield states.last, value
-          reset[*args]
-        }
+        tokenize(rest)
+      end
 
-        until index > chars.size
-          char, repeat = chars[index], false
+      private
 
-          case states.last
-            when nil
-              case char
-                when ':' then states << :symbol
-                when '"' then states << :string
-                when '#' then states << :object
-                when /[a-z]/i
-                  states << :keyword
-                  repeat = true
-                when /[0-9-]/
-                  states << :number
-                  repeat = true
-                when '{'  then yield :open_hash,   '{'
-                when '['  then yield :open_array,  '['
-                when ']'  then yield :close_array, ']'
-                when '}'  then yield :close_hash,  '}'
-                when /\s/ then yield :whitespace,  char
-                when ','  then yield :comma,       ','
-                when '>'  then yield :refers,      '=>' if last_char == '='
-                when '.'  then yield :range,       '..' if last_char == '.'
-                when '='  then nil
-                else           yield :unknown,     char if char
-              end
-            when :symbol
-              if char =~ /[a-z0-9_!?]/  # should have =, but that messes up foo=>bar
-                value << char
-              else
-                yield :symbol_prefix, ':'
-                yield_last[true]
-              end
-            when :string
-              if char == '"'
-                if last_char == '\\'
-                  value[-1] = char
-                else
-                  yield :open_string,  char
-                  yield_last[]
-                  yield :close_string, char
-                end
-              else
-                value << char
-              end
-            when :keyword
-              if char =~ /[a-z0-9_]/i
-                value << char
-              else
-                states[-1] = :class if value =~ /\A[A-Z]/
-                yield_last[true]
+      def enc_event(str)  # XXX /\A\s*#.*?coding\s*:\s*./
+        object($1, $2, $3) if str =~ OBJECT_RE && str.include?('coding')
+      end
 
-                value << char if char == '.'
-              end
-            when :number
-              case char
-                when /[0-9e-]/
-                  value << char
-                when '.'
-                  if last_char == char
-                    value.chop!
+      def obj_event(event, tok)
+        object($1, $2, $3) if event == :on_comment && tok =~ OBJECT_RE
+      end
 
-                    yield_last[]
-                    yield :range, '..'
-                  else
-                    value << char
-                  end
-                else
-                  yield_last[true]
-              end
-            when :object
-              case char
-                when '<'
-                  yield :open_object, '#<'
-                  states << :object_class
-                when ':'
-                  states << :object_addr
-                when '@'
-                  states << :object_line
-                when '>'
-                  yield :close_object, '>'
-                  reset[]
-              end
-            when :object_class
-              if char == ':'
-                yield_last[true]
-              else
-                value << char
-              end
-            when :object_addr
-              case char
-                when '>'
-                  # ignore
-                when '@'
-                  yield :object_addr_prefix, ':'
-                  yield_last[true]
-                else
-                  value << char
-              end
-            when :object_line
-              if char == '>'
-                yield :object_line_prefix, '@'
-                yield_last[true]
-              else
-                value << char
-              end
-            else
-              raise "unknown state: #{states}"
-          end
+      def sym_event(event, tok, prev)
+        block[:symbol, tok] if event == :on_kw && prev == :on_symbeg
+      end
 
-          unless repeat
-            index += 1
-            last_char = char
+      def rng_event(event, tok)
+        block[:range, tok] if event == :on_op && tok =~ RANGE_RE
+      end
+
+      def var_event(event, tok)
+        if event == :on_ivar && tok =~ IVAR_RE
+          block[:object_line_prefix, $1]
+          block[:keyword, $2]
+        end
+      end
+
+      def map_event(event, tok)
+        block[EVENT_MAP[event], tok]
+      end
+
+      def object(open, str, close)
+        block[:open_object, open]
+
+        if str.sub!(OBJECT_CLASS_RE, '')
+          block[:object_class, $&]
+
+          if str.sub!(OBJECT_ADDR_RE, '')
+            block[:object_addr_prefix, $1]
+            block[:object_addr, $2]
+
+            str = tokenize(str)
           end
         end
+
+        block[:unknown, str] if str
+
+        block[:close_object, close]
       end
 
     end
