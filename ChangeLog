@@ -2,6 +2,12 @@
 
 = Revision history for brice
 
+== 0.4.1 [2016-03-29]
+
+* To mark default packages as optional, use underscore in addition to question
+  mark, since the latter is not supported on Windows file systems (issue #10
+  by Hovis Biddle).
+
 == 0.4.0 [2014-10-31]
 
 * Require at least Ruby 1.9.3.
