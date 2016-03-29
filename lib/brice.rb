@@ -3,7 +3,7 @@
 #                                                                             #
 # brice -- Extra cool IRb goodness for the masses                             #
 #                                                                             #
-# Copyright (C) 2008-2014 Jens Wille                                          #
+# Copyright (C) 2008-2016 Jens Wille                                          #
 #                                                                             #
 # Authors:                                                                    #
 #     Jens Wille <jens.wille@gmail.com>                                       #
@@ -61,7 +61,7 @@ module Brice
 
     packages = rc_files(true).map { |rc|
       File.basename(rc, '.rb').sub(/\A\d+_/, '')
-    }.reject { |rc| rc.end_with?('?') }
+    }.reject { |rc| rc.end_with?('?') || rc.end_with?('_') }
 
     warn "Default packages: #{packages.join(', ')}" if verbose
 
