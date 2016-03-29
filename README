@@ -2,7 +2,7 @@
 
 == VERSION
 
-This documentation refers to brice version 0.4.0
+This documentation refers to brice version 0.4.1
 
 
 == DESCRIPTION
@@ -75,7 +75,7 @@ Travis CI::     https://travis-ci.org/blackwinter/brice
 
 == LICENSE AND COPYRIGHT
 
-Copyright (C) 2008-2014 Jens Wille
+Copyright (C) 2008-2016 Jens Wille
 
 brice is free software: you can redistribute it and/or modify it under the
 terms of the GNU Affero General Public License as published by the Free
