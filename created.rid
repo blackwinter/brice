@@ -1,16 +1,16 @@
-Fri, 31 Oct 2014 12:33:19 +0100
-README	Fri, 31 Oct 2014 12:27:06 +0100
+Tue, 29 Mar 2016 11:06:59 +0200
+README	Tue, 29 Mar 2016 11:06:06 +0200
 COPYING	Mon, 18 Mar 2013 10:58:52 +0100
-ChangeLog	Fri, 31 Oct 2014 12:26:32 +0100
-lib/brice.rb	Fri, 31 Oct 2014 12:14:55 +0100
+ChangeLog	Tue, 29 Mar 2016 11:06:06 +0200
+lib/brice.rb	Tue, 29 Mar 2016 11:06:06 +0200
 lib/brice/dsl.rb	Fri, 17 Oct 2014 16:18:29 +0200
 lib/brice/init.rb	Mon, 18 Mar 2013 11:38:39 +0100
 lib/brice/loud.rb	Fri, 17 Oct 2014 16:09:49 +0200
 lib/brice/config.rb	Fri, 17 Oct 2014 16:06:49 +0200
-lib/brice/colours.rb	Fri, 17 Oct 2014 16:18:58 +0200
-lib/brice/history.rb	Fri, 17 Oct 2014 16:07:30 +0200
-lib/brice/version.rb	Fri, 31 Oct 2014 12:27:22 +0100
-lib/brice/shortcuts.rb	Fri, 17 Oct 2014 16:23:44 +0200
+lib/brice/colours.rb	Tue, 29 Mar 2016 11:06:06 +0200
+lib/brice/history.rb	Tue, 29 Mar 2016 11:06:06 +0200
+lib/brice/version.rb	Tue, 29 Mar 2016 11:06:06 +0200
+lib/brice/shortcuts.rb	Tue, 29 Mar 2016 11:05:29 +0200
 lib/brice/rc/020_libs.rb	Wed, 10 Apr 2013 11:51:25 +0200
 lib/brice/rc/060_init.rb	Fri, 17 Oct 2014 16:16:33 +0200
 lib/brice/really_loud.rb	Fri, 17 Oct 2014 16:11:41 +0200
@@ -20,4 +20,4 @@ lib/brice/rc/070_prompt.rb	Fri, 17 Oct 2014 16:28:47 +0200
 lib/brice/rc/030_history.rb	Mon, 18 Mar 2013 10:58:52 +0100
 lib/brice/rc/040_colours.rb	Mon, 18 Mar 2013 10:58:52 +0100
 lib/brice/rc/050_shortcuts.rb	Mon, 18 Mar 2013 10:58:52 +0100
-lib/brice/rc/010_added_methods?.rb	Mon, 18 Mar 2013 10:58:52 +0100
+lib/brice/rc/010_added_methods_.rb	Tue, 29 Mar 2016 11:06:06 +0200
