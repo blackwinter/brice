@@ -48,7 +48,7 @@ module Brice
 
   # call-seq:
   #   Brice.init { |config| ... }
-  #   Brice.init(:verbose => true) { |config| ... }
+  #   Brice.init(verbose: true) { |config| ... }
   #
   # Initialize Brice and optionally configure any packages.
   def init(options = {})

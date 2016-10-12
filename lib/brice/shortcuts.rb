@@ -39,8 +39,8 @@ module Brice
 
   # Convenient shortcut methods.
   #
-  # Set <tt>config.shortcuts.opt = { :object => false }</tt> to disable
-  # ObjectShortcuts, or <tt>config.shortcuts.opt = { :ri => false }</tt>
+  # Set <tt>config.shortcuts.opt = { object: false }</tt> to disable
+  # ObjectShortcuts, or <tt>config.shortcuts.opt = { ri: false }</tt>
   # to disable #ri shortcuts.
 
   module Shortcuts

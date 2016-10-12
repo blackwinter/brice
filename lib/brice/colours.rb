@@ -28,9 +28,9 @@ module Brice
 
   # Add colour support to IRb.
   #
-  # Set your own colours with <tt>config.colours.opt = { :colours => { ... } }</tt>
+  # Set your own colours with <tt>config.colours.opt = { colours: { ... } }</tt>
   # or modify the default scheme (DEFAULT_COLOURS) with <tt>config.colours.opt =
-  # { :colours => Brice::Colours::DEFAULT_COLOURS.merge(...) }</tt>.
+  # { colours: Brice::Colours::DEFAULT_COLOURS.merge(...) }</tt>.
 
   module Colours
 

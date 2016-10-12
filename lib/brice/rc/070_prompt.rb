@@ -39,17 +39,17 @@ brice 'prompt' => nil do |config|
     lambda { |rt| "#{rt} => %s\n" } : "=> %s\n"
 
   IRB.conf[:PROMPT].update(
-    :BRICE_SIMPLE => {
-      :PROMPT_I => '  ',
-      :PROMPT_S => '  ',
-      :PROMPT_C => '  ',
-      :RETURN   => prompt_return
+    BRICE_SIMPLE: {
+      PROMPT_I: '  ',
+      PROMPT_S: '  ',
+      PROMPT_C: '  ',
+      RETURN:   prompt_return
     },
-    :BRICE_VERBOSE => {
-      :PROMPT_I => "#{prefix}> ",
-      :PROMPT_S => "#{prefix}> ",
-      :PROMPT_C => "#{prefix}> ",
-      :RETURN   => prompt_return
+    BRICE_VERBOSE: {
+      PROMPT_I: "#{prefix}> ",
+      PROMPT_S: "#{prefix}> ",
+      PROMPT_C: "#{prefix}> ",
+      RETURN:   prompt_return
     }
   )
 

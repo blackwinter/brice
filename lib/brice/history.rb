@@ -43,11 +43,11 @@ module Brice
   class History
 
     DEFAULTS = {
-      :path   =>  ENV['IRB_HISTORY_FILE'] || File.join(ENV.user_home, '.irb_history'),
-      :size   => (ENV['IRB_HISTORY_SIZE'] || 1000).to_i,
-      :perms  => File::WRONLY | File::CREAT | File::TRUNC,
-      :uniq   => :reverse,
-      :merge  => true
+      path:   ENV['IRB_HISTORY_FILE'] || File.join(ENV.user_home, '.irb_history'),
+      size:  (ENV['IRB_HISTORY_SIZE'] || 1000).to_i,
+      perms: File::WRONLY | File::CREAT | File::TRUNC,
+      uniq:  :reverse,
+      merge: true
     }
 
     def self.init(opt = {})
