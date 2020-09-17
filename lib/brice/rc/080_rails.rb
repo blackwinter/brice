@@ -40,7 +40,7 @@ brice 'rails' => nil do |config|
         Object.const_set(:RAILS_DEFAULT_LOGGER, Logger.new(STDOUT))
       }
 
-      define_irb_method(:logger) { |*args|
+      define_irb_method(:logger) { |*args, &block|
         if args.empty?
           RAILS_DEFAULT_LOGGER
         else
@@ -51,7 +51,7 @@ brice 'rails' => nil do |config|
 
           if block_given?
             begin
-              yield  # RDoc: Warning: yield outside of method
+              block.call
             ensure
               logger.level = previous_level
             end

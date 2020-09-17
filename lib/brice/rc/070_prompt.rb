@@ -17,8 +17,8 @@ brice 'prompt' => nil do |config|
       alias_method :_brice_original_evaluate, :evaluate
 
       # Capture execution time
-      def evaluate(*a)
-        @_brice_tms = Benchmark.measure { _brice_original_evaluate(*a) }
+      def evaluate(*a, **o)
+        @_brice_tms = Benchmark.measure { _brice_original_evaluate(*a, **o) }
       end
     end
   end
