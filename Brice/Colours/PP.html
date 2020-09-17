@@ -4,17 +4,22 @@
 <head>
 <meta charset="UTF-8">
 
-<title>module Brice::Colours::PP - brice Application documentation (v0.4.1)</title>
+<title>module Brice::Colours::PP - brice Application documentation (v0.4.2)</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
+  var index_rel_prefix = "../../";
 </script>
 
-<script src="../../js/jquery.js"></script>
-<script src="../../js/darkfish.js"></script>
+<script src="../../js/navigation.js" defer></script>
+<script src="../../js/search.js" defer></script>
+<script src="../../js/search_index.js" defer></script>
+<script src="../../js/searcher.js" defer></script>
+<script src="../../js/darkfish.js" defer></script>
 
 <link href="../../css/fonts.css" rel="stylesheet">
 <link href="../../css/rdoc.css" rel="stylesheet">
+
 
 
 
@@ -83,8 +88,6 @@
   </section>
 
   
-  
-  
   <section id="5Buntitled-5D" class="documentation-section">
     
 
@@ -105,7 +108,7 @@
         
         <div class="method-heading">
           <span class="method-name">pp_with_colour</span><span
-            class="method-args">(obj, out = $>, width = 79)</span>
+            class="method-args">(obj, out = $&gt;, width = 79)</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -120,12 +123,12 @@
 
           
           <div class="method-source-code" id="pp_with_colour-source">
-            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 139</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">pp_with_colour</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-identifier">out</span> = <span class="ruby-identifier">$&gt;</span>, <span class="ruby-identifier">width</span> = <span class="ruby-value">79</span>)
-  <span class="ruby-identifier">res</span> = <span class="ruby-identifier">pp_without_colour</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-identifier">str</span> = <span class="ruby-string">&#39;&#39;</span>, <span class="ruby-identifier">width</span>)
-  <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Colours</span>.<span class="ruby-identifier">colourize</span>(<span class="ruby-identifier">str</span>)
-  <span class="ruby-identifier">res</span>
-<span class="ruby-keyword">end</span></pre>
+            <pre>    <span class="ruby-comment"># File lib/brice/colours.rb</span>
+<span class="line-num">141</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pp_with_colour</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-identifier">out</span> = <span class="ruby-identifier">$&gt;</span>, <span class="ruby-identifier">width</span> = <span class="ruby-value">79</span>)
+<span class="line-num">142</span>   <span class="ruby-identifier">res</span> = <span class="ruby-identifier">pp_without_colour</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-identifier">str</span> = <span class="ruby-string">&#39;&#39;</span>, <span class="ruby-identifier">width</span>)
+<span class="line-num">143</span>   <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Colours</span>.<span class="ruby-identifier">colourize</span>(<span class="ruby-identifier">str</span>)
+<span class="line-num">144</span>   <span class="ruby-identifier">res</span>
+<span class="line-num">145</span> <span class="ruby-keyword">end</span></pre>
           </div>
           
         </div>
@@ -140,7 +143,7 @@
         
         <div class="method-heading">
           <span class="method-name">singleline_pp_with_colour</span><span
-            class="method-args">(obj, out = $>)</span>
+            class="method-args">(obj, out = $&gt;)</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -155,12 +158,12 @@
 
           
           <div class="method-source-code" id="singleline_pp_with_colour-source">
-            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 151</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">singleline_pp_with_colour</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-identifier">out</span> = <span class="ruby-identifier">$&gt;</span>)
-  <span class="ruby-identifier">res</span> = <span class="ruby-identifier">singleline_pp_without_colour</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-identifier">str</span> = <span class="ruby-string">&#39;&#39;</span>)
-  <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Colours</span>.<span class="ruby-identifier">colourize</span>(<span class="ruby-identifier">str</span>)
-  <span class="ruby-identifier">res</span>
-<span class="ruby-keyword">end</span></pre>
+            <pre>    <span class="ruby-comment"># File lib/brice/colours.rb</span>
+<span class="line-num">153</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">singleline_pp_with_colour</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-identifier">out</span> = <span class="ruby-identifier">$&gt;</span>)
+<span class="line-num">154</span>   <span class="ruby-identifier">res</span> = <span class="ruby-identifier">singleline_pp_without_colour</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-identifier">str</span> = <span class="ruby-string">&#39;&#39;</span>)
+<span class="line-num">155</span>   <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Colours</span>.<span class="ruby-identifier">colourize</span>(<span class="ruby-identifier">str</span>)
+<span class="line-num">156</span>   <span class="ruby-identifier">res</span>
+<span class="line-num">157</span> <span class="ruby-keyword">end</span></pre>
           </div>
           
         </div>
@@ -174,12 +177,13 @@
     </section>
   
   </section>
+
 </main>
 
 
 <footer id="validator-badges" role="contentinfo">
-  <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.1.
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

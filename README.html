@@ -4,17 +4,22 @@
 <head>
 <meta charset="UTF-8">
 
-<title>README - brice Application documentation (v0.4.1)</title>
+<title>README - brice Application documentation (v0.4.2)</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
 </script>
 
-<script src="./js/jquery.js"></script>
-<script src="./js/darkfish.js"></script>
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
 
 <link href="./css/fonts.css" rel="stylesheet">
 <link href="./css/rdoc.css" rel="stylesheet">
+
 
 
 
@@ -90,15 +95,11 @@
 
 <h2 id="label-VERSION">VERSION<span><a href="#label-VERSION">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<p>This documentation refers to brice version 0.4.1</p>
+<p>This documentation refers to brice version 0.4.2</p>
 
 <h2 id="label-DESCRIPTION">DESCRIPTION<span><a href="#label-DESCRIPTION">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<p>Enhances your IRb experience by adding new functionality and by providing a
-framework that you can utilize to add your own extensions. It comes with a
-set of pre-selected features (see the files in <a
-href="../lib/brice/rc">lib/brice/rc</a>), but is highly configurable in
-that regard.</p>
+<p>Enhances your IRb experience by adding new functionality and by providing a framework that you can utilize to add your own extensions. It comes with a set of pre-selected features (see the files in <a href="../lib/brice/rc">lib/brice/rc</a>), but is highly configurable in that regard.</p>
 
 <p>Add this to your <code>~/.irbrc</code> and receive the default goodness:</p>
 
@@ -113,61 +114,45 @@ Brice.init { |config|
   ...
 }</pre>
 
-<p>See <a href="Brice/Config.html">Brice::Config</a> for what you can
-configure, and how.</p>
+<p>See <a href="Brice/Config.html"><code>Brice::Config</code></a> for what you can configure, and how.</p>
 
-<p>It will even load your own extensions that you place in your
-<code>~/.brice</code> directory. See <a
-href="Brice/DSL.html">Brice::DSL</a> for helpers provided.</p>
+<p>It will even load your own extensions that you place in your <code>~/.brice</code> directory. See <a href="Brice/DSL.html"><code>Brice::DSL</code></a> for helpers provided.</p>
 
-<p>Please note that further changes to the configuration for brice can&#39;t
-be guaranteed to have any effect after <code>Brice.init</code> has been
-called.</p>
+<p>Please note that further changes to the configuration for brice can&#39;t be guaranteed to have any effect after <code>Brice.init</code> has been called.</p>
 
 <h2 id="label-DEFAULT+FEATURES">DEFAULT FEATURES<span><a href="#label-DEFAULT+FEATURES">&para;</a> <a href="#top">&uarr;</a></span></h2>
-<dl class="rdoc-list note-list"><dt>added_methods
+<dl class="rdoc-list note-list"><dt><code>added_methods</code>
 <dd>
-<p>Loads <a
-href="http://blackwinter.github.com/added_methods">AddedMethods</a> if one
-(or both) of the following environment variables has been set:</p>
-<dl class="rdoc-list note-list"><dt>WATCH_FOR_ADDED_METHODS
+<p>Loads <a href="http://blackwinter.github.com/added_methods">AddedMethods</a> if one (or both) of the following environment variables has been set:</p>
+<dl class="rdoc-list note-list"><dt><code>WATCH_FOR_ADDED_METHODS</code>
 <dd>
 <p>Regular expression or <code>true</code></p>
-</dd><dt>WATCH_FOR_ADDED_METHODS_IN
+</dd><dt><code>WATCH_FOR_ADDED_METHODS_IN</code>
 <dd>
 <p>Space- or comma-delimited list of class names</p>
 </dd></dl>
-</dd><dt>libs
+</dd><dt><code>libs</code>
 <dd>
-<p>Loads libraries, either a set of default ones or those you configure with
-<code>config.libs = %w[...]</code>.</p>
-</dd><dt>history
+<p>Loads libraries, either a set of default ones or those you configure with <code>config.libs = %w[...]</code>.</p>
+</dd><dt><code>history</code>
 <dd>
-<p>Configures IRb history support. See <a
-href="Brice/History.html">Brice::History</a> for more information.</p>
-</dd><dt>colours
+<p>Configures IRb history support. See <a href="Brice/History.html"><code>Brice::History</code></a> for more information.</p>
+</dd><dt><code>colours</code>
 <dd>
-<p>Configures IRb colour support. See <a
-href="Brice/Colours.html">Brice::Colours</a> for more information.</p>
-</dd><dt>shortcuts
+<p>Configures IRb colour support. See <a href="Brice/Colours.html"><code>Brice::Colours</code></a> for more information.</p>
+</dd><dt><code>shortcuts</code>
 <dd>
-<p>Includes convenient shortcut methods. See <a
-href="Brice/Shortcuts.html">Brice::Shortcuts</a> and <a
-href="Brice/Shortcuts/ObjectShortcuts.html">Brice::Shortcuts::ObjectShortcuts</a>
-for more information.</p>
-</dd><dt>init
+<p>Includes convenient shortcut methods. See <a href="Brice/Shortcuts.html"><code>Brice::Shortcuts</code></a> and <a href="Brice/Shortcuts/ObjectShortcuts.html"><code>Brice::Shortcuts::ObjectShortcuts</code></a> for more information.</p>
+</dd><dt><code>init</code>
 <dd>
 <p>Does some basic initialization for IRb.</p>
-</dd><dt>prompt
+</dd><dt><code>prompt</code>
 <dd>
-<p>Configures the IRb prompt, providing <code>:BRICE_SIMPLE</code> and
-<code>:BRICE_VERBOSE</code> prompt modes.</p>
-</dd><dt>rails
+<p>Configures the IRb prompt, providing <code>:BRICE_SIMPLE</code> and <code>:BRICE_VERBOSE</code> prompt modes.</p>
+</dd><dt><code>rails</code>
 <dd>
-<p>Provides some Rails settings, such as adding the <code>:BRICE_RAILS</code>
-prompt mode, setting the Rails logger to <code>STDOUT</code>, and defining
-convenience accessors for your models.</p>
-</dd><dt>devel
+<p>Provides some Rails settings, such as adding the <code>:BRICE_RAILS</code> prompt mode, setting the Rails logger to <code>STDOUT</code>, and defining convenience accessors for your models.</p>
+</dd><dt><code>devel</code>
 <dd>
 <p>Provides some useful settings when developing Ruby libraries.</p>
 </dd></dl>
@@ -175,51 +160,40 @@ convenience accessors for your models.</p>
 <h2 id="label-LINKS">LINKS<span><a href="#label-LINKS">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <dl class="rdoc-list note-list"><dt>Documentation
 <dd>
-<p><a
-href="https://blackwinter.github.com/brice">blackwinter.github.com/brice</a></p>
+<p><a href="https://blackwinter.github.com/brice">blackwinter.github.com/brice</a></p>
 </dd><dt>Source code
 <dd>
-<p><a
-href="https://github.com/blackwinter/brice">github.com/blackwinter/brice</a></p>
+<p><a href="https://github.com/blackwinter/brice">github.com/blackwinter/brice</a></p>
 </dd><dt>RubyGem
 <dd>
 <p><a href="https://rubygems.org/gems/brice">rubygems.org/gems/brice</a></p>
 </dd><dt>Travis CI
 <dd>
-<p><a
-href="https://travis-ci.org/blackwinter/brice">travis-ci.org/blackwinter/brice</a></p>
+<p><a href="https://travis-ci.org/blackwinter/brice">travis-ci.org/blackwinter/brice</a></p>
 </dd></dl>
 
 <h2 id="label-AUTHORS">AUTHORS<span><a href="#label-AUTHORS">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <ul><li>
-<p>Jens Wille &lt;<a
-href="mailto:jens.wille@gmail.com">jens.wille@gmail.com</a>&gt;</p>
+<p>Jens Wille &lt;<a href="mailto:jens.wille@gmail.com">jens.wille@gmail.com</a>&gt;</p>
 </li></ul>
 
 <h2 id="label-LICENSE+AND+COPYRIGHT">LICENSE AND COPYRIGHT<span><a href="#label-LICENSE+AND+COPYRIGHT">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<p>Copyright (C) 2008-2016 Jens Wille</p>
+<p>Copyright (C) 2008-2020 Jens Wille</p>
 
-<p>brice is free software: you can redistribute it and/or modify it under the
-terms of the GNU Affero General Public License as published by the Free
-Software Foundation, either version 3 of the License, or (at your option)
-any later version.</p>
+<p>brice is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</p>
 
-<p>brice is distributed in the hope that it will be useful, but WITHOUT ANY
-WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for
-more details.</p>
+<p>brice is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.</p>
 
-<p>You should have received a copy of the GNU Affero General Public License
-along with brice. If not, see &lt;<a
-href="http://www.gnu.org/licenses">www.gnu.org/licenses</a>/&gt;.</p>
+<p>You should have received a copy of the GNU Affero General Public License along with brice. If not, see &lt;<a href="http://www.gnu.org/licenses">www.gnu.org/licenses</a>/&gt;.</p>
+
 </main>
 
 
 
 <footer id="validator-badges" role="contentinfo">
-  <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.1.
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

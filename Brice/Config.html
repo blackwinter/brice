@@ -4,17 +4,22 @@
 <head>
 <meta charset="UTF-8">
 
-<title>class Brice::Config - brice Application documentation (v0.4.1)</title>
+<title>class Brice::Config - brice Application documentation (v0.4.2)</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
 </script>
 
-<script src="../js/jquery.js"></script>
-<script src="../js/darkfish.js"></script>
+<script src="../js/navigation.js" defer></script>
+<script src="../js/search.js" defer></script>
+<script src="../js/search_index.js" defer></script>
+<script src="../js/searcher.js" defer></script>
+<script src="../js/darkfish.js" defer></script>
 
 <link href="../css/fonts.css" rel="stylesheet">
 <link href="../css/rdoc.css" rel="stylesheet">
+
 
 
 
@@ -140,8 +145,6 @@
   </section>
 
   
-  
-  
   <section id="5Buntitled-5D" class="documentation-section">
     
 
@@ -198,11 +201,11 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/brice/config.rb, line 62</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">packages</span> = [])
-  <span class="ruby-ivar">@packages</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>, <span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-constant">PackageConfig</span>.<span class="ruby-identifier">new</span> }
-  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">include</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">packages</span>)
-<span class="ruby-keyword">end</span></pre>
+            <pre>   <span class="ruby-comment"># File lib/brice/config.rb</span>
+<span class="line-num">62</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">packages</span> = [])
+<span class="line-num">63</span>   <span class="ruby-ivar">@packages</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>, <span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-constant">PackageConfig</span>.<span class="ruby-identifier">new</span> }
+<span class="line-num">64</span>   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">include</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">packages</span>)
+<span class="line-num">65</span> <span class="ruby-keyword">end</span></pre>
           </div>
           
         </div>
@@ -327,10 +330,10 @@
 
           
           <div class="method-source-code" id="5B-5D-source">
-            <pre><span class="ruby-comment"># File lib/brice/config.rb, line 71</span>
-<span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">package</span>)
-  <span class="ruby-identifier">packages</span>[<span class="ruby-identifier">package</span>.<span class="ruby-identifier">to_s</span>]
-<span class="ruby-keyword">end</span></pre>
+            <pre>   <span class="ruby-comment"># File lib/brice/config.rb</span>
+<span class="line-num">71</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]</span>(<span class="ruby-identifier">package</span>)
+<span class="line-num">72</span>   <span class="ruby-identifier">packages</span>[<span class="ruby-identifier">package</span>.<span class="ruby-identifier">to_s</span>]
+<span class="line-num">73</span> <span class="ruby-keyword">end</span></pre>
           </div>
           
         </div>
@@ -363,10 +366,10 @@
 
           
           <div class="method-source-code" id="clear-source">
-            <pre><span class="ruby-comment"># File lib/brice/config.rb, line 116</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">clear</span>
-  <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">clear</span>
-<span class="ruby-keyword">end</span></pre>
+            <pre>    <span class="ruby-comment"># File lib/brice/config.rb</span>
+<span class="line-num">116</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">clear</span>
+<span class="line-num">117</span>   <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">clear</span>
+<span class="line-num">118</span> <span class="ruby-keyword">end</span></pre>
           </div>
           
         </div>
@@ -406,11 +409,11 @@
 
           
           <div class="method-source-code" id="exclude-source">
-            <pre><span class="ruby-comment"># File lib/brice/config.rb, line 92</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">exclude</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">packages</span>)
-  <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">package</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">packages</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">package</span>.<span class="ruby-identifier">to_s</span>) }
-  <span class="ruby-keyword">self</span>
-<span class="ruby-keyword">end</span></pre>
+            <pre>   <span class="ruby-comment"># File lib/brice/config.rb</span>
+<span class="line-num">92</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">exclude</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">packages</span>)
+<span class="line-num">93</span>   <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">package</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">packages</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">package</span>.<span class="ruby-identifier">to_s</span>) }
+<span class="line-num">94</span>   <span class="ruby-keyword">self</span>
+<span class="line-num">95</span> <span class="ruby-keyword">end</span></pre>
           </div>
           
         </div>
@@ -482,11 +485,11 @@
 
           
           <div class="method-source-code" id="include-source">
-            <pre><span class="ruby-comment"># File lib/brice/config.rb, line 80</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">include</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">packages</span>)
-  <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">package</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">package</span>] }
-  <span class="ruby-keyword">self</span>
-<span class="ruby-keyword">end</span></pre>
+            <pre>   <span class="ruby-comment"># File lib/brice/config.rb</span>
+<span class="line-num">80</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">include</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">packages</span>)
+<span class="line-num">81</span>   <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">package</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">package</span>] }
+<span class="line-num">82</span>   <span class="ruby-keyword">self</span>
+<span class="line-num">83</span> <span class="ruby-keyword">end</span></pre>
           </div>
           
         </div>
@@ -530,10 +533,10 @@
 
           
           <div class="method-source-code" id="include-3F-source">
-            <pre><span class="ruby-comment"># File lib/brice/config.rb, line 125</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">include?</span>(<span class="ruby-identifier">package</span>)
-  <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">package</span>.<span class="ruby-identifier">to_s</span>)
-<span class="ruby-keyword">end</span></pre>
+            <pre>    <span class="ruby-comment"># File lib/brice/config.rb</span>
+<span class="line-num">125</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">include?</span>(<span class="ruby-identifier">package</span>)
+<span class="line-num">126</span>   <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">package</span>.<span class="ruby-identifier">to_s</span>)
+<span class="line-num">127</span> <span class="ruby-keyword">end</span></pre>
           </div>
           
         </div>
@@ -598,29 +601,29 @@
 
           
           <div class="method-source-code" id="method_missing-source">
-            <pre><span class="ruby-comment"># File lib/brice/config.rb, line 139</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">method_missing</span>(<span class="ruby-identifier">method</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
-  <span class="ruby-identifier">package</span>, <span class="ruby-identifier">punctuation</span> = <span class="ruby-identifier">method</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/([=!?])?\z/</span>, <span class="ruby-string">&#39;&#39;</span>), <span class="ruby-node">$1</span>
-
-  <span class="ruby-identifier">assignment</span> = <span class="ruby-identifier">punctuation</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;=&#39;</span>
-
-  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">assignment</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
-    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;wrong number of arguments (#{args.size} for 0)&quot;</span>
-  <span class="ruby-keyword">end</span>
-
-  <span class="ruby-keyword">case</span> <span class="ruby-identifier">punctuation</span>
-    <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;=&#39;</span>, <span class="ruby-string">&#39;!&#39;</span>
-      <span class="ruby-identifier">config</span> = <span class="ruby-identifier">packages</span>[<span class="ruby-identifier">package</span>] = <span class="ruby-constant">PackageConfig</span>.<span class="ruby-identifier">new</span>
-
-      <span class="ruby-identifier">assignment</span> <span class="ruby-operator">?</span> <span class="ruby-constant">Array</span>(<span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span>
-        <span class="ruby-identifier">config</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{arg}=&quot;</span>, <span class="ruby-keyword">true</span>)
-      } <span class="ruby-operator">:</span> <span class="ruby-identifier">config</span>
-    <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;?&#39;</span>
-      <span class="ruby-identifier">include?</span>(<span class="ruby-identifier">package</span>)
-    <span class="ruby-keyword">else</span>
-      <span class="ruby-keyword">self</span>[<span class="ruby-identifier">package</span>]
-  <span class="ruby-keyword">end</span>
-<span class="ruby-keyword">end</span></pre>
+            <pre>    <span class="ruby-comment"># File lib/brice/config.rb</span>
+<span class="line-num">139</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">method_missing</span>(<span class="ruby-identifier">method</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+<span class="line-num">140</span>   <span class="ruby-identifier">package</span>, <span class="ruby-identifier">punctuation</span> = <span class="ruby-identifier">method</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/([=!?])?\z/</span>, <span class="ruby-string">&#39;&#39;</span>), <span class="ruby-node">$1</span>
+<span class="line-num">141</span> 
+<span class="line-num">142</span>   <span class="ruby-identifier">assignment</span> = <span class="ruby-identifier">punctuation</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;=&#39;</span>
+<span class="line-num">143</span> 
+<span class="line-num">144</span>   <span class="ruby-keyword">unless</span> <span class="ruby-identifier">assignment</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
+<span class="line-num">145</span>     <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;wrong number of arguments (#{args.size} for 0)&quot;</span>
+<span class="line-num">146</span>   <span class="ruby-keyword">end</span>
+<span class="line-num">147</span> 
+<span class="line-num">148</span>   <span class="ruby-keyword">case</span> <span class="ruby-identifier">punctuation</span>
+<span class="line-num">149</span>     <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;=&#39;</span>, <span class="ruby-string">&#39;!&#39;</span>
+<span class="line-num">150</span>       <span class="ruby-identifier">config</span> = <span class="ruby-identifier">packages</span>[<span class="ruby-identifier">package</span>] = <span class="ruby-constant">PackageConfig</span>.<span class="ruby-identifier">new</span>
+<span class="line-num">151</span> 
+<span class="line-num">152</span>       <span class="ruby-identifier">assignment</span> <span class="ruby-operator">?</span> <span class="ruby-constant">Array</span>(<span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span>
+<span class="line-num">153</span>         <span class="ruby-identifier">config</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{arg}=&quot;</span>, <span class="ruby-keyword">true</span>)
+<span class="line-num">154</span>       } <span class="ruby-operator">:</span> <span class="ruby-identifier">config</span>
+<span class="line-num">155</span>     <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;?&#39;</span>
+<span class="line-num">156</span>       <span class="ruby-identifier">include?</span>(<span class="ruby-identifier">package</span>)
+<span class="line-num">157</span>     <span class="ruby-keyword">else</span>
+<span class="line-num">158</span>       <span class="ruby-keyword">self</span>[<span class="ruby-identifier">package</span>]
+<span class="line-num">159</span>   <span class="ruby-keyword">end</span>
+<span class="line-num">160</span> <span class="ruby-keyword">end</span></pre>
           </div>
           
         </div>
@@ -654,18 +657,17 @@
 
         <div class="method-description">
           
-          <p>Enable/include <strong>only</strong> packages <code>packages</code>,
-disable/exclude everything else.</p>
+          <p>Enable/include <strong>only</strong> packages <code>packages</code>, disable/exclude everything else.</p>
           
           
 
           
           <div class="method-source-code" id="only-source">
-            <pre><span class="ruby-comment"># File lib/brice/config.rb, line 105</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">only</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">packages</span>)
-  <span class="ruby-identifier">clear</span>
-  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">include</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">packages</span>)
-<span class="ruby-keyword">end</span></pre>
+            <pre>    <span class="ruby-comment"># File lib/brice/config.rb</span>
+<span class="line-num">105</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">only</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">packages</span>)
+<span class="line-num">106</span>   <span class="ruby-identifier">clear</span>
+<span class="line-num">107</span>   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">include</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">packages</span>)
+<span class="line-num">108</span> <span class="ruby-keyword">end</span></pre>
           </div>
           
         </div>
@@ -683,12 +685,13 @@ disable/exclude everything else.</p>
     </section>
   
   </section>
+
 </main>
 
 
 <footer id="validator-badges" role="contentinfo">
-  <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.1.
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

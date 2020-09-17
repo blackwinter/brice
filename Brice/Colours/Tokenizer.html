@@ -4,21 +4,26 @@
 <head>
 <meta charset="UTF-8">
 
-<title>module Brice::Colours::Tokenizer - brice Application documentation (v0.4.1)</title>
+<title>class Brice::Colours::Tokenizer - brice Application documentation (v0.4.2)</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
+  var index_rel_prefix = "../../";
 </script>
 
-<script src="../../js/jquery.js"></script>
-<script src="../../js/darkfish.js"></script>
+<script src="../../js/navigation.js" defer></script>
+<script src="../../js/search.js" defer></script>
+<script src="../../js/search_index.js" defer></script>
+<script src="../../js/searcher.js" defer></script>
+<script src="../../js/darkfish.js" defer></script>
 
 <link href="../../css/fonts.css" rel="stylesheet">
 <link href="../../css/rdoc.css" rel="stylesheet">
 
 
 
-<body id="top" role="document" class="module">
+
+<body id="top" role="document" class="class">
 <nav role="navigation">
   <div id="project-navigation">
     <div id="home-section" role="region" title="Quick navigation" class="nav-section">
@@ -54,7 +59,14 @@
 
   <div id="class-metadata">
     
-    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Object
+  
+</div>
+
     
     
     <!-- Method Quickref -->
@@ -63,7 +75,25 @@
 
   <ul class="link-list" role="directory">
     
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-c-tokenize">::tokenize</a>
+    
+    <li ><a href="#method-i-enc_event">#enc_event</a>
+    
+    <li ><a href="#method-i-map_event">#map_event</a>
+    
+    <li ><a href="#method-i-obj_event">#obj_event</a>
+    
+    <li ><a href="#method-i-object">#object</a>
+    
+    <li ><a href="#method-i-rng_event">#rng_event</a>
+    
+    <li ><a href="#method-i-sym_event">#sym_event</a>
+    
     <li ><a href="#method-i-tokenize">#tokenize</a>
+    
+    <li ><a href="#method-i-var_event">#var_event</a>
     
   </ul>
 </div>
@@ -71,9 +101,9 @@
   </div>
 </nav>
 
-<main role="main" aria-labelledby="module-Brice::Colours::Tokenizer">
-  <h1 id="module-Brice::Colours::Tokenizer" class="module">
-    module Brice::Colours::Tokenizer
+<main role="main" aria-labelledby="class-Brice::Colours::Tokenizer">
+  <h1 id="class-Brice::Colours::Tokenizer" class="class">
+    class Brice::Colours::Tokenizer
   </h1>
 
   <section class="description">
@@ -83,29 +113,120 @@
   </section>
 
   
-  
-  
   <section id="5Buntitled-5D" class="documentation-section">
     
 
     
 
     
-
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="EVENT_MAP">EVENT_MAP
+        
+        <dd>
+        
+      
+        <dt id="IVAR_RE">IVAR_RE
+        
+        <dd>
+        
+      
+        <dt id="OBJECT_ADDR_RE">OBJECT_ADDR_RE
+        
+        <dd>
+        
+      
+        <dt id="OBJECT_CLASS_RE">OBJECT_CLASS_RE
+        
+        <dd>
+        
+      
+        <dt id="OBJECT_RE">OBJECT_RE
+        
+        <dd>
+        
+      
+        <dt id="RANGE_RE">RANGE_RE
+        
+        <dd>
+        
+      
+      </dl>
+    </section>
     
 
     
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-block" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">block</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
        <header>
-         <h3>Public Instance Methods</h3>
+         <h3>Public Class Methods</h3>
        </header>
 
     
-      <div id="method-i-tokenize" class="method-detail ">
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(&amp;block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre>    <span class="ruby-comment"># File lib/brice/colours.rb</span>
+<span class="line-num">330</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="line-num">331</span>   <span class="ruby-ivar">@block</span> = <span class="ruby-identifier">block</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&#39;no block given&#39;</span>
+<span class="line-num">332</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-tokenize" class="method-detail ">
         
         <div class="method-heading">
           <span class="method-name">tokenize</span><span
-            class="method-args">(str) { |last, value| ... }</span>
+            class="method-args">(str, &amp;block)</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -120,142 +241,328 @@
 
           
           <div class="method-source-code" id="tokenize-source">
-            <pre><span class="ruby-comment"># File lib/brice/colours.rb, line 244</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">tokenize</span>(<span class="ruby-identifier">str</span>)
-  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&#39;no block given&#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
+            <pre>    <span class="ruby-comment"># File lib/brice/colours.rb</span>
+<span class="line-num">326</span> <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">tokenize</span>(<span class="ruby-identifier">str</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="line-num">327</span>   <span class="ruby-identifier">new</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>).<span class="ruby-identifier">tokenize</span>(<span class="ruby-identifier">str</span>)
+<span class="line-num">328</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
 
-  <span class="ruby-identifier">chars</span> = <span class="ruby-identifier">str</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">//</span>)
-  <span class="ruby-identifier">char</span>  = <span class="ruby-identifier">last_char</span> = <span class="ruby-identifier">repeat</span> = <span class="ruby-keyword">nil</span>
-  <span class="ruby-identifier">states</span>, <span class="ruby-identifier">value</span>, <span class="ruby-identifier">index</span> = [], <span class="ruby-string">&#39;&#39;</span>, <span class="ruby-value">0</span>
+        
 
-  <span class="ruby-identifier">reset</span> = <span class="ruby-identifier">lambda</span> { <span class="ruby-operator">|</span><span class="ruby-operator">*</span><span class="ruby-identifier">args</span><span class="ruby-operator">|</span>
-    <span class="ruby-identifier">states</span>.<span class="ruby-identifier">pop</span>
+        
+      </div>
 
-    <span class="ruby-identifier">value</span>  = <span class="ruby-string">&#39;&#39;</span>
-    <span class="ruby-identifier">repeat</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
-  }
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
 
-  <span class="ruby-identifier">yield_last</span> = <span class="ruby-identifier">lambda</span> { <span class="ruby-operator">|</span><span class="ruby-operator">*</span><span class="ruby-identifier">args</span><span class="ruby-operator">|</span>
-    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">states</span>.<span class="ruby-identifier">last</span>, <span class="ruby-identifier">value</span>
-    <span class="ruby-identifier">reset</span>[<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>]
-  }
+    
+      <div id="method-i-tokenize" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">tokenize</span><span
+            class="method-args">(str)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
 
-  <span class="ruby-keyword">until</span> <span class="ruby-identifier">index</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">chars</span>.<span class="ruby-identifier">size</span>
-    <span class="ruby-identifier">char</span>, <span class="ruby-identifier">repeat</span> = <span class="ruby-identifier">chars</span>[<span class="ruby-identifier">index</span>], <span class="ruby-keyword">false</span>
+        <div class="method-description">
+          
+          
+          
+          
 
-    <span class="ruby-keyword">case</span> <span class="ruby-identifier">states</span>.<span class="ruby-identifier">last</span>
-      <span class="ruby-keyword">when</span> <span class="ruby-keyword">nil</span>
-        <span class="ruby-keyword">case</span> <span class="ruby-identifier">char</span>
-          <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;:&#39;</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">states</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">:symbol</span>
-          <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;&quot;&#39;</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">states</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">:string</span>
-          <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;#&#39;</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">states</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">:object</span>
-          <span class="ruby-keyword">when</span> <span class="ruby-regexp">/[a-z]/i</span>
-            <span class="ruby-identifier">states</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">:keyword</span>
-            <span class="ruby-identifier">repeat</span> = <span class="ruby-keyword">true</span>
-          <span class="ruby-keyword">when</span> <span class="ruby-regexp">/[0-9-]/</span>
-            <span class="ruby-identifier">states</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">:number</span>
-            <span class="ruby-identifier">repeat</span> = <span class="ruby-keyword">true</span>
-          <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;{&#39;</span>  <span class="ruby-keyword">then</span> <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">open_hash</span>,   <span class="ruby-string">&#39;{&#39;</span>
-          <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;[&#39;</span>  <span class="ruby-keyword">then</span> <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">open_array</span>,  <span class="ruby-string">&#39;[&#39;</span>
-          <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;]&#39;</span>  <span class="ruby-keyword">then</span> <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">close_array</span>, <span class="ruby-string">&#39;]&#39;</span>
-          <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;}&#39;</span>  <span class="ruby-keyword">then</span> <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">close_hash</span>,  <span class="ruby-string">&#39;}&#39;</span>
-          <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\s/</span> <span class="ruby-keyword">then</span> <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">whitespace</span>,  <span class="ruby-identifier">char</span>
-          <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;,&#39;</span>  <span class="ruby-keyword">then</span> <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">comma</span>,       <span class="ruby-string">&#39;,&#39;</span>
-          <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;&gt;&#39;</span>  <span class="ruby-keyword">then</span> <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">refers</span>,      <span class="ruby-string">&#39;=&gt;&#39;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">last_char</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;=&#39;</span>
-          <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;.&#39;</span>  <span class="ruby-keyword">then</span> <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">range</span>,       <span class="ruby-string">&#39;..&#39;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">last_char</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;.&#39;</span>
-          <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;=&#39;</span>  <span class="ruby-keyword">then</span> <span class="ruby-keyword">nil</span>
-          <span class="ruby-keyword">else</span>           <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">unknown</span>,     <span class="ruby-identifier">char</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">char</span>
-        <span class="ruby-keyword">end</span>
-      <span class="ruby-keyword">when</span> <span class="ruby-value">:symbol</span>
-        <span class="ruby-keyword">if</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/[a-z0-9_!?]/</span>  <span class="ruby-comment"># should have =, but that messes up foo=&gt;bar</span>
-          <span class="ruby-identifier">value</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">char</span>
-        <span class="ruby-keyword">else</span>
-          <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">symbol_prefix</span>, <span class="ruby-string">&#39;:&#39;</span>
-          <span class="ruby-identifier">yield_last</span>[<span class="ruby-keyword">true</span>]
-        <span class="ruby-keyword">end</span>
-      <span class="ruby-keyword">when</span> <span class="ruby-value">:string</span>
-        <span class="ruby-keyword">if</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&quot;&#39;</span>
-          <span class="ruby-keyword">if</span> <span class="ruby-identifier">last_char</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;\&#39;</span>
-            <span class="ruby-identifier">value</span>[<span class="ruby-value">-1</span>] = <span class="ruby-identifier">char</span>
-          <span class="ruby-keyword">else</span>
-            <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">open_string</span>,  <span class="ruby-identifier">char</span>
-            <span class="ruby-identifier">yield_last</span>[]
-            <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">close_string</span>, <span class="ruby-identifier">char</span>
-          <span class="ruby-keyword">end</span>
-        <span class="ruby-keyword">else</span>
-          <span class="ruby-identifier">value</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">char</span>
-        <span class="ruby-keyword">end</span>
-      <span class="ruby-keyword">when</span> <span class="ruby-value">:keyword</span>
-        <span class="ruby-keyword">if</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/[a-z0-9_]/i</span>
-          <span class="ruby-identifier">value</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">char</span>
-        <span class="ruby-keyword">else</span>
-          <span class="ruby-identifier">states</span>[<span class="ruby-value">-1</span>] = <span class="ruby-value">:class</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/\A[A-Z]/</span>
-          <span class="ruby-identifier">yield_last</span>[<span class="ruby-keyword">true</span>]
+          
+          <div class="method-source-code" id="tokenize-source">
+            <pre>    <span class="ruby-comment"># File lib/brice/colours.rb</span>
+<span class="line-num">336</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">tokenize</span>(<span class="ruby-identifier">str</span>)
+<span class="line-num">337</span>   <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">empty?</span>
+<span class="line-num">338</span>   <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">enc_event</span>(<span class="ruby-identifier">str</span>)
+<span class="line-num">339</span> 
+<span class="line-num">340</span>   <span class="ruby-identifier">lex</span>, <span class="ruby-identifier">prev</span> = <span class="ruby-constant">Ripper</span>.<span class="ruby-identifier">lex</span>(<span class="ruby-identifier">str</span>), <span class="ruby-keyword">nil</span>
+<span class="line-num">341</span> 
+<span class="line-num">342</span>   <span class="ruby-identifier">len</span> = <span class="ruby-identifier">lex</span>[<span class="ruby-value">-1</span>][<span class="ruby-value">0</span>][<span class="ruby-value">-1</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">lex</span>[<span class="ruby-value">-1</span>][<span class="ruby-value">-1</span>].<span class="ruby-identifier">bytesize</span>
+<span class="line-num">343</span>   <span class="ruby-identifier">str</span>, <span class="ruby-identifier">rest</span> = <span class="ruby-identifier">str</span>.<span class="ruby-identifier">byteslice</span>(<span class="ruby-value">0</span>, <span class="ruby-identifier">len</span>), <span class="ruby-identifier">str</span>.<span class="ruby-identifier">byteslice</span>(<span class="ruby-identifier">len</span> <span class="ruby-operator">..</span> <span class="ruby-value">-1</span>)
+<span class="line-num">344</span> 
+<span class="line-num">345</span>   <span class="ruby-keyword">return</span> <span class="ruby-identifier">block</span>[<span class="ruby-value">:unknown</span>, <span class="ruby-identifier">rest</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">empty?</span>
+<span class="line-num">346</span> 
+<span class="line-num">347</span>   <span class="ruby-identifier">lex</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>, <span class="ruby-identifier">event</span>, <span class="ruby-identifier">tok</span><span class="ruby-operator">|</span>
+<span class="line-num">348</span>     <span class="ruby-identifier">sym_event</span>(<span class="ruby-identifier">event</span>, <span class="ruby-identifier">tok</span>, <span class="ruby-identifier">prev</span>) <span class="ruby-operator">||</span>
+<span class="line-num">349</span>     <span class="ruby-identifier">obj_event</span>(<span class="ruby-identifier">event</span>, <span class="ruby-identifier">tok</span>)       <span class="ruby-operator">||</span>
+<span class="line-num">350</span>     <span class="ruby-identifier">rng_event</span>(<span class="ruby-identifier">event</span>, <span class="ruby-identifier">tok</span>)       <span class="ruby-operator">||</span>
+<span class="line-num">351</span>     <span class="ruby-identifier">var_event</span>(<span class="ruby-identifier">event</span>, <span class="ruby-identifier">tok</span>)       <span class="ruby-operator">||</span>
+<span class="line-num">352</span>     <span class="ruby-identifier">map_event</span>(<span class="ruby-identifier">event</span>, <span class="ruby-identifier">tok</span>)
+<span class="line-num">353</span> 
+<span class="line-num">354</span>     <span class="ruby-identifier">prev</span> = <span class="ruby-identifier">event</span>
+<span class="line-num">355</span>   }
+<span class="line-num">356</span> 
+<span class="line-num">357</span>   <span class="ruby-identifier">tokenize</span>(<span class="ruby-identifier">rest</span>)
+<span class="line-num">358</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
 
-          <span class="ruby-identifier">value</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">char</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;.&#39;</span>
-        <span class="ruby-keyword">end</span>
-      <span class="ruby-keyword">when</span> <span class="ruby-value">:number</span>
-        <span class="ruby-keyword">case</span> <span class="ruby-identifier">char</span>
-          <span class="ruby-keyword">when</span> <span class="ruby-regexp">/[0-9e-]/</span>
-            <span class="ruby-identifier">value</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">char</span>
-          <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;.&#39;</span>
-            <span class="ruby-keyword">if</span> <span class="ruby-identifier">last_char</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">char</span>
-              <span class="ruby-identifier">value</span>.<span class="ruby-identifier">chop!</span>
+        
 
-              <span class="ruby-identifier">yield_last</span>[]
-              <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">range</span>, <span class="ruby-string">&#39;..&#39;</span>
-            <span class="ruby-keyword">else</span>
-              <span class="ruby-identifier">value</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">char</span>
-            <span class="ruby-keyword">end</span>
-          <span class="ruby-keyword">else</span>
-            <span class="ruby-identifier">yield_last</span>[<span class="ruby-keyword">true</span>]
-        <span class="ruby-keyword">end</span>
-      <span class="ruby-keyword">when</span> <span class="ruby-value">:object</span>
-        <span class="ruby-keyword">case</span> <span class="ruby-identifier">char</span>
-          <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;&lt;&#39;</span>
-            <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">open_object</span>, <span class="ruby-string">&#39;#&lt;&#39;</span>
-            <span class="ruby-identifier">states</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">:object_class</span>
-          <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;:&#39;</span>
-            <span class="ruby-identifier">states</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">:object_addr</span>
-          <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;@&#39;</span>
-            <span class="ruby-identifier">states</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">:object_line</span>
-          <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;&gt;&#39;</span>
-            <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">close_object</span>, <span class="ruby-string">&#39;&gt;&#39;</span>
-            <span class="ruby-identifier">reset</span>[]
-        <span class="ruby-keyword">end</span>
-      <span class="ruby-keyword">when</span> <span class="ruby-value">:object_class</span>
-        <span class="ruby-keyword">if</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;:&#39;</span>
-          <span class="ruby-identifier">yield_last</span>[<span class="ruby-keyword">true</span>]
-        <span class="ruby-keyword">else</span>
-          <span class="ruby-identifier">value</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">char</span>
-        <span class="ruby-keyword">end</span>
-      <span class="ruby-keyword">when</span> <span class="ruby-value">:object_addr</span>
-        <span class="ruby-keyword">case</span> <span class="ruby-identifier">char</span>
-          <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;&gt;&#39;</span>
-            <span class="ruby-comment"># ignore</span>
-          <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;@&#39;</span>
-            <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">object_addr_prefix</span>, <span class="ruby-string">&#39;:&#39;</span>
-            <span class="ruby-identifier">yield_last</span>[<span class="ruby-keyword">true</span>]
-          <span class="ruby-keyword">else</span>
-            <span class="ruby-identifier">value</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">char</span>
-        <span class="ruby-keyword">end</span>
-      <span class="ruby-keyword">when</span> <span class="ruby-value">:object_line</span>
-        <span class="ruby-keyword">if</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;&gt;&#39;</span>
-          <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">object_line_prefix</span>, <span class="ruby-string">&#39;@&#39;</span>
-          <span class="ruby-identifier">yield_last</span>[<span class="ruby-keyword">true</span>]
-        <span class="ruby-keyword">else</span>
-          <span class="ruby-identifier">value</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">char</span>
-        <span class="ruby-keyword">end</span>
-      <span class="ruby-keyword">else</span>
-        <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;unknown state: #{states}&quot;</span>
-    <span class="ruby-keyword">end</span>
+        
+      </div>
 
-    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">repeat</span>
-      <span class="ruby-identifier">index</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
-      <span class="ruby-identifier">last_char</span> = <span class="ruby-identifier">char</span>
-    <span class="ruby-keyword">end</span>
-  <span class="ruby-keyword">end</span>
-<span class="ruby-keyword">end</span></pre>
+    
+    </section>
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-enc_event" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">enc_event</span><span
+            class="method-args">(str)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="enc_event-source">
+            <pre>    <span class="ruby-comment"># File lib/brice/colours.rb</span>
+<span class="line-num">362</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">enc_event</span>(<span class="ruby-identifier">str</span>)  <span class="ruby-comment"># XXX /\A\s*#.*?coding\s*:\s*./</span>
+<span class="line-num">363</span>   <span class="ruby-identifier">object</span>(<span class="ruby-node">$1</span>, <span class="ruby-node">$2</span>, <span class="ruby-node">$3</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span> <span class="ruby-operator">=~</span> <span class="ruby-constant">OBJECT_RE</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&#39;coding&#39;</span>)
+<span class="line-num">364</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-map_event" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">map_event</span><span
+            class="method-args">(event, tok)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="map_event-source">
+            <pre>    <span class="ruby-comment"># File lib/brice/colours.rb</span>
+<span class="line-num">385</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">map_event</span>(<span class="ruby-identifier">event</span>, <span class="ruby-identifier">tok</span>)
+<span class="line-num">386</span>   <span class="ruby-identifier">block</span>[<span class="ruby-constant">EVENT_MAP</span>[<span class="ruby-identifier">event</span>], <span class="ruby-identifier">tok</span>]
+<span class="line-num">387</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-obj_event" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">obj_event</span><span
+            class="method-args">(event, tok)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="obj_event-source">
+            <pre>    <span class="ruby-comment"># File lib/brice/colours.rb</span>
+<span class="line-num">366</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">obj_event</span>(<span class="ruby-identifier">event</span>, <span class="ruby-identifier">tok</span>)
+<span class="line-num">367</span>   <span class="ruby-identifier">object</span>(<span class="ruby-node">$1</span>, <span class="ruby-node">$2</span>, <span class="ruby-node">$3</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">event</span> <span class="ruby-operator">==</span> <span class="ruby-value">:on_comment</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">tok</span> <span class="ruby-operator">=~</span> <span class="ruby-constant">OBJECT_RE</span>
+<span class="line-num">368</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-object" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">object</span><span
+            class="method-args">(open, str, close)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="object-source">
+            <pre>    <span class="ruby-comment"># File lib/brice/colours.rb</span>
+<span class="line-num">389</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">object</span>(<span class="ruby-identifier">open</span>, <span class="ruby-identifier">str</span>, <span class="ruby-identifier">close</span>)
+<span class="line-num">390</span>   <span class="ruby-identifier">block</span>[<span class="ruby-value">:open_object</span>, <span class="ruby-identifier">open</span>]
+<span class="line-num">391</span> 
+<span class="line-num">392</span>   <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-constant">OBJECT_CLASS_RE</span>, <span class="ruby-string">&#39;&#39;</span>)
+<span class="line-num">393</span>     <span class="ruby-identifier">block</span>[<span class="ruby-value">:object_class</span>, <span class="ruby-node">$&amp;</span>]
+<span class="line-num">394</span> 
+<span class="line-num">395</span>     <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-constant">OBJECT_ADDR_RE</span>, <span class="ruby-string">&#39;&#39;</span>)
+<span class="line-num">396</span>       <span class="ruby-identifier">block</span>[<span class="ruby-value">:object_addr_prefix</span>, <span class="ruby-node">$1</span>]
+<span class="line-num">397</span>       <span class="ruby-identifier">block</span>[<span class="ruby-value">:object_addr</span>, <span class="ruby-node">$2</span>]
+<span class="line-num">398</span> 
+<span class="line-num">399</span>       <span class="ruby-identifier">str</span> = <span class="ruby-identifier">tokenize</span>(<span class="ruby-identifier">str</span>)
+<span class="line-num">400</span>     <span class="ruby-keyword">end</span>
+<span class="line-num">401</span>   <span class="ruby-keyword">end</span>
+<span class="line-num">402</span> 
+<span class="line-num">403</span>   <span class="ruby-identifier">block</span>[<span class="ruby-value">:unknown</span>, <span class="ruby-identifier">str</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>
+<span class="line-num">404</span> 
+<span class="line-num">405</span>   <span class="ruby-identifier">block</span>[<span class="ruby-value">:close_object</span>, <span class="ruby-identifier">close</span>]
+<span class="line-num">406</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-rng_event" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rng_event</span><span
+            class="method-args">(event, tok)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="rng_event-source">
+            <pre>    <span class="ruby-comment"># File lib/brice/colours.rb</span>
+<span class="line-num">374</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rng_event</span>(<span class="ruby-identifier">event</span>, <span class="ruby-identifier">tok</span>)
+<span class="line-num">375</span>   <span class="ruby-identifier">block</span>[<span class="ruby-value">:range</span>, <span class="ruby-identifier">tok</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">event</span> <span class="ruby-operator">==</span> <span class="ruby-value">:on_op</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">tok</span> <span class="ruby-operator">=~</span> <span class="ruby-constant">RANGE_RE</span>
+<span class="line-num">376</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-sym_event" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sym_event</span><span
+            class="method-args">(event, tok, prev)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="sym_event-source">
+            <pre>    <span class="ruby-comment"># File lib/brice/colours.rb</span>
+<span class="line-num">370</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">sym_event</span>(<span class="ruby-identifier">event</span>, <span class="ruby-identifier">tok</span>, <span class="ruby-identifier">prev</span>)
+<span class="line-num">371</span>   <span class="ruby-identifier">block</span>[<span class="ruby-value">:symbol</span>, <span class="ruby-identifier">tok</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">event</span> <span class="ruby-operator">==</span> <span class="ruby-value">:on_kw</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">prev</span> <span class="ruby-operator">==</span> <span class="ruby-value">:on_symbeg</span>
+<span class="line-num">372</span> <span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-var_event" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">var_event</span><span
+            class="method-args">(event, tok)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="var_event-source">
+            <pre>    <span class="ruby-comment"># File lib/brice/colours.rb</span>
+<span class="line-num">378</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">var_event</span>(<span class="ruby-identifier">event</span>, <span class="ruby-identifier">tok</span>)
+<span class="line-num">379</span>   <span class="ruby-keyword">if</span> <span class="ruby-identifier">event</span> <span class="ruby-operator">==</span> <span class="ruby-value">:on_ivar</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">tok</span> <span class="ruby-operator">=~</span> <span class="ruby-constant">IVAR_RE</span>
+<span class="line-num">380</span>     <span class="ruby-identifier">block</span>[<span class="ruby-value">:object_line_prefix</span>, <span class="ruby-node">$1</span>]
+<span class="line-num">381</span>     <span class="ruby-identifier">block</span>[<span class="ruby-value">:keyword</span>, <span class="ruby-node">$2</span>]
+<span class="line-num">382</span>   <span class="ruby-keyword">end</span>
+<span class="line-num">383</span> <span class="ruby-keyword">end</span></pre>
           </div>
           
         </div>
@@ -269,12 +576,13 @@
     </section>
   
   </section>
+
 </main>
 
 
 <footer id="validator-badges" role="contentinfo">
-  <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.1.
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 
