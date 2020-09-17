@@ -2,6 +2,10 @@
 
 = Revision history for brice
 
+== 0.4.2 [2020-09-17]
+
+* Ruby 2.7 compatibility.
+
 == 0.4.1 [2016-03-29]
 
 * To mark default packages as optional, use underscore in addition to question
